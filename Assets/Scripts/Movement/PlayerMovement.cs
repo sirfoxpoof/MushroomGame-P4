@@ -12,12 +12,14 @@ public class PlayerMovement : MonoBehaviour
 
 
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float moveForce, jumpForce, maxSpeed;
+    [Header("Values")]
+    [SerializeField] private float moveSpeed, jumpForce, maxSpeed;
     private Vector3 forceDirection, jump;
 
     [SerializeField] private Camera cam;
-
     public bool isGrounded;
+
+    [SerializeField] private Animator animator;
 
     private void Awake()
     {
@@ -44,8 +46,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        forceDirection += move.ReadValue<Vector2>().x * GetCameraRight(cam) * moveForce;
-        forceDirection += move.ReadValue<Vector2>().y * GetCameraForward(cam) * moveForce;
+        forceDirection += move.ReadValue<Vector2>().x * GetCameraRight(cam) * moveSpeed;
+        forceDirection += move.ReadValue<Vector2>().y * GetCameraForward(cam) * moveSpeed;
 
         rb.AddForce(forceDirection, ForceMode.Impulse);
         forceDirection = Vector3.zero;
@@ -109,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGrounded)
             {
-
+                animator.Play("Jumping");
                 rb.AddForce(jump * jumpForce, ForceMode.Impulse);
                 isGrounded = false;
             }
@@ -117,5 +119,18 @@ public class PlayerMovement : MonoBehaviour
       
     }
 
-  
+    public void Sprint(InputAction.CallbackContext context)
+    {
+        if (context.performed && isGrounded)
+        {
+            maxSpeed *= 2;
+
+            moveSpeed *= 2;
+        }
+        else
+        {
+            maxSpeed = 2;
+            moveSpeed = 1;
+        }
+    }
 }
