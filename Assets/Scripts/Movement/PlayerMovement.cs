@@ -11,21 +11,23 @@ public class PlayerMovement : MonoBehaviour
     private InputAction move;
 
 
-    [SerializeField] private Rigidbody rb;
+    [HideInInspector] public Rigidbody rb;
     [Header("Values")]
-    [SerializeField] private float moveSpeed, jumpForce, maxSpeed;
-    private Vector3 forceDirection, jump;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float maxSpeed;
+    public float jumpForce;
+    [HideInInspector] public Vector3 forceDirection;
+    [HideInInspector] public Vector3 jump;
 
+    [Header("Other Things")]
     [SerializeField] private Camera cam;
-    public bool isGrounded;
-
-    [SerializeField] private Animator animator;
-
+    public bool isGrounded, jumping;
+    [SerializeField] private Animator movementAnimator;
     private void Awake()
     {
         playerActionMap = new PlayerActionMap();
 
-        jump = new Vector3(0, 5, 0);
+        jump = new Vector3(0, 7, 0);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -67,9 +69,28 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
+        //animations oke oke jump is kakka miss heeft het met de eerste if statement te maken
+        //even proberen om er een speed van de maken
+        if(rb.velocity.x > 0|| rb.velocity.y > 0)
+        {
+            if(moveSpeed > 2)
+            {
+                movementAnimator.Play("Sprint"); 
+
+            }
+            else
+            {
+                movementAnimator.Play("walking");
+            }
+        }
+        else
+        {
+            movementAnimator.SetTrigger("Idle");
+        }
+
         LookAt();
     }
-
+    //hier zorgen we ervoor dat de camera goed komt te staaaaaannnnn
     private Vector3 GetCameraForward(Camera cam)
     {
         Vector3 forward = cam.transform.forward;
@@ -83,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
         right.y = 0f;
         return right.normalized;
     }
-
+    //hier kijken we in de directie die we opgaan
     private void LookAt()
     {
         Vector3 direction = rb.velocity;
@@ -99,25 +120,44 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     void OnCollisionStay()
     {
         isGrounded = true;
     }
+    private void OnCollisionExit(Collision collision)
+    {
+        isGrounded = false;
+    }
+
     public void DoJump(InputAction.CallbackContext context)
     {
-
-        if(context.performed)
+        if(!isGrounded)
         {
-            if (isGrounded)
+            if(jumping)
             {
-                animator.Play("Jumping");
                 rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+
+                //forceDirection += Vector3.up * jumpForce;
+                //animatie voor tweede jump
+            }
+
+
+            return;
+        }
+        else
+        {
+            if(context.performed)
+            {
+                movementAnimator.SetTrigger("Jumping");
+                rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+           
                 isGrounded = false;
+                
             }
         }
       
     }
+    //btw niet op de hardcode letten ik ga het fixen I swear
 
     public void Sprint(InputAction.CallbackContext context)
     {
@@ -129,8 +169,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            maxSpeed = 2;
-            moveSpeed = 1;
+            maxSpeed = 4;
+            moveSpeed = 2;
         }
     }
 }
