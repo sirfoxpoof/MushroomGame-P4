@@ -201,5 +201,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a21d43452abd484ab5770302ce15732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  flowerJump: 4
   flowerAnimator: {fileID: 2131174945892339135}

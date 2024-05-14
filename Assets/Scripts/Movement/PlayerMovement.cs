@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.velocity.y < 0)
         {
-            rb.velocity += Vector3.up * Physics.gravity.y * Time.fixedDeltaTime;
+            rb.velocity -= Vector3.down * Physics.gravity.y * Time.fixedDeltaTime;
         }
         //als ik wil dat je soort van kunt gliden ofzo dan kun je net zoeits doen ^^
 
