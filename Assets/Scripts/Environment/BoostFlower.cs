@@ -21,6 +21,9 @@ public class BoostFlower : MonoBehaviour
 
             flowerAnimator.SetTrigger("Jump");
             player.rb.AddForce(player.jump * flowerJump, ForceMode.Impulse);
+
+
+            player.jumping = true;
         }
     }
 }

@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float maxSpeed;
     public float jumpForce;
+    /*[SerializeField] float boostForce;*/
     [HideInInspector] public Vector3 forceDirection;
     [HideInInspector] public Vector3 jump;
 
@@ -31,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        //miss hier alle stats van de player aangeven ofzo
     }
 
     private void OnEnable()
@@ -59,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity -= Vector3.down * Physics.gravity.y * Time.fixedDeltaTime;
         }
+            
         //als ik wil dat je soort van kunt gliden ofzo dan kun je net zoeits doen ^^
 
         Vector3 horizontalVel = rb.velocity;
@@ -123,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
     void OnCollisionStay()
     {
         isGrounded = true;
+        //jumping = false;
     }
     private void OnCollisionExit(Collision collision)
     {
@@ -131,29 +136,35 @@ public class PlayerMovement : MonoBehaviour
 
     public void DoJump(InputAction.CallbackContext context)
     {
-        if(!isGrounded)
+        if(isGrounded)
         {
-            if(jumping)
-            {
-                rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-
-                //forceDirection += Vector3.up * jumpForce;
-                //animatie voor tweede jump
-            }
-
-
-            return;
-        }
-        else
-        {
+            //first jump
             if(context.performed)
             {
                 movementAnimator.SetTrigger("Jumping");
                 rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+
+                jumping = true;
            
                 isGrounded = false;
                 
             }
+        }
+        else
+        {
+            //second jump (aka boost), which is a bit higher
+            if(jumping)
+            {
+                if (context.performed)
+                {
+                   rb.AddForce(jump * jumpForce * 1.5f, ForceMode.Impulse);
+                   jumping = false;
+                   //animatie voor tweede jump
+
+                }
+            }
+            
+
         }
       
     }

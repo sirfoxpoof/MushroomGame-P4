@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 public class Attack : MonoBehaviour
 {
 
+    //player stats I guess
+
+
     public Weapons weapons;
     public Animator attackAnimator;
 
