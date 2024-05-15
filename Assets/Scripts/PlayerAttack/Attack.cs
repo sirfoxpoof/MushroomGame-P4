@@ -7,7 +7,7 @@ public class Attack : MonoBehaviour
 {
 
     //player stats I guess
-
+    public float health;
 
     public Weapons weapons;
     public Animator attackAnimator;
@@ -21,10 +21,16 @@ public class Attack : MonoBehaviour
         if(context.performed)
         {
             attackAnimator.Play("Attack"); 
-            weapons.Attack();
             weapons.attacking = true;
-        }
 
-        
+            if (weapons.attacking && weapons.inRange)
+            {
+                //hier damage doen
+                Destroy(weapons.enemy.gameObject);
+            }
+
+            weapons.attacking = false;
+            weapons.inRange = false;
+        }
     }
 }
