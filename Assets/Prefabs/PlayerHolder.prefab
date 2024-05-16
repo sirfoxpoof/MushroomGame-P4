@@ -59,6 +59,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   isGrounded: 0
   jumping: 0
+  gliding: 0
   movementAnimator: {fileID: 1740213026917337563}
 --- !u!54 &7824845313605236391
 Rigidbody:
@@ -69,7 +70,7 @@ Rigidbody:
   m_GameObject: {fileID: 89657493610224492}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 3
+  m_Drag: 3.5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -2189,7 +2190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7148721363196488935}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.025552504, y: 0.0000000031362184, z: -8.01644e-11, w: 0.9996735}
+  m_LocalRotation: {x: 0.0255525, y: -0.0000000017325177, z: 4.4284618e-11, w: 0.9996735}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3065,6 +3066,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9a57c598-2e31-41da-a0cf-093e969b1908
     m_ActionName: Character/Sprint[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 804635104602477807}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Gliding
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c15ce3a4-2c8f-49a6-96d8-0c4d5221ccc8
+    m_ActionName: Character/Glide[/Keyboard/alt]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Character

@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Other Things")]
     [SerializeField] private Camera cam;
-    public bool isGrounded, jumping;
+    /*[HideInInspector]*/ public bool isGrounded, jumping, gliding;
     [SerializeField] private Animator movementAnimator;
     private void Awake()
     {
@@ -60,9 +60,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.velocity.y < 0)
         {
-            rb.velocity -= Vector3.down * Physics.gravity.y * Time.fixedDeltaTime;
+            if (gliding)
+            {
+                rb.velocity -= Vector3.down * Physics.gravity.y * 0.1f * Time.fixedDeltaTime;
+            }
+            else
+            {
+                rb.velocity -= Vector3.down * Physics.gravity.y * 3.5f * Time.fixedDeltaTime;
+            }
         }
-            
         //als ik wil dat je soort van kunt gliden ofzo dan kun je net zoeits doen ^^
 
         Vector3 horizontalVel = rb.velocity;
@@ -94,7 +100,23 @@ public class PlayerMovement : MonoBehaviour
 
         LookAt();
     }
-    //hier zorgen we ervoor dat de camera goed komt te staaaaaannnnn
+
+    public void Gliding(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            if (gliding)
+            {
+                gliding = false;
+            }
+            else
+            {
+                gliding = true;
+            }
+        }
+    }
+
+
     private Vector3 GetCameraForward(Camera cam)
     {
         Vector3 forward = cam.transform.forward;
@@ -127,6 +149,7 @@ public class PlayerMovement : MonoBehaviour
     void OnCollisionStay()
     {
         isGrounded = true;
+        gliding = false;
         //jumping = false;
     }
     private void OnCollisionExit(Collision collision)

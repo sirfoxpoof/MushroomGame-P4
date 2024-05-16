@@ -28,6 +28,24 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
             ""id"": ""6f75007a-981c-4fbe-b7f1-adbab859daf7"",
             ""actions"": [
                 {
+                    ""name"": ""Dodge left"",
+                    ""type"": ""Value"",
+                    ""id"": ""27873daf-2e3d-4e6c-a569-3ba686e2009e"",
+                    ""expectedControlType"": ""Double"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Dodge right"",
+                    ""type"": ""Value"",
+                    ""id"": ""c7debcd1-362b-4632-953b-894c37d6849f"",
+                    ""expectedControlType"": ""Double"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Look"",
                     ""type"": ""PassThrough"",
                     ""id"": ""99f9fb74-3a80-4759-8002-1dcafbe2aac1"",
@@ -46,6 +64,15 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""9a57c598-2e31-41da-a0cf-093e969b1908"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""63eb8a03-da77-40c0-b531-5cd8b508549f"",
@@ -55,9 +82,9 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Sprint"",
+                    ""name"": ""Glide"",
                     ""type"": ""Button"",
-                    ""id"": ""9a57c598-2e31-41da-a0cf-093e969b1908"",
+                    ""id"": ""c15ce3a4-2c8f-49a6-96d8-0c4d5221ccc8"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -228,17 +255,6 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c4ad9990-3d96-483b-811b-d59f5d681d0c"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""c044e2ed-1d56-4ddf-903b-5a3c2bca441b"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
@@ -261,6 +277,28 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""c4ad9990-3d96-483b-811b-d59f5d681d0c"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""91080f34-8649-499d-8e07-bd2391634c3c"",
+                    ""path"": ""<Keyboard>/alt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Glide"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""4fe571b6-d817-4c99-8abb-db40a5d27432"",
                     ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
@@ -269,6 +307,72 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""3af3b2a5-bc67-4e19-b929-5369325b9b91"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dodge left"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""d5535d58-0e4b-47a2-9342-7d1c37b1151f"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dodge left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""c7a074a3-5902-4661-929b-dec4cbb6246f"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dodge left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""4aa9cfda-5839-47ab-8320-4918dfde7c5a"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dodge right"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""ca01937d-f66c-4102-9406-d9d7aaa7f37a"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dodge right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""6e3070b8-19ea-4ffb-af99-e58aed3813e7"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dodge right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -338,10 +442,13 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
 }");
         // Character
         m_Character = asset.FindActionMap("Character", throwIfNotFound: true);
+        m_Character_Dodgeleft = m_Character.FindAction("Dodge left", throwIfNotFound: true);
+        m_Character_Dodgeright = m_Character.FindAction("Dodge right", throwIfNotFound: true);
         m_Character_Look = m_Character.FindAction("Look", throwIfNotFound: true);
         m_Character_Move = m_Character.FindAction("Move", throwIfNotFound: true);
-        m_Character_Jump = m_Character.FindAction("Jump", throwIfNotFound: true);
         m_Character_Sprint = m_Character.FindAction("Sprint", throwIfNotFound: true);
+        m_Character_Jump = m_Character.FindAction("Jump", throwIfNotFound: true);
+        m_Character_Glide = m_Character.FindAction("Glide", throwIfNotFound: true);
         m_Character_Attack = m_Character.FindAction("Attack", throwIfNotFound: true);
         m_Character_Interact = m_Character.FindAction("Interact", throwIfNotFound: true);
     }
@@ -405,20 +512,26 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
     // Character
     private readonly InputActionMap m_Character;
     private List<ICharacterActions> m_CharacterActionsCallbackInterfaces = new List<ICharacterActions>();
+    private readonly InputAction m_Character_Dodgeleft;
+    private readonly InputAction m_Character_Dodgeright;
     private readonly InputAction m_Character_Look;
     private readonly InputAction m_Character_Move;
-    private readonly InputAction m_Character_Jump;
     private readonly InputAction m_Character_Sprint;
+    private readonly InputAction m_Character_Jump;
+    private readonly InputAction m_Character_Glide;
     private readonly InputAction m_Character_Attack;
     private readonly InputAction m_Character_Interact;
     public struct CharacterActions
     {
         private @PlayerActionMap m_Wrapper;
         public CharacterActions(@PlayerActionMap wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Dodgeleft => m_Wrapper.m_Character_Dodgeleft;
+        public InputAction @Dodgeright => m_Wrapper.m_Character_Dodgeright;
         public InputAction @Look => m_Wrapper.m_Character_Look;
         public InputAction @Move => m_Wrapper.m_Character_Move;
-        public InputAction @Jump => m_Wrapper.m_Character_Jump;
         public InputAction @Sprint => m_Wrapper.m_Character_Sprint;
+        public InputAction @Jump => m_Wrapper.m_Character_Jump;
+        public InputAction @Glide => m_Wrapper.m_Character_Glide;
         public InputAction @Attack => m_Wrapper.m_Character_Attack;
         public InputAction @Interact => m_Wrapper.m_Character_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Character; }
@@ -430,18 +543,27 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_CharacterActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_CharacterActionsCallbackInterfaces.Add(instance);
+            @Dodgeleft.started += instance.OnDodgeleft;
+            @Dodgeleft.performed += instance.OnDodgeleft;
+            @Dodgeleft.canceled += instance.OnDodgeleft;
+            @Dodgeright.started += instance.OnDodgeright;
+            @Dodgeright.performed += instance.OnDodgeright;
+            @Dodgeright.canceled += instance.OnDodgeright;
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @Jump.started += instance.OnJump;
-            @Jump.performed += instance.OnJump;
-            @Jump.canceled += instance.OnJump;
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
+            @Glide.started += instance.OnGlide;
+            @Glide.performed += instance.OnGlide;
+            @Glide.canceled += instance.OnGlide;
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
@@ -452,18 +574,27 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(ICharacterActions instance)
         {
+            @Dodgeleft.started -= instance.OnDodgeleft;
+            @Dodgeleft.performed -= instance.OnDodgeleft;
+            @Dodgeleft.canceled -= instance.OnDodgeleft;
+            @Dodgeright.started -= instance.OnDodgeright;
+            @Dodgeright.performed -= instance.OnDodgeright;
+            @Dodgeright.canceled -= instance.OnDodgeright;
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @Jump.started -= instance.OnJump;
-            @Jump.performed -= instance.OnJump;
-            @Jump.canceled -= instance.OnJump;
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
+            @Glide.started -= instance.OnGlide;
+            @Glide.performed -= instance.OnGlide;
+            @Glide.canceled -= instance.OnGlide;
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
@@ -534,10 +665,13 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
     }
     public interface ICharacterActions
     {
+        void OnDodgeleft(InputAction.CallbackContext context);
+        void OnDodgeright(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnGlide(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
     }

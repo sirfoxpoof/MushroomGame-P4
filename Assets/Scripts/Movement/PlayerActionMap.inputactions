@@ -6,6 +6,24 @@
             "id": "6f75007a-981c-4fbe-b7f1-adbab859daf7",
             "actions": [
                 {
+                    "name": "Dodge left",
+                    "type": "Value",
+                    "id": "27873daf-2e3d-4e6c-a569-3ba686e2009e",
+                    "expectedControlType": "Double",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Dodge right",
+                    "type": "Value",
+                    "id": "c7debcd1-362b-4632-953b-894c37d6849f",
+                    "expectedControlType": "Double",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Look",
                     "type": "PassThrough",
                     "id": "99f9fb74-3a80-4759-8002-1dcafbe2aac1",
@@ -24,6 +42,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "9a57c598-2e31-41da-a0cf-093e969b1908",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "63eb8a03-da77-40c0-b531-5cd8b508549f",
@@ -33,9 +60,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Sprint",
+                    "name": "Glide",
                     "type": "Button",
-                    "id": "9a57c598-2e31-41da-a0cf-093e969b1908",
+                    "id": "c15ce3a4-2c8f-49a6-96d8-0c4d5221ccc8",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -206,17 +233,6 @@
                 },
                 {
                     "name": "",
-                    "id": "c4ad9990-3d96-483b-811b-d59f5d681d0c",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c044e2ed-1d56-4ddf-903b-5a3c2bca441b",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -239,6 +255,28 @@
                 },
                 {
                     "name": "",
+                    "id": "c4ad9990-3d96-483b-811b-d59f5d681d0c",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "91080f34-8649-499d-8e07-bd2391634c3c",
+                    "path": "<Keyboard>/alt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Glide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4fe571b6-d817-4c99-8abb-db40a5d27432",
                     "path": "<Keyboard>/shift",
                     "interactions": "",
@@ -247,6 +285,72 @@
                     "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "3af3b2a5-bc67-4e19-b929-5369325b9b91",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge left",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "d5535d58-0e4b-47a2-9342-7d1c37b1151f",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge left",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "c7a074a3-5902-4661-929b-dec4cbb6246f",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge left",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "4aa9cfda-5839-47ab-8320-4918dfde7c5a",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge right",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "ca01937d-f66c-4102-9406-d9d7aaa7f37a",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge right",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "6e3070b8-19ea-4ffb-af99-e58aed3813e7",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge right",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
