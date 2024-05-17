@@ -24,6 +24,13 @@ public class Weapons : MonoBehaviour
         else
         {
             inRange = false;
+            enemy = null;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        inRange = false;
+        enemy = null;
     }
 }

@@ -15,8 +15,7 @@ public class Attack : MonoBehaviour
     public Animator attackAnimator;
 
     //dodge
-    Vector3 dodge = new Vector3(1000,0,0);
-    float dodgeSpeed = 5;
+    float dodgeValue = 0.01f;
 
 
     private void Start()
@@ -30,17 +29,17 @@ public class Attack : MonoBehaviour
     {
         if(context.performed)
         {
-            attackAnimator.Play("Attack"); 
             weapons.attacking = true;
 
             if (weapons.attacking && weapons.inRange)
             {
                 //hier damage doen
-                Destroy(weapons.enemy.gameObject);
-            }
+                weapons.enemy.GetComponent<EnemyAttack>().TakeDamage(weapons.damage);
 
+            }
+            attackAnimator.Play("Attack"); 
             weapons.attacking = false;
-            weapons.inRange = false;
+           // weapons.inRange = false;
         }
     }
 
@@ -49,6 +48,7 @@ public class Attack : MonoBehaviour
         //de character zichzelf damage geven
     }
 
+    //dodgew aka wtf uis dit hoe kut wil jke het hebben
     public void DodgeLeft(InputAction.CallbackContext context)
     {
         //ik wil de dodge hier ook in zetten want dat is makkelijker met aanspreken enzo met invincibility en whoooooooo
@@ -64,7 +64,8 @@ public class Attack : MonoBehaviour
     {
         if (context.performed)
         {
-            playerMovement.rb.AddForce(Vector3.right * 10, ForceMode.Impulse);
+            //playerMovement.rb.AddForce(Vector3.right * 10, ForceMode.Impulse);
+           transform.Translate(transform.position.x * dodgeValue, transform.position.y, 0);
         }
     }
 }

@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [HideInInspector] public Rigidbody rb;
     [Header("Values")]
-    [SerializeField] float moveSpeed;
+    [SerializeField] float moveSpeed, normalSpeed;
     [SerializeField] float maxSpeed;
     public float jumpForce;
     /*[SerializeField] float boostForce;*/
@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        normalSpeed = moveSpeed;
 
         //miss hier alle stats van de player aangeven ofzo
     }
@@ -63,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
             if (gliding)
             {
                 rb.velocity -= Vector3.down * Physics.gravity.y * 0.1f * Time.fixedDeltaTime;
+
             }
             else
             {
@@ -81,24 +84,14 @@ public class PlayerMovement : MonoBehaviour
 
         //animations oke oke jump is kakka miss heeft het met de eerste if statement te maken
         //even proberen om er een speed van de maken
-        if(rb.velocity.x > 0|| rb.velocity.y > 0)
-        {
-            if(moveSpeed > 2)
-            {
-                movementAnimator.Play("Sprint"); 
 
-            }
-            else
-            {
-                movementAnimator.Play("walking");
-            }
-        }
-        else
-        {
-            movementAnimator.SetTrigger("Idle");
-        }
+        //float actualSpeed = rb.velocity.magnitude;
+        //float actualSpeed = rb.velocity.z;
+        float actualSpeed = new Vector3(rb.velocity.x, rb.velocity.z, 0).magnitude;
+        movementAnimator.SetFloat("Actual Speed", actualSpeed);
 
-        LookAt();
+
+LookAt();
     }
 
     public void Gliding(InputAction.CallbackContext context)
@@ -108,10 +101,12 @@ public class PlayerMovement : MonoBehaviour
             if (gliding)
             {
                 gliding = false;
+
             }
             else
             {
                 gliding = true;
+                moveSpeed += 2;
             }
         }
     }
@@ -164,12 +159,12 @@ public class PlayerMovement : MonoBehaviour
             //first jump
             if(context.performed)
             {
+                //movementAnimator.Play("Jumping");
                 movementAnimator.SetTrigger("Jumping");
-                rb.AddForce(jump * jumpForce, ForceMode.Impulse);
 
                 jumping = true;
-           
                 isGrounded = false;
+                rb.AddForce(jump * jumpForce, ForceMode.Impulse);
                 
             }
         }
@@ -204,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             maxSpeed = 4;
-            moveSpeed = 2;
+            moveSpeed = normalSpeed;
         }
     }
 }

@@ -9,7 +9,7 @@ public class BoostFlower : MonoBehaviour
 
     [SerializeField] float flowerJump;
 
-    [SerializeField] Animator flowerAnimator;
+    [SerializeField] Animator flowerAnimator, playerAnimator;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -17,9 +17,11 @@ public class BoostFlower : MonoBehaviour
         {
             playerBody = collision.gameObject;
             player = playerBody.GetComponent<PlayerMovement>();
+            playerAnimator = playerBody.GetComponentInChildren<Animator>();
 
 
             flowerAnimator.SetTrigger("Jump");
+            playerAnimator.SetTrigger("Jumping");
             player.rb.AddForce(player.jump * flowerJump, ForceMode.Impulse);
 
 
