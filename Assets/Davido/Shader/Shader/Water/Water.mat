@@ -20,7 +20,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _Absorbtion_Coef
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -68,6 +68,11 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2D:
+        m_Texture: {fileID: 28584486757587946, guid: 125cb55b44b24c4393181402bc6200e6,
+          type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -82,6 +87,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Absorbtion_Coef: 3.99
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -91,9 +97,10 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _Depth: -0.23
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Distance: 0
+    - _Distance: 0.179
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
@@ -117,7 +124,8 @@ Material:
     - _ZWrite: 1
     - _waterdepth: 0.009
     m_Colors:
-    - _BaseColor: {r: 0, g: 1, b: 0.78057027, a: 1}
+    - _Absorbtion_Color: {r: 1, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 0.17928979, g: 0.39772832, b: 0.4811321, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
