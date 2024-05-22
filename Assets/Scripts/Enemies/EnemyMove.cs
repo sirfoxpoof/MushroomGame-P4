@@ -1,17 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    NavMeshAgent Agent;
+    Transform player;
+
+    public LayerMask getGround, getPlayer;
+
+    //maybe patrolling
+
+    //attacking
+    float timeBetweenAttacks;
+    bool attacking;
+
+    //states
+    float sightRange, attackRange;
+    bool inSightRange, inAttackRange;
+
+
+    private void Start()
     {
-        
+        player = GameObject.Find("").transform;
+        Agent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }

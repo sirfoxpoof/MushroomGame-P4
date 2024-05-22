@@ -14,6 +14,7 @@ public class Attack : MonoBehaviour
 
     public Animator attackAnimator;
 
+    [SerializeField]bool allowedAttack;
     //dodge
     float dodgeValue = 0.01f;
 
@@ -21,6 +22,7 @@ public class Attack : MonoBehaviour
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        allowedAttack = true;
     }
 
     //hier moeten we checken welk wapen we vast hebben en het script vahn dat wapen pakken om die attack uit te voeren
@@ -30,19 +32,33 @@ public class Attack : MonoBehaviour
         if(context.performed)
         {
             weapons.attacking = true;
-
-            if (weapons.attacking && weapons.inRange)
+            if(allowedAttack)
             {
-                //hier damage doen
-                weapons.enemy.GetComponent<EnemyAttack>().TakeDamage(weapons.damage);
+                StartCoroutine("AttackTime");
+                if (weapons.attacking && weapons.inRange && weapons.enemy != null)
+                {
+                    //hier damage doen
+                    Debug.Log("supposed to do damage");
+                    weapons.enemy.GetComponent<EnemyAttack>().TakeDamage(weapons.damage);
+
+                }
 
             }
-            attackAnimator.Play("Attack"); 
+            attackAnimator.Play("Attack");
             weapons.attacking = false;
            // weapons.inRange = false;
         }
     }
 
+
+    IEnumerator AttackTime()
+    {
+        Debug.Log("start");
+        allowedAttack = false;
+        yield return new WaitForSeconds(1.5f);
+        allowedAttack = true;
+        Debug.Log("End");
+    }
     public void TakeDamage()
     {
         //de character zichzelf damage geven
