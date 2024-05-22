@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4255310817246534392}
   - component: {fileID: 2453285211875341329}
   - component: {fileID: 4922547046633974510}
+  - component: {fileID: 3622131911719879999}
   m_Layer: 0
   m_Name: MUIS
   m_TagString: Enemy
@@ -122,3 +123,21 @@ MonoBehaviour:
   damage: 0
   enemyName: Maus, the servant of decay
   normalColour: {fileID: 0}
+--- !u!114 &3622131911719879999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447467024654837333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb26c3b5b2a0a043880406cb35c1155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getGround:
+    serializedVersion: 2
+    m_Bits: 0
+  getPlayer:
+    serializedVersion: 2
+    m_Bits: 0
