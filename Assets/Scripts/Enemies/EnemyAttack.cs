@@ -5,26 +5,12 @@ using UnityEngine.AI;
 
 public class EnemyAttack : MonoBehaviour
 {
-    //EnemyStats
+   /* //EnemyStats
     public float health, damage;
     public string enemyName;
 
     public Material normalColour;
 
-  /*  NavMeshAgent Agent;
-    Transform player;
-
-    public LayerMask getGround, getPlayer;
-
-    //maybe patrolling
-
-    //attacking
-    float timeBetweenAttacks;
-    bool attacking;
-
-    //states
-    float sightRange, attackRange;
-    bool inSightRange, inAttackRange;*/
 
 
     //EnemyAttack
@@ -32,23 +18,10 @@ public class EnemyAttack : MonoBehaviour
     {
         normalColour = gameObject.GetComponent<MeshRenderer>().material;
 
-        /*player = GameObject.Find("PlayerHolder").transform;
-        Agent = GetComponent<NavMeshAgent>();*/
+       
     }
 
-   /* private void Update()
-    {
-        
-    }
-    public void Patrolling()
-    {
-
-    }
-
-    public void ChasePlayer()
-    {
-
-    }*/
+   
 
     public void Attack()
     {
@@ -73,5 +46,5 @@ public class EnemyAttack : MonoBehaviour
         gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
         yield return new WaitForSeconds(1);
         gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
-    }
+    }*/
 }

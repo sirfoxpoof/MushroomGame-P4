@@ -39,7 +39,7 @@ public class Attack : MonoBehaviour
                 {
                     //hier damage doen
                     Debug.Log("supposed to do damage");
-                    weapons.enemy.GetComponent<EnemyAttack>().TakeDamage(weapons.damage);
+                    weapons.enemy.GetComponent<Enemy>().TakeDamage(weapons.damage);
 
                 }
 
@@ -53,12 +53,11 @@ public class Attack : MonoBehaviour
 
     IEnumerator AttackTime()
     {
-        Debug.Log("start");
         allowedAttack = false;
         yield return new WaitForSeconds(1.5f);
         allowedAttack = true;
-        Debug.Log("End");
     }
+
     public void TakeDamage()
     {
         //de character zichzelf damage geven

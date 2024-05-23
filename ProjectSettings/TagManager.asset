@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Main
   - Secondary
+  - Boss area
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Boss area
+  - Player
   - 
   - 
   - 

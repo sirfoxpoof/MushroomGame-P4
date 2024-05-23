@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Other Things")]
     [SerializeField] private Camera cam;
-    /*[HideInInspector]*/ public bool isGrounded, jumping, gliding;
+    [HideInInspector] public bool isGrounded, jumping, gliding;
     [SerializeField] private Animator movementAnimator;
     private void Awake()
     {
@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
         movementAnimator.SetFloat("Actual Speed", actualSpeed);
 
 
-LookAt();
+        LookAt();
     }
 
     public void Gliding(InputAction.CallbackContext context)
