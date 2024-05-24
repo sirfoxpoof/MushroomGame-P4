@@ -4946,7 +4946,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       propertyPath: m_Name
-      value: Tree
+      value: SmallTree
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4971,7 +4971,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2105792906503633501}
+      addedObject: {fileID: 4832334402640596130}
   m_SourcePrefab: {fileID: 100100000, guid: a4c7f7a32fcbb0645898b0aaf35f54b9, type: 3}
 --- !u!23 &250686232134482890 stripped
 MeshRenderer:
@@ -5018,8 +5018,8 @@ LODGroup:
     renderers:
     - renderer: {fileID: 9148078913272049175}
   m_Enabled: 1
---- !u!136 &2105792906503633501
-CapsuleCollider:
+--- !u!64 &4832334402640596130
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5036,11 +5036,10 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.4813294
-  m_Height: 8.245592
-  m_Direction: 1
-  m_Center: {x: -0.05861044, y: 1.9490557, z: 0.69000006}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1921684434295740798, guid: cd46c80b7c933fc42aee1d6c92c3e1df, type: 3}
 --- !u!1001 &7580988552674079379
 PrefabInstance:
   m_ObjectHideFlags: 0
