@@ -69,8 +69,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:
-        m_Texture: {fileID: 28584486757587946, guid: 125cb55b44b24c4393181402bc6200e6,
-          type: 2}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -87,7 +86,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Absorbtion_Coef: 3.99
+    - _Absorbtion_Coef: 5.99
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -124,8 +123,8 @@ Material:
     - _ZWrite: 1
     - _waterdepth: 0.009
     m_Colors:
-    - _Absorbtion_Color: {r: 1, g: 0, b: 0, a: 1}
-    - _BaseColor: {r: 0.17928979, g: 0.39772832, b: 0.4811321, a: 1}
+    - _Absorbtion_Color: {r: 1, g: 0.8537736, b: 0.8537736, a: 1}
+    - _BaseColor: {r: 0.8396226, g: 0.55991334, b: 0.37624598, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
