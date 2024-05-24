@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Attack : MonoBehaviour
 {
@@ -58,9 +59,25 @@ public class Attack : MonoBehaviour
         allowedAttack = true;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
         //de character zichzelf damage geven
+        health -= damage;
+        StartCoroutine("DamageColour");
+
+        if(health <= 0)
+        {
+            SceneManager.LoadScene("Doets");
+        }
+
+    }
+
+    IEnumerator DamageColour()
+    {
+        Debug.Log("TAKING DAMAGE");
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.red;
+        yield return new WaitForSeconds(1);
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.white;
     }
 
     //dodgew aka wtf uis dit hoe kut wil jke het hebben

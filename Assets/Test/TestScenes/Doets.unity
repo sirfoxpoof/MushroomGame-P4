@@ -212,7 +212,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 169482943}
-  - component: {fileID: 169482944}
   m_Layer: 6
   m_Name: Boss Area
   m_TagString: Boss area
@@ -237,27 +236,6 @@ Transform:
   - {fileID: 380076197}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &169482944
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169482942}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &188421214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -838,10 +816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3548f48f08ff8464f93a19adb02f6791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  damage: 0
-  enemyName: DaniqueCube
-  normalColour: {fileID: 0}
 --- !u!1001 &412236323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1787,7 +1761,7 @@ GameObject:
   - component: {fileID: 1022319516}
   - component: {fileID: 1022319515}
   - component: {fileID: 1022319518}
-  - component: {fileID: 1022319517}
+  - component: {fileID: 1022319519}
   m_Layer: 6
   m_Name: Boss Collider
   m_TagString: Boss area
@@ -1805,10 +1779,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 123, y: 0, z: 0}
-  m_LocalScale: {x: 90, y: 90, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1386662250}
+  - {fileID: 3003363880734401461}
   m_Father: {fileID: 169482943}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1022319515
@@ -1861,19 +1835,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022319512}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1022319517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022319512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c212942a315303e41ac88b140e2bda86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyMove: {fileID: 0}
 --- !u!135 &1022319518
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1893,8 +1854,21 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.49999997
+  m_Radius: 44.5
   m_Center: {x: 0.00000011920929, y: 0, z: 0}
+--- !u!114 &1022319519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022319512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c212942a315303e41ac88b140e2bda86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMove: {fileID: 0}
 --- !u!1 &1055382709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,10 +1987,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3548f48f08ff8464f93a19adb02f6791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  damage: 0
-  enemyName: DaniqueCube
-  normalColour: {fileID: 0}
 --- !u!1 &1064118532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,12 +2476,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5592077b1c45c0645a2bf2cb51facbd8, type: 3}
---- !u!4 &1386662250 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8358347172899590926, guid: c0ad86f586ef2f14d9e8e628e90ddf65,
-    type: 3}
-  m_PrefabInstance: {fileID: 6507921301003022523}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1408812745
 GameObject:
   m_ObjectHideFlags: 0
@@ -3410,10 +3374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3548f48f08ff8464f93a19adb02f6791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  damage: 0
-  enemyName: DaniqueCube
-  normalColour: {fileID: 0}
 --- !u!1001 &1638510296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3714,7 +3674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770682151}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.01938833, y: -0.0000000344063, z: 6.6720596e-10, w: 0.99981207}
+  m_LocalRotation: {x: 0.019388288, y: 0.0000000344063, z: -6.6720457e-10, w: 0.99981207}
   m_LocalPosition: {x: 0, y: 0.51, z: -7.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4012,10 +3972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3548f48f08ff8464f93a19adb02f6791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  damage: 0
-  enemyName: DaniqueCube
-  normalColour: {fileID: 0}
 --- !u!4 &1977106190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5747747354575952210, guid: 717778faad1e0e54fb4db7ad5837890f,
@@ -4142,11 +4098,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHolder
       objectReference: {fileID: 0}
-    - target: {fileID: 298682472765666836, guid: 92adb5f4a0a31a4428b8113c3122ab97,
-        type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 804635104602477807, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: cam
@@ -4155,17 +4106,17 @@ PrefabInstance:
     - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.019388318
+      value: 0.019388298
       objectReference: {fileID: 0}
     - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017203151
+      value: 0.000000017203146
       objectReference: {fileID: 0}
     - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 3.3360284e-10
+      value: -3.336024e-10
       objectReference: {fileID: 0}
     - target: {fileID: 7437842001021187338, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
@@ -4222,6 +4173,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92adb5f4a0a31a4428b8113c3122ab97, type: 3}
+--- !u!4 &3003363880734401461 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8358347172899590926, guid: c0ad86f586ef2f14d9e8e628e90ddf65,
+    type: 3}
+  m_PrefabInstance: {fileID: 4505859295627936271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3171511129997852562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4290,7 +4247,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5592077b1c45c0645a2bf2cb51facbd8, type: 3}
---- !u!1001 &6507921301003022523
+--- !u!1001 &4505859295627936271
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -4298,30 +4255,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1022319513}
     m_Modifications:
+    - target: {fileID: 4471515525127336208, guid: c0ad86f586ef2f14d9e8e628e90ddf65,
+        type: 3}
+      propertyPath: m_BaseOffset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8358347172899590926, guid: c0ad86f586ef2f14d9e8e628e90ddf65,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.010000017
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8358347172899590926, guid: c0ad86f586ef2f14d9e8e628e90ddf65,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.007777777
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 8358347172899590926, guid: c0ad86f586ef2f14d9e8e628e90ddf65,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.057777774
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8358347172899590926, guid: c0ad86f586ef2f14d9e8e628e90ddf65,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8358347172899590926, guid: c0ad86f586ef2f14d9e8e628e90ddf65,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8358347172899590926, guid: c0ad86f586ef2f14d9e8e628e90ddf65,
         type: 3}
@@ -4336,7 +4298,7 @@ PrefabInstance:
     - target: {fileID: 8358347172899590926, guid: c0ad86f586ef2f14d9e8e628e90ddf65,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8358347172899590926, guid: c0ad86f586ef2f14d9e8e628e90ddf65,
         type: 3}

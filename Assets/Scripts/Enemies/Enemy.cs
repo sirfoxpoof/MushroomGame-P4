@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    NavMeshAgent Agent;
-    Transform player;
+    [HideInInspector]public NavMeshAgent agent;
+    [HideInInspector]public Transform player;
 
     public LayerMask getGround, getPlayer;
 
@@ -14,11 +14,11 @@ public class Enemy : MonoBehaviour
 
     //attacking
     float timeBetweenAttacks;
-    bool attacking;
+    public bool attacking, charge;
 
     //states
     [SerializeField]float sightRange, attackRange;
-    public bool inSightRange, inAttackRange;
+    [HideInInspector]public bool inSightRange, inAttackRange;
 
     //stats
     public float health, damage;
@@ -29,9 +29,11 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("PlayerHolder").transform;
-        Agent = gameObject.GetComponent<NavMeshAgent>();
+        agent = gameObject.GetComponent<NavMeshAgent>();
 
-        normalColour = gameObject.GetComponent<MeshRenderer>().material;
+        normalColour = gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material;
+
+        
     }
 
     private void Update()
@@ -64,16 +66,16 @@ public class Enemy : MonoBehaviour
 
     public void ChasePlayer()
     {
-        Agent.SetDestination(player.position);
+        agent.SetDestination(player.position);
 
     }
 
     public void AttackPlayer()
     {
         //whenever the boss is attacking the boss cannot move
-        Agent.SetDestination(transform.position);
-        transform.LookAt(player);
-
+        agent.SetDestination(transform.position);
+        transform.LookAt(player, transform.forward);
+       
         if (!attacking)
         {
             //hier attacked hij HOWEVER ik heb daar een ander script voor
@@ -82,14 +84,16 @@ public class Enemy : MonoBehaviour
             /*nouja in ieder geval
              de bedoeling is dat hij hier attacks uit gaat voeren en de animaties doet enzo en hutsafluts*/
 
+            player.transform.GetComponent<Attack>().TakeDamage(damage);
 
+            Invoke("ResetAttack", 5);
             attacking = true;
-            Invoke("ResetAttack", timeBetweenAttacks);
         }
     }
     private void ResetAttack()
     {
         attacking = false;
+        gameObject.GetComponent<NavMeshAgent>().speed = 2;
     }
 
     public void TakeDamage(float damage)
@@ -99,15 +103,15 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            Debug.Log(enemyName + "DIED");
+            Debug.Log(enemyName + " DIED");
         }
     }
     IEnumerator ChangeMaterial()
     {
         Debug.Log("HUTS");
-        gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.red;
         yield return new WaitForSeconds(1);
-        gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.clear;
     }
 
 }

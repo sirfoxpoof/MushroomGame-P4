@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddbc417d9fd1df1488a669b089768014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 50
   weapons: {fileID: 5653810659005101966}
   playerMovement: {fileID: 0}
   attackAnimator: {fileID: 1740213026917337563}
@@ -2193,7 +2193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7148721363196488935}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.019388298, y: 0.000000017203146, z: -3.336024e-10, w: 0.99981207}
+  m_LocalRotation: {x: 0.019388318, y: -0.000000017203151, z: 3.3360284e-10, w: 0.99981207}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2789,7 +2789,7 @@ MonoBehaviour:
     m_VelocityFilterStrength: 4
     m_Bias: 0
   m_RecenterToTargetHeading:
-    m_enabled: 1
+    m_enabled: 0
     m_WaitTime: 1
     m_RecenteringTime: 2
     m_LegacyHeadingDefinition: -1
