@@ -36723,6 +36723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2292857719878383479}
+  - component: {fileID: 7121047075360145315}
   m_Layer: 0
   m_Name: MCH-foot_ik.parent.L
   m_TagString: Untagged
@@ -36746,6 +36747,27 @@ Transform:
   - {fileID: 381637932707921145}
   m_Father: {fileID: 6719016727856820703}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7121047075360145315
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8908174663385873875}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8918140044020627521
 GameObject:
   m_ObjectHideFlags: 0
