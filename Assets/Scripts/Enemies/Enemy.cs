@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("ToFill")]
     public NavMeshAgent agent;
     public Transform player;
 
@@ -13,14 +14,17 @@ public class Enemy : MonoBehaviour
     //maybe patrolling
 
     //attacking
+    [Header("AttackValues")]
+    public bool attacking;
     float timeBetweenAttacks;
-    public bool attacking, charge;
 
     //states
     [SerializeField]float sightRange, attackRange;
     [HideInInspector]public bool inSightRange, inAttackRange;
 
     //stats
+    [Header("Stats")]
+    public Animator enemyAnimator;
     public float health, damage;
     public string enemyName;
 
@@ -30,25 +34,15 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.Find("PlayerHolder").transform;
         agent = gameObject.GetComponent<NavMeshAgent>();
-
+        //zorgde voor errors :')
         //normalColour = gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material;
-
-        
     }
 
     private void Update()
     {
-        // Check if the enemy can see 
-        // if this is shit I'll use a sphere to check
-
+        // Check if the player is in range to attack 
         inAttackRange = Physics.CheckSphere(transform.position, attackRange, getPlayer);
        
-       /* Vector3 fwd = transform.TransformDirection(Vector3.forward);
-        if (Physics.Raycast(transform.position, fwd, 100))
-        {
-
-        }*/
-
         //states
         if(inSightRange && !inAttackRange)
             ChasePlayer();
@@ -57,6 +51,7 @@ public class Enemy : MonoBehaviour
             AttackPlayer();
 
     }
+
     //check voor hoe groot de attackrange is
     private void OnDrawGizmos()
     {
@@ -67,7 +62,6 @@ public class Enemy : MonoBehaviour
     public void ChasePlayer()
     {
         agent.SetDestination(player.position);
-
     }
 
     public virtual void AttackPlayer()
@@ -86,8 +80,10 @@ public class Enemy : MonoBehaviour
             // is miss wel handig 
             /*nouja in ieder geval
              de bedoeling is dat hij hier attacks uit gaat voeren en de animaties doet enzo en hutsafluts*/
+
+            enemyAnimator.SetTrigger("TailLeft");
             Debug.Log(" AAAAAAH");
-            player.transform.GetComponent<Attack>().TakeDamage(damage);
+            //player.transform.GetComponent<Attack>().TakeDamage(damage);
 
             Invoke("ResetAttack", 5);
             attacking = true;

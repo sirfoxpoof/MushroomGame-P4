@@ -4967,15 +4967,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHolder
       objectReference: {fileID: 0}
-    - target: {fileID: 3502892146291542608, guid: 92adb5f4a0a31a4428b8113c3122ab97,
+    - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.4447747
+      value: 0.44478124
       objectReference: {fileID: 0}
-    - target: {fileID: 3502892146291542608, guid: 92adb5f4a0a31a4428b8113c3122ab97,
+    - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.002394621
+      value: -0.0009003621
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.895637
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0018130209
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278709779680870177, guid: 92adb5f4a0a31a4428b8113c3122ab97,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0009003567
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278709779680870177, guid: 92adb5f4a0a31a4428b8113c3122ab97,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0018130098
       objectReference: {fileID: 0}
     - target: {fileID: 7437842001021187338, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
@@ -5357,16 +5377,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1206221292770403558, guid: c7605132c14f0654cbafb1a816956ce3,
-        type: 3}
-      propertyPath: m_Radius
-      value: 69
-      objectReference: {fileID: 0}
-    - target: {fileID: 1403647182230353550, guid: c7605132c14f0654cbafb1a816956ce3,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1882257289}
     - target: {fileID: 1979040545947127731, guid: c7605132c14f0654cbafb1a816956ce3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5421,11 +5431,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boss Area Maus
-      objectReference: {fileID: 0}
-    - target: {fileID: 3783607399273560837, guid: c7605132c14f0654cbafb1a816956ce3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8713,12 +8718,6 @@ Transform:
   - {fileID: 6273807}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1882257289 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7437842001021187338, guid: 92adb5f4a0a31a4428b8113c3122ab97,
-    type: 3}
-  m_PrefabInstance: {fileID: 17969521}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1899644726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4113622645796882210, guid: e7d984992a99e2d4ca1d346fb6b1b54c,

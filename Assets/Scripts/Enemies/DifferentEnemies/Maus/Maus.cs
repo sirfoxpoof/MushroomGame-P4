@@ -1,45 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Maus : Enemy
 {
-    /* bool charging;
-
-     private void Update()
-     {
-         if (!charging && attacking)
-         {
-
-             agent.SetDestination(transform.forward);
-             gameObject.GetComponent<NavMeshAgent>().speed = 10;
-
-             Invoke("ChargeAttack", 5);
-             charging = true;
-         }
-     }
-     public void ChargeAttack()
-     {
-         charging = false;
-     }*/
-
-
-    private void Start()
-    {
-        //StartCoroutine("Rotate", 2);
-    }
-
 
     public override void AttackPlayer()
     {
         base.AttackPlayer();
         if (!attacking)
         {
-            Debug.Log("ROATET");
-            StartCoroutine("Rotate", 2);
+            enemyAnimator.SetTrigger("TailLeft");
+            Debug.Log("ATTACK");
+            Invoke("ResetAttack", 5);
+            attacking = true;
         }
+    
     }
+    private void ResetAttack()
+    {
+        attacking = false;
+        gameObject.GetComponent<NavMeshAgent>().speed = 2;
+    }
+
 
     IEnumerator Rotate(float duration)
     {
