@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [HideInInspector]public NavMeshAgent agent;
-    [HideInInspector]public Transform player;
+    public NavMeshAgent agent;
+    public Transform player;
 
     public LayerMask getGround, getPlayer;
 
@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.Find("PlayerHolder").transform;
         agent = gameObject.GetComponent<NavMeshAgent>();
 
-        normalColour = gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material;
+        //normalColour = gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material;
 
         
     }
@@ -70,11 +70,14 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void AttackPlayer()
+    public virtual void AttackPlayer()
     {
         //whenever the boss is attacking the boss cannot move
+        var playerPos = player.position;
+        playerPos.y = transform.position.y;
+  
         agent.SetDestination(transform.position);
-        transform.LookAt(player, transform.forward);
+        transform.LookAt(playerPos);
        
         if (!attacking)
         {
@@ -83,7 +86,7 @@ public class Enemy : MonoBehaviour
             // is miss wel handig 
             /*nouja in ieder geval
              de bedoeling is dat hij hier attacks uit gaat voeren en de animaties doet enzo en hutsafluts*/
-
+            Debug.Log(" AAAAAAH");
             player.transform.GetComponent<Attack>().TakeDamage(damage);
 
             Invoke("ResetAttack", 5);

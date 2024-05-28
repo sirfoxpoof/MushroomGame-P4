@@ -27,8 +27,20 @@ public class Maus : Enemy
 
     private void Start()
     {
-        StartCoroutine("Rotate", 2);
+        //StartCoroutine("Rotate", 2);
     }
+
+
+    public override void AttackPlayer()
+    {
+        base.AttackPlayer();
+        if (!attacking)
+        {
+            Debug.Log("ROATET");
+            StartCoroutine("Rotate", 2);
+        }
+    }
+
     IEnumerator Rotate(float duration)
     {
         float startRotation = transform.eulerAngles.y;
