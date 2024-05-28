@@ -35528,6 +35528,7 @@ GameObject:
   - component: {fileID: 6078370828974794750}
   - component: {fileID: 6186491774309735895}
   - component: {fileID: 4471515525127336208}
+  - component: {fileID: 105474455558318921}
   m_Layer: 0
   m_Name: Maus
   m_TagString: Enemy
@@ -35625,6 +35626,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &105474455558318921
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8697859169033800116}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7f27a278d8ef854e90956b93a64c214, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8702626628840922881
 GameObject:
   m_ObjectHideFlags: 0
