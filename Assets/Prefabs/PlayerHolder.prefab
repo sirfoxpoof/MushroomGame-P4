@@ -319,7 +319,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 35
+    FieldOfView: 90
     OrthographicSize: 10
     NearClipPlane: 0.01
     FarClipPlane: 500
@@ -965,7 +965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2955527862904924523}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.010062893, y: 0.8954096, z: -0.020263217, w: 0.44466832}
+  m_LocalRotation: {x: -0.0050919205, y: 0.8955801, z: 0.010253382, w: 0.444753}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1001,7 +1001,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 35
+    FieldOfView: 90
     OrthographicSize: 10
     NearClipPlane: 0.01
     FarClipPlane: 500
@@ -2262,7 +2262,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 35
+    FieldOfView: 90
     OrthographicSize: 10
     NearClipPlane: 0.01
     FarClipPlane: 500
@@ -2758,7 +2758,7 @@ MonoBehaviour:
   m_Follow: {fileID: 6453251272353632863}
   m_CommonLens: 1
   m_Lens:
-    FieldOfView: 35
+    FieldOfView: 40
     OrthographicSize: 10
     NearClipPlane: 0.01
     FarClipPlane: 500
@@ -2830,12 +2830,12 @@ MonoBehaviour:
   m_BindingMode: 4
   m_SplineCurvature: 0.552
   m_Orbits:
-  - m_Height: 6.83
+  - m_Height: 4.32
     m_Radius: 3.39
   - m_Height: 2.54
     m_Radius: 5.96
-  - m_Height: 0.19
-    m_Radius: 2.47
+  - m_Height: -0.53
+    m_Radius: 2.56
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 2958626158109405480}
@@ -3418,8 +3418,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8535742595196380451}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00090037624, y: 0.895637, z: 0.0018130493, w: 0.44478124}
-  m_LocalPosition: {x: -1.9679184, y: 1.5699999, z: 1.4927139}
+  m_LocalRotation: {x: -0.023677362, y: 0.90538365, z: -0.05093606, w: -0.42086276}
+  m_LocalPosition: {x: 45.653862, y: 5.4128094, z: -26.418793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3458,7 +3458,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 500
-  field of view: 35
+  field of view: 90
   orthographic: 0
   orthographic size: 10
   m_Depth: -1

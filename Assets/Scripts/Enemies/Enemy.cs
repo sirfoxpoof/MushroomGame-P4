@@ -71,8 +71,10 @@ public class Enemy : MonoBehaviour
         playerPos.y = transform.position.y;
   
         agent.SetDestination(transform.position);
-        transform.LookAt(playerPos);
-       
+
+        //transform.LookAt(playerPos);
+
+        transform.rotation = Quaternion.LookRotation(playerPos);
         if (!attacking)
         {
             //hier attacked hij HOWEVER ik heb daar een ander script voor

@@ -19,6 +19,7 @@ public class Attack : MonoBehaviour
     //dodge
     float dodgeValue = 0.01f;
 
+    bool takingDamage;
 
     private void Start()
     {
@@ -40,7 +41,7 @@ public class Attack : MonoBehaviour
                 {
                     //hier damage doen
                     Debug.Log("supposed to do damage");
-                    weapons.enemy.GetComponent<Enemy>().TakeDamage(weapons.damage);
+                    weapons.enemy.GetComponentInParent<Enemy>().TakeDamage(weapons.damage);
 
                 }
 
@@ -62,12 +63,17 @@ public class Attack : MonoBehaviour
     public void TakeDamage(float damage)
     {
         //de character zichzelf damage geven
-        health -= damage;
-        StartCoroutine("DamageColour");
+
+        if(!takingDamage)
+        {
+            health -= damage;
+            StartCoroutine("DamageColour");
+            takingDamage = true;
+        }
 
         if(health <= 0)
         {
-            SceneManager.LoadScene("Doets");
+            SceneManager.LoadScene("Level 1");
         }
 
     }
@@ -76,8 +82,9 @@ public class Attack : MonoBehaviour
     {
         Debug.Log("TAKING DAMAGE");
         gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.red;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.2f);
         gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.white;
+        takingDamage = false;
     }
 
     //dodgew aka wtf uis dit hoe kut wil jke het hebben
