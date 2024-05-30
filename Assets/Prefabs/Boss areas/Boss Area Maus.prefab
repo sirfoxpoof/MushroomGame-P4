@@ -14884,7 +14884,7 @@ MonoBehaviour:
     m_Bits: 128
   attacking: 0
   sightRange: 0
-  attackRange: 20
+  attackRange: 12
   inSightRange: 0
   inAttackRange: 0
   enemyAnimator: {fileID: 5166036929896203444}

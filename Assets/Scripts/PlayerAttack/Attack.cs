@@ -9,7 +9,7 @@ public class Attack : MonoBehaviour
 
     //player stats I guess
     public float health;
-
+    float maxHealth = 100;
     public Weapons weapons;
     public PlayerMovement playerMovement;
 
@@ -73,9 +73,16 @@ public class Attack : MonoBehaviour
 
         if(health <= 0)
         {
-            SceneManager.LoadScene("Level 1");
+            SceneManager.LoadScene("Level1");
         }
+    }
 
+    public void Heal(float healAmmount)
+    {
+        if (health < maxHealth)
+             health += healAmmount;
+        else
+            return;
     }
 
     IEnumerator DamageColour()

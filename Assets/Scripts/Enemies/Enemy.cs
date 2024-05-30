@@ -72,9 +72,9 @@ public class Enemy : MonoBehaviour
   
         agent.SetDestination(transform.position);
 
-        //transform.LookAt(playerPos);
+        transform.LookAt(playerPos);
 
-        transform.rotation = Quaternion.LookRotation(playerPos);
+        //transform.rotation = Quaternion.LookRotation(playerPos);
         if (!attacking)
         {
             //hier attacked hij HOWEVER ik heb daar een ander script voor
@@ -83,7 +83,7 @@ public class Enemy : MonoBehaviour
             /*nouja in ieder geval
              de bedoeling is dat hij hier attacks uit gaat voeren en de animaties doet enzo en hutsafluts*/
 
-            enemyAnimator.SetTrigger("TailLeft");
+            enemyAnimator.SetTrigger("TailRight");
             Debug.Log(" AAAAAAH");
             //player.transform.GetComponent<Attack>().TakeDamage(damage);
 
