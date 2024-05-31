@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9411765, b: 0.83137256, a: 0}
+  m_Color: {r: 1, g: 0.9411765, b: 0.83137256, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -634,10 +634,10 @@ RectTransform:
   - {fileID: 5785725310786921117}
   m_Father: {fileID: 3894694488064143480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -99.37619}
-  m_SizeDelta: {x: 1200, y: 82}
+  m_AnchorMin: {x: 0.18652084, y: 0.83100003}
+  m_AnchorMax: {x: 0.81600004, y: 0.9082963}
+  m_AnchoredPosition: {x: -2, y: -0.3761902}
+  m_SizeDelta: {x: -8, y: -2}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &7685996373412910645
 MonoBehaviour:
@@ -1010,6 +1010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
   bossUI: {fileID: 0}
+  animatorOff: {fileID: 0}
 --- !u!1 &9144691230998946886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,32 +1310,32 @@ PrefabInstance:
     - target: {fileID: 6828351786168641068, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6828351786168641068, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6828351786168641068, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6828351786168641068, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6828351786168641068, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6828351786168641068, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 139.10497
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6828351786168641068, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}
