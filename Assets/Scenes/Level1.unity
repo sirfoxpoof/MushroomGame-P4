@@ -4997,7 +4997,7 @@ PrefabInstance:
     - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.061578054
+      value: -0.061578058
       objectReference: {fileID: 0}
     - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
@@ -5007,7 +5007,7 @@ PrefabInstance:
     - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.123997435
+      value: 0.12399743
       objectReference: {fileID: 0}
     - target: {fileID: 3502892146291542608, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
@@ -5540,6 +5540,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boss Area Maus
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770114533591909791, guid: c7605132c14f0654cbafb1a816956ce3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7334835736513844504, guid: c7605132c14f0654cbafb1a816956ce3,
         type: 3}
@@ -9760,6 +9765,11 @@ PrefabInstance:
       propertyPath: bossUI
       value: 
       objectReference: {fileID: 2046798852}
+    - target: {fileID: 3480850915124904886, guid: 5d79fbfe5d0f17248bcbb4ec07fe1eea,
+        type: 3}
+      propertyPath: animatorOff
+      value: 
+      objectReference: {fileID: 1249571317}
     - target: {fileID: 5876490960530166140, guid: 5d79fbfe5d0f17248bcbb4ec07fe1eea,
         type: 3}
       propertyPath: m_AnchorMax.x
