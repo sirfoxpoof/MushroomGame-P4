@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Attack : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Attack : MonoBehaviour
     float maxHealth = 100;
     public Weapons weapons;
     public PlayerMovement playerMovement;
+    public Slider healthSlider;
 
     public Animator attackAnimator;
 
@@ -23,6 +25,7 @@ public class Attack : MonoBehaviour
 
     private void Start()
     {
+        healthSlider.maxValue = health;
         playerMovement = GetComponent<PlayerMovement>();
         allowedAttack = true;
     }
@@ -69,6 +72,7 @@ public class Attack : MonoBehaviour
             health -= damage;
             StartCoroutine("DamageColour");
             takingDamage = true;
+            healthSlider.value = health;
         }
 
         if(health <= 0)

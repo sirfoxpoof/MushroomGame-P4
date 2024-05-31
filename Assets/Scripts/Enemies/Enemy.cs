@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -28,14 +29,17 @@ public class Enemy : MonoBehaviour
     public float health, damage;
     public string enemyName;
     public float resetTime = 5;
-
+    
     bool playerPosActive;
+
+    public Slider healthSlider;
 
     public Material normalColour;
     
 
     private void Start()
     {
+        healthSlider.maxValue = health;
         player = GameObject.Find("PlayerHolder").transform;
         agent = gameObject.GetComponent<NavMeshAgent>();
         //zorgde voor errors :')
@@ -117,11 +121,15 @@ public class Enemy : MonoBehaviour
     {
         StartCoroutine("ChangeMaterial");
         health -= damage;
+        
+        healthSlider.value = health;
+
         if (health <= 0)
         {
             Destroy(gameObject);
             Debug.Log(enemyName + " DIED");
         }
+        
     }
     IEnumerator ChangeMaterial()
     {
