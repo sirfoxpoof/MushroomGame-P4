@@ -14,7 +14,7 @@ public class Weapons : MonoBehaviour
 
 
     // Update is called once per frame
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {

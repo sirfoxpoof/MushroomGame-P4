@@ -84,7 +84,10 @@ public class Attack : MonoBehaviour
     public void Heal(float healAmmount)
     {
         if (health < maxHealth)
-             health += healAmmount;
+        {
+            health += healAmmount;
+            healthSlider.value = health;
+        }
         else
             return;
     }

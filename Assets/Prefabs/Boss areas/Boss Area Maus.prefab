@@ -14891,6 +14891,8 @@ MonoBehaviour:
   health: 40
   damage: 5
   enemyName: Maus, The servant of decay
+  resetTime: 5
+  healthSlider: {fileID: 0}
   normalColour: {fileID: 0}
 --- !u!95 &5166036929896203444
 Animator:
@@ -24192,8 +24194,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.1545334, y: 5.5731907, z: 3.0484307}
-  m_Center: {x: -0.01543045, y: 1.0624223, z: 1.0242157}
+  m_Size: {x: 4.1143723, y: 8.089468, z: 3.7047698}
+  m_Center: {x: -0.1146965, y: 2.028963, z: 1.3523854}
 --- !u!135 &5025680915762558510
 SphereCollider:
   m_ObjectHideFlags: 0

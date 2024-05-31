@@ -9,17 +9,21 @@ public class BossUI : MonoBehaviour
     [SerializeField] GameObject bossUI;
     [SerializeField] AnimatorOff animatorOff;
 
+    bool animatorIsOff = false;
+
     public void Update()
     {
         if (enemy.inSightRange == true)
         {
-            print("suhfdiuefhgeiu");
             bossUI.SetActive(true);
-            print("aaaaaaaaaaaaaa");
 
-            if (animatorOff.animationFinished)
+            if (!animatorIsOff)
             {
-                animatorOff.enabled = false;
+                if (animatorOff.animationFinished)
+                {
+                    animatorIsOff = true;
+                    animatorOff.enabled = false;
+                }
             }
         }
     }

@@ -55,7 +55,8 @@ MonoBehaviour:
   moveSpeed: 2
   normalSpeed: 0
   maxSpeed: 4
-  jumpForce: 2
+  jumpForce: 1
+  maxJumpforce: 1.2
   forceDirection: {x: 0, y: 0, z: 0}
   jump: {x: 0, y: 0, z: 0}
   cam: {fileID: 1146300122109801920}
@@ -125,9 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddbc417d9fd1df1488a669b089768014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 100
   weapons: {fileID: 5653810659005101966}
   playerMovement: {fileID: 0}
+  healthSlider: {fileID: 0}
   attackAnimator: {fileID: 1740213026917337563}
   allowedAttack: 0
 --- !u!1 &179291073195776172
@@ -284,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 1084338132589553550}
   serializedVersion: 2
   m_LocalRotation: {x: 0.02817515, y: -0.000000017262497, z: 4.865666e-10, w: 0.99960303}
-  m_LocalPosition: {x: 1.9679184, y: -1.1699998, z: -8.58271}
+  m_LocalPosition: {x: 2.0396194, y: -0.45000076, z: -8.637104}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -319,7 +321,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 90
+    FieldOfView: 40
     OrthographicSize: 10
     NearClipPlane: 0.01
     FarClipPlane: 500
@@ -965,7 +967,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2955527862904924523}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0050919205, y: 0.8955801, z: 0.010253382, w: 0.444753}
+  m_LocalRotation: {x: -0.05336236, y: 0.88917005, z: 0.10745378, w: 0.44156852}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1001,7 +1003,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 90
+    FieldOfView: 40
     OrthographicSize: 10
     NearClipPlane: 0.01
     FarClipPlane: 500
@@ -1715,7 +1717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.19, z: -2.47}
+  m_FollowOffset: {x: 0, y: -0.53, z: -2.56}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1940,7 +1942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.19, z: -2.47}
+  m_FollowOffset: {x: 0, y: -0.53, z: -2.56}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2226,7 +2228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7148721363196488935}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00090037193, y: 0.89563704, z: 0.0018130406, w: 0.4447812}
+  m_LocalRotation: {x: -0.061578058, y: 0.88701427, z: 0.12399743, w: 0.44049796}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2262,7 +2264,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 90
+    FieldOfView: 40
     OrthographicSize: 10
     NearClipPlane: 0.01
     FarClipPlane: 500
@@ -2727,7 +2729,7 @@ Transform:
   m_GameObject: {fileID: 7964407217942718397}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9679184, y: 1.5699999, z: 1.4927139}
+  m_LocalPosition: {x: -2.0396194, y: 0.8500004, z: 1.5471077}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3418,8 +3420,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8535742595196380451}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.023677362, y: 0.90538365, z: -0.05093606, w: -0.42086276}
-  m_LocalPosition: {x: 45.653862, y: 5.4128094, z: -26.418793}
+  m_LocalRotation: {x: -0.061578065, y: 0.88701427, z: 0.12399744, w: 0.440498}
+  m_LocalPosition: {x: -2.0396194, y: 0.8500004, z: 1.5471077}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3458,7 +3460,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 500
-  field of view: 90
+  field of view: 40
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -3652,7 +3654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.19, z: -2.47}
+  m_FollowOffset: {x: 0, y: -0.53, z: -2.56}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1

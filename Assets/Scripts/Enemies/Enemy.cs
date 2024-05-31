@@ -77,12 +77,18 @@ public class Enemy : MonoBehaviour
         
         agent.SetDestination(transform.position);
 
-        if (!playerPosActive && !attacking)
-        {
-            Invoke("SetPlayerPos", 1);
-            playerPosActive = true;
-        }
-  
+        playerPosActive = true;
+        var playerPos = player.position;
+        playerPos.y = transform.position.y;
+
+
+        //transform.LookAt(playerPos);
+        /* if (!playerPosActive && !attacking)
+         {
+             Invoke("SetPlayerPos", 1);
+             playerPosActive = true;
+         }*/
+
 
         //transform.rotation = Quaternion.LookRotation(playerPos);
         /*if (!attacking)
@@ -108,14 +114,14 @@ public class Enemy : MonoBehaviour
         attacking = false;
         gameObject.GetComponent<NavMeshAgent>().speed = 2;
     }*/
-    public void SetPlayerPos()
+   /* public void SetPlayerPos()
     {
         playerPosActive = true;
         var playerPos = player.position;
         playerPos.y = transform.position.y;
 
         transform.LookAt(playerPos);
-    }
+    }*/
 
     public void TakeDamage(float damage)
     {

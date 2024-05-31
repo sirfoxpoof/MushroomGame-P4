@@ -5,8 +5,8 @@ using UnityEngine;
 public class HealShroom : MonoBehaviour
 {
 
-    float healAmmount = 1;
-    float healspeed = 0.5f;
+    [SerializeField]float healAmmount;
+    [SerializeField]float healspeed;
     bool isHealing;
 
     GameObject player;

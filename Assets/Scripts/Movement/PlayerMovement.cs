@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed, normalSpeed;
     [SerializeField] float maxSpeed;
     public float jumpForce;
+    [SerializeField] float maxJumpforce;
     /*[SerializeField] float boostForce;*/
     [HideInInspector] public Vector3 forceDirection;
     [HideInInspector] public Vector3 jump;
@@ -175,7 +176,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (context.performed)
                 {
-                   rb.AddForce(jump * jumpForce * 1.5f, ForceMode.Impulse);
+                   rb.AddForce(jump * jumpForce * maxJumpforce, ForceMode.Impulse);
                    jumping = false;
                    //animatie voor tweede jump
 
