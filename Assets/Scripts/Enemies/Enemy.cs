@@ -27,8 +27,12 @@ public class Enemy : MonoBehaviour
     public Animator enemyAnimator;
     public float health, damage;
     public string enemyName;
+    public float resetTime = 5;
+
+    bool playerPosActive;
 
     public Material normalColour;
+    
 
     private void Start()
     {
@@ -66,35 +70,47 @@ public class Enemy : MonoBehaviour
 
     public virtual void AttackPlayer()
     {
-        //whenever the boss is attacking the boss cannot move
-        var playerPos = player.position;
-        playerPos.y = transform.position.y;
-  
+        
         agent.SetDestination(transform.position);
 
-        transform.LookAt(playerPos);
+        if (!playerPosActive && !attacking)
+        {
+            Invoke("SetPlayerPos", 1);
+            playerPosActive = true;
+        }
+  
 
         //transform.rotation = Quaternion.LookRotation(playerPos);
-        if (!attacking)
+        /*if (!attacking)
         {
             //hier attacked hij HOWEVER ik heb daar een ander script voor
             //miss gooi ik het heir ook wel in
             // is miss wel handig 
-            /*nouja in ieder geval
-             de bedoeling is dat hij hier attacks uit gaat voeren en de animaties doet enzo en hutsafluts*/
+            *//*nouja in ieder geval
+             de bedoeling is dat hij hier attacks uit gaat voeren en de animaties doet enzo en hutsafluts*//*
 
-            enemyAnimator.SetTrigger("TailRight");
+            //enemyAnimator.SetTrigger("TailRight");
             Debug.Log(" AAAAAAH");
             //player.transform.GetComponent<Attack>().TakeDamage(damage);
 
             Invoke("ResetAttack", 5);
             attacking = true;
-        }
+        }*/
     }
-    private void ResetAttack()
+
+
+    /*private void ResetAttack()
     {
         attacking = false;
         gameObject.GetComponent<NavMeshAgent>().speed = 2;
+    }*/
+    public void SetPlayerPos()
+    {
+        playerPosActive = true;
+        var playerPos = player.position;
+        playerPos.y = transform.position.y;
+
+        transform.LookAt(playerPos);
     }
 
     public void TakeDamage(float damage)

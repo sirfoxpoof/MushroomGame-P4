@@ -14,7 +14,7 @@ public class Maus : Enemy
         {
             enemyAnimator.SetTrigger("TailLeft");
             Debug.Log("ATTACK");
-            Invoke("ResetAttack", 5);
+            Invoke("ResetAttack", resetTime);
             attacking = true;
         }
     
@@ -24,8 +24,7 @@ public class Maus : Enemy
         attacking = false;
         gameObject.GetComponent<NavMeshAgent>().speed = 2;
     }
-
-
+/*
     IEnumerator Rotate(float duration)
     {
         float startRotation = transform.eulerAngles.y;
@@ -38,5 +37,5 @@ public class Maus : Enemy
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, yRotation, transform.eulerAngles.z);
             yield return null;
         }
-    }
+    }*/
 }
