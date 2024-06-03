@@ -141,10 +141,11 @@ public class Enemy : MonoBehaviour
         
     }
 
-    private void Reset()
+    public void Reset()
     {
         SceneManager.LoadScene(0);
     }
+
     IEnumerator ChangeMaterial()
     {
         Debug.Log("HUTS");

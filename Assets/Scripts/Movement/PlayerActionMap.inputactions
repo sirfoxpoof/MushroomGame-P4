@@ -85,6 +85,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Settings",
+                    "type": "Button",
+                    "id": "54f8f24e-22cd-4a56-af87-99fa842d9c48",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -351,6 +360,17 @@
                     "action": "Dodge right",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "c0d4feb6-7ed5-4501-afd7-d1a2c051de30",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Settings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

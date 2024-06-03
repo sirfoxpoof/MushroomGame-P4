@@ -107,6 +107,15 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Settings"",
+                    ""type"": ""Button"",
+                    ""id"": ""54f8f24e-22cd-4a56-af87-99fa842d9c48"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -373,6 +382,17 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
                     ""action"": ""Dodge right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c0d4feb6-7ed5-4501-afd7-d1a2c051de30"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Settings"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -451,6 +471,7 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
         m_Character_Glide = m_Character.FindAction("Glide", throwIfNotFound: true);
         m_Character_Attack = m_Character.FindAction("Attack", throwIfNotFound: true);
         m_Character_Interact = m_Character.FindAction("Interact", throwIfNotFound: true);
+        m_Character_Settings = m_Character.FindAction("Settings", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -521,6 +542,7 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_Character_Glide;
     private readonly InputAction m_Character_Attack;
     private readonly InputAction m_Character_Interact;
+    private readonly InputAction m_Character_Settings;
     public struct CharacterActions
     {
         private @PlayerActionMap m_Wrapper;
@@ -534,6 +556,7 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
         public InputAction @Glide => m_Wrapper.m_Character_Glide;
         public InputAction @Attack => m_Wrapper.m_Character_Attack;
         public InputAction @Interact => m_Wrapper.m_Character_Interact;
+        public InputAction @Settings => m_Wrapper.m_Character_Settings;
         public InputActionMap Get() { return m_Wrapper.m_Character; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -570,6 +593,9 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Settings.started += instance.OnSettings;
+            @Settings.performed += instance.OnSettings;
+            @Settings.canceled += instance.OnSettings;
         }
 
         private void UnregisterCallbacks(ICharacterActions instance)
@@ -601,6 +627,9 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Settings.started -= instance.OnSettings;
+            @Settings.performed -= instance.OnSettings;
+            @Settings.canceled -= instance.OnSettings;
         }
 
         public void RemoveCallbacks(ICharacterActions instance)
@@ -674,5 +703,6 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
         void OnGlide(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnSettings(InputAction.CallbackContext context);
     }
 }
