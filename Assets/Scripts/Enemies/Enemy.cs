@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
@@ -134,6 +135,8 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log(enemyName + " DIED");
+
+            SceneManager.LoadScene(0);
         }
         
     }

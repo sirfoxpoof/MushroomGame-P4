@@ -23,5 +23,9 @@ public class StartUp : MonoBehaviour
         {
             gameObject.SetActive(true);
         }
+
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

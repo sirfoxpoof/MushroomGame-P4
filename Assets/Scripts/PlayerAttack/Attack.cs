@@ -78,6 +78,7 @@ public class Attack : MonoBehaviour
         if(health <= 0)
         {
             SceneManager.LoadScene("Level1");
+
         }
     }
 

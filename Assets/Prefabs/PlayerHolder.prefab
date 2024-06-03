@@ -55,7 +55,7 @@ MonoBehaviour:
   moveSpeed: 2
   normalSpeed: 0
   maxSpeed: 4
-  jumpForce: 1
+  jumpForce: 1.3
   maxJumpforce: 1.2
   forceDirection: {x: 0, y: 0, z: 0}
   jump: {x: 0, y: 0, z: 0}
@@ -2489,8 +2489,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3278362486075372538}
   - component: {fileID: 5672055958387012314}
+  - component: {fileID: 5343563984493429705}
   - component: {fileID: 5653810659005101966}
-  - component: {fileID: 5334643612674705701}
   m_Layer: 7
   m_Name: Maria_sword
   m_TagString: Untagged
@@ -2631,6 +2631,29 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.93020946, y: 0.3836928, z: 0.28643847}
     m_Extent: {x: 0.1783554, y: 0.07747741, z: 0.5816437}
   m_DirtyAABB: 0
+--- !u!136 &5343563984493429705
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822912003047155098}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.33
+  m_Height: 1.1816086
+  m_Direction: 2
+  m_Center: {x: 1.09, y: 1.36, z: 0.31328008}
 --- !u!114 &5653810659005101966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2648,27 +2671,6 @@ MonoBehaviour:
   attacking: 0
   inRange: 0
   enemy: {fileID: 0}
---- !u!65 &5334643612674705701
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7822912003047155098}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.3567111, y: 0.15495555, z: 1.1632874}
-  m_Center: {x: 0.9302103, y: 1.436209, z: 0.30412227}
 --- !u!1 &7924470716512838099
 GameObject:
   m_ObjectHideFlags: 0
