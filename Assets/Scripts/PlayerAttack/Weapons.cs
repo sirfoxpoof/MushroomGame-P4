@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapons : MonoBehaviour
 {
-    public float range, damage;
+    public float damage;
     public bool attacking = false;
     public bool inRange = false;
     public GameObject enemy;

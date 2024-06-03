@@ -150,7 +150,7 @@ public class Enemy : MonoBehaviour
         Debug.Log("HUTS");
         gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.red;
         yield return new WaitForSeconds(1);
-        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.clear;
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = normalColour.color;
     }
 
 }

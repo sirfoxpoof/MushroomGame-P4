@@ -37,11 +37,11 @@ public class Attack : MonoBehaviour
     {
         if(context.performed)
         {
-            weapons.attacking = true;
+           // weapons.attacking = true;
             if(allowedAttack)
             {
                 StartCoroutine("AttackTime");
-                if (weapons.attacking && weapons.inRange && weapons.enemy != null)
+                if (weapons.inRange && weapons.enemy != null)
                 {
                     //hier damage doen
                     Debug.Log("supposed to do damage");
@@ -51,7 +51,7 @@ public class Attack : MonoBehaviour
 
             }
             attackAnimator.Play("Attack");
-            weapons.attacking = false;
+           // weapons.attacking = false;
            // weapons.inRange = false;
         }
     }
@@ -79,7 +79,6 @@ public class Attack : MonoBehaviour
         if(health <= 0)
         {
             SceneManager.LoadScene(0);
-
         }
     }
 
@@ -104,7 +103,7 @@ public class Attack : MonoBehaviour
     }
 
     //dodgew aka wtf uis dit hoe kut wil jke het hebben
-    public void DodgeLeft(InputAction.CallbackContext context)
+   /* public void DodgeLeft(InputAction.CallbackContext context)
     {
         //ik wil de dodge hier ook in zetten want dat is makkelijker met aanspreken enzo met invincibility en whoooooooo
 
@@ -122,5 +121,5 @@ public class Attack : MonoBehaviour
             //playerMovement.rb.AddForce(Vector3.right * 10, ForceMode.Impulse);
            transform.Translate(transform.position.x * dodgeValue, transform.position.y, 0);
         }
-    }
+    }*/
 }
