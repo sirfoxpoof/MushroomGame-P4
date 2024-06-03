@@ -13,7 +13,7 @@ public class MausBody : MonoBehaviour
         if (other.tag == ("Player"))
         {
             player = other.gameObject;
-            Invoke("BodyDamage", 1);
+            Invoke("BodyDamage", 2);
         }
     }
 

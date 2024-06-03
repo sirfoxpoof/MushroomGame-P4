@@ -24152,7 +24152,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3942166012295965998}
   - component: {fileID: 5025680915762558510}
-  - component: {fileID: 1508588108148576176}
   - component: {fileID: 2319803978570027317}
   - component: {fileID: 1000273017420257317}
   - component: {fileID: 2372819053165342225}
@@ -24199,27 +24198,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.13
   m_Center: {x: 0, y: 2.87, z: 4.34}
---- !u!135 &1508588108148576176
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2770114533591909791}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1.16
-  m_Center: {x: 0, y: 0, z: 4.17}
 --- !u!65 &2319803978570027317
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24281,8 +24259,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.26, y: 8.515498, z: 3.2036917}
-  m_Center: {x: 0.122169495, y: 2.2825713, z: 1.1018462}
+  m_Size: {x: 3.4061356, y: 8.515498, z: 5.9550714}
+  m_Center: {x: 0.13703537, y: 2.2825713, z: 2.4775364}
 --- !u!1 &2770613655066869820
 GameObject:
   m_ObjectHideFlags: 0
@@ -47724,7 +47702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6397038305150781906
 Transform:
   m_ObjectHideFlags: 0
@@ -47759,7 +47737,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6.18, z: 2.22}
+  m_Size: {x: 4.68, y: 6.18, z: 2.22}
   m_Center: {x: 0.122169495, y: 2.2825713, z: 1.1018462}
 --- !u!114 &2385443790880200088
 MonoBehaviour:
