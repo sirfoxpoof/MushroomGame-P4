@@ -26,6 +26,7 @@ public class Attack : MonoBehaviour
     private void Start()
     {
         healthSlider.maxValue = health;
+        healthSlider.value = health;
         playerMovement = GetComponent<PlayerMovement>();
         allowedAttack = true;
     }
@@ -77,7 +78,7 @@ public class Attack : MonoBehaviour
 
         if(health <= 0)
         {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene(0);
 
         }
     }

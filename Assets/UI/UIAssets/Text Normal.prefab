@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: (omg kijk een text)
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 508be79f2033ee94184f3221bdac78ad, type: 2}
-  m_sharedMaterial: {fileID: 1752826257510608437, guid: 508be79f2033ee94184f3221bdac78ad,
+  m_fontAsset: {fileID: 11400000, guid: 8fb7b3d816b85094d80a3c4f8dec9c6f, type: 2}
+  m_sharedMaterial: {fileID: 2806889835212331509, guid: 8fb7b3d816b85094d80a3c4f8dec9c6f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 16
   m_fontSizeMax: 50
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535

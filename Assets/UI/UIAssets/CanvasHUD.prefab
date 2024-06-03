@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 600.06824, y: 0.060005188}
-  m_SizeDelta: {x: 1232.0837, y: 24.95996}
+  m_AnchoredPosition: {x: -4.1138916, y: 0.060005188}
+  m_SizeDelta: {x: 23.7195, y: 24.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7370015022723894635
 CanvasRenderer:
@@ -371,7 +371,7 @@ RectTransform:
   m_Father: {fileID: 4673443995448375957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -0.00012207, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -763,6 +763,7 @@ GameObject:
   - component: {fileID: 1274854732565990375}
   - component: {fileID: 7685996373412910645}
   - component: {fileID: 2984608963494684106}
+  - component: {fileID: 5252003653166727622}
   m_Layer: 5
   m_Name: EnemyHealthbar
   m_TagString: Untagged
@@ -839,7 +840,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -864,6 +865,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5252003653166727622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7633075621462709868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616162f474ad04c4a9410f503de75a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationFinished: 0
 --- !u!1 &8032494116319753101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,7 +1100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
   bossUI: {fileID: 0}
-  animatorOff: {fileID: 0}
+  animatorOff: {fileID: 5252003653166727622}
+  animalcrossing: {fileID: 0}
+  eldenring: {fileID: 0}
 --- !u!1 &9144691230998946886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,6 +1517,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5415122185157316213}
+    - targetCorrespondingSourceObject: {fileID: 6492313396733458905, guid: 4fe54d036fce96140baa3c63c10be2f6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4801610687632890379}
   m_SourcePrefab: {fileID: 100100000, guid: 4fe54d036fce96140baa3c63c10be2f6, type: 3}
 --- !u!1 &7010531614603677494 stripped
 GameObject:
@@ -1529,9 +1549,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4801610687632890379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7010531614603677494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6a790bf83da5644885476d75b49965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 8090064646871396495}
+  typingSpeed: 0.5
 --- !u!224 &7318367242988277955 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6828351786168641068, guid: 4fe54d036fce96140baa3c63c10be2f6,
     type: 3}
   m_PrefabInstance: {fileID: 4274828636090513135}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8090064646871396495 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5410673700190062176, guid: 4fe54d036fce96140baa3c63c10be2f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4274828636090513135}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7010531614603677494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
