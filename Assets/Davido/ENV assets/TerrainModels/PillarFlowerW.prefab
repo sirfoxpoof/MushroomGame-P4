@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8300821010076289228}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PillarFlowerW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,11 +45,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TrampolineFlower
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940388767891489768, guid: 717778faad1e0e54fb4db7ad5837890f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5747747354575952210, guid: 717778faad1e0e54fb4db7ad5837890f,
         type: 3}

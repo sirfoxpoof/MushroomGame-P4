@@ -63,66 +63,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8153468022190502949, guid: 1b436041ffb4244409e766c86c961579,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: -5568371526223589888, guid: 1b436041ffb4244409e766c86c961579,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: -2090608591832345471, guid: 1b436041ffb4244409e766c86c961579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f149c185a28ef4845a72ff0cfeb75193, type: 2}
-    - target: {fileID: 50754954277266222, guid: 1b436041ffb4244409e766c86c961579,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b436041ffb4244409e766c86c961579,
         type: 3}
       propertyPath: m_Name
       value: PillarWVeins
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 1b436041ffb4244409e766c86c961579,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3616844112969948802, guid: 1b436041ffb4244409e766c86c961579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d384100b26c0e5b49a73363d37e044d8, type: 2}
-    - target: {fileID: 4767400413853537203, guid: 1b436041ffb4244409e766c86c961579,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5394693769120690257, guid: 1b436041ffb4244409e766c86c961579,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6507901977716847365, guid: 1b436041ffb4244409e766c86c961579,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 7339356831882890532, guid: 1b436041ffb4244409e766c86c961579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f149c185a28ef4845a72ff0cfeb75193, type: 2}
-    - target: {fileID: 7715626668051313982, guid: 1b436041ffb4244409e766c86c961579,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8443713291819645580, guid: 1b436041ffb4244409e766c86c961579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
