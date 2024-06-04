@@ -86,12 +86,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b8d6610b3515eb4468ece6dd690b4bf7,
         type: 3}
       propertyPath: m_Name
-      value: WhiteFlower
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: b8d6610b3515eb4468ece6dd690b4bf7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
+      value: Flower 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
