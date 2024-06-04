@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6397597482798805313}
   - component: {fileID: 4025216132268108620}
   - component: {fileID: 8249920525559517685}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4850,52 +4850,52 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.4134835
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.4134835
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.4134835
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.25
+      value: 110.41
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: 6.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.11
+      value: -103.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7274421
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.6861691
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
@@ -4905,7 +4905,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -86.655
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
         type: 3}
@@ -4941,6 +4941,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5127,6 +5132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeLOD3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f3adf74637db7a141a0ad40a031a72e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5236,6 +5246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeLOD2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 930d0c87da046c244bee8024e69c825b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
