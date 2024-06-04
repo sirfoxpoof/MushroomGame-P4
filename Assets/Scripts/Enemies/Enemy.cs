@@ -43,8 +43,6 @@ public class Enemy : MonoBehaviour
         healthSlider.maxValue = health;
         player = GameObject.Find("PlayerHolder").transform;
         agent = gameObject.GetComponent<NavMeshAgent>();
-        //zorgde voor errors :')
-        //normalColour = gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material;
     }
 
     private void Update()
@@ -61,7 +59,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    //check voor hoe groot de attackrange is
+    //check to see how big the attack range is
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -72,7 +70,8 @@ public class Enemy : MonoBehaviour
     {
         agent.SetDestination(player.position);
     }
-
+    
+    //basic things for the attack, the actual attack happens inside the scripts that inherit from this one
     public virtual void AttackPlayer()
     {
         

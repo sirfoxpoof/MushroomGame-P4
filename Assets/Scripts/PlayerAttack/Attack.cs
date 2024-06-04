@@ -17,9 +17,9 @@ public class Attack : MonoBehaviour
 
     public Animator attackAnimator;
 
-    [SerializeField]bool allowedAttack, attacking;
+    [SerializeField]bool allowedAttack, attacking, heavyAttacking;
     //dodge
-    float dodgeValue = 0.01f;
+    //float dodgeValue = 0.01f;
 
     bool takingDamage;
 
@@ -60,7 +60,15 @@ public class Attack : MonoBehaviour
     {
         if(context.performed)
         {
-            if (allowedAttack)
+            if(allowedAttack && !playerMovement.jumping)
+            {
+                weapons.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+                attackAnimator.Play("Heavy Attack");
+                allowedAttack = false;
+                attacking = true;
+                StartCoroutine("AttackTime");
+            }
+            else if (allowedAttack)
             {
                 weapons.gameObject.GetComponent<CapsuleCollider>().enabled = true;
                 attackAnimator.Play("Attack");
