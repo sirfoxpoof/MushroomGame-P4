@@ -17,7 +17,7 @@ public class Attack : MonoBehaviour
 
     public Animator attackAnimator;
 
-    [SerializeField]bool allowedAttack;
+    [SerializeField]bool allowedAttack, attacking;
     //dodge
     float dodgeValue = 0.01f;
 
@@ -31,28 +31,43 @@ public class Attack : MonoBehaviour
         allowedAttack = true;
     }
 
+
+    private void Update()
+    {
+        if (attacking)
+        {
+             if(weapons.inRange && weapons.enemy != null)
+             {
+                    attacking = false;
+                    //weapons.gameObject.GetComponent<CapsuleCollider>().enabled = true;    
+                    Debug.Log("supposed to do damage");
+                    weapons.enemy.GetComponentInParent<Enemy>().TakeDamage(weapons.damage);
+                   // StartCoroutine("AttackTime");
+                    Invoke("Reset", 1.1f);
+             }
+            
+        }
+    }
+
+    private void Reset()
+    {
+        weapons.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        attacking = false;
+    }
     //hier moeten we checken welk wapen we vast hebben en het script vahn dat wapen pakken om die attack uit te voeren
     //verder spreken we dan de attack functie uit van dat wapen
     public void Attacking(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
-           // weapons.attacking = true;
-            if(allowedAttack)
+            if (allowedAttack)
             {
+                weapons.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+                attackAnimator.Play("Attack");
+                allowedAttack = false;
+                attacking= true;
                 StartCoroutine("AttackTime");
-                if (weapons.inRange && weapons.enemy != null)
-                {
-                    //hier damage doen
-                    Debug.Log("supposed to do damage");
-                    weapons.enemy.GetComponentInParent<Enemy>().TakeDamage(weapons.damage);
-
-                }
-
             }
-            attackAnimator.Play("Attack");
-           // weapons.attacking = false;
-           // weapons.inRange = false;
         }
     }
 
@@ -60,8 +75,10 @@ public class Attack : MonoBehaviour
     IEnumerator AttackTime()
     {
         allowedAttack = false;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.1f);
         allowedAttack = true;
+        weapons.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+
     }
 
     public void TakeDamage(float damage)

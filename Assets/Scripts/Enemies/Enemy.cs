@@ -135,16 +135,16 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log(enemyName + " DIED");
-
-            Invoke("Reset", 2);
+            SceneManager.LoadScene(0);
+            //Invoke("Reset", 2);
         }
         
     }
 
-    public void Reset()
+    /*public void Reset()
     {
         SceneManager.LoadScene(0);
-    }
+    }*/
 
     IEnumerator ChangeMaterial()
     {
