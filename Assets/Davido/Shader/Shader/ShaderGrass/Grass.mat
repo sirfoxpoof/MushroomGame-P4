@@ -135,8 +135,8 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _TerrainOffset: 0.5
-    - _TerrainSize: 400
+    - _TerrainOffset: 0.39
+    - _TerrainSize: 200
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
