@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class OptionMenu : MonoBehaviour
 {
-    [SerializeField] bool settingsAan = false;
+    [SerializeField] bool settingsAan = false, firsttime = false;
     [SerializeField] GameObject settingsMenu;
     [SerializeField] PlayerMovement moveScript;
 
+    [SerializeField] StartUp mainmenu;
     [SerializeField] GameObject[] secondaryGameObjects;
     [SerializeField] GameObject[] primaryGameObjects;
 
@@ -17,17 +20,27 @@ public class OptionMenu : MonoBehaviour
     {
         if (context.performed)
         {
-            if (!settingsAan)
+            Debug.Log(mainmenu.mainMenuOn);
+            if(!mainmenu.mainMenuOn)
             {
-                SettingsMenuOn();
-            }
-            else
-            {
-                SettingsMenuOff();
+                if (!settingsAan)
+                {
+                    SettingsMenuOn();
+                }
+                else
+                {
+                    SettingsMenuOff();
 
+                }
+                settingsAan = !settingsAan;
             }
-            settingsAan = !settingsAan;
+
         }
+        else
+        {
+            return;
+        }
+       
     }
 
     /*public void DoSettingsMenuButton()
@@ -51,10 +64,13 @@ public class OptionMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0;
-
-        settingsMenu.gameObject.SetActive(true);
         
+
+        SortMenu();
+        settingsMenu.gameObject.SetActive(true);
+
         moveScript.enabled = false;
+        print("settingsOn");
 
     }
 
@@ -69,15 +85,36 @@ public class OptionMenu : MonoBehaviour
 
         moveScript.enabled = true;
         print("settingsOff");
-        
+
+    }
+
+    public void SettingsButton()
+    {
+        if (!mainmenu.mainMenuOn)
+        {
+            if (!settingsAan)
+            {
+                SettingsMenuOn();
+            }
+            else
+            {
+                SettingsMenuOff();
+
+            }
+            settingsAan = !settingsAan;
+        }
     }
 
     public void SortMenu()
     {
-        secondaryGameObjects = GameObject.FindGameObjectsWithTag("Secondary");
-        primaryGameObjects = GameObject.FindGameObjectsWithTag("Primary");
+        if (!firsttime)
+        {
+            secondaryGameObjects = GameObject.FindGameObjectsWithTag("Secondary");
+            primaryGameObjects = GameObject.FindGameObjectsWithTag("Primary");
 
-
+            firsttime = true;
+        }
+      
         foreach (GameObject gameObject in secondaryGameObjects)
         {
             gameObject.SetActive(false);
@@ -87,12 +124,8 @@ public class OptionMenu : MonoBehaviour
         {
             gameObject.SetActive(true);
         }
-        print("sortedMenu");
+
     }
-
-        
-
-        
 
 }
 /* muis moet stoppen met lopen

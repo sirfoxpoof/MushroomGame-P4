@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3102321315779683445}
   - component: {fileID: 7370015022723894635}
   - component: {fileID: 4381300088532533975}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4673443995448375957}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 9064055149177948560}
   - component: {fileID: 5388315617528752813}
   - component: {fileID: 4789422546969932409}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 5876490960530166140}
   - component: {fileID: 2688601232047955956}
   - component: {fileID: 6357227323452422363}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 2974309367288196952}
   - component: {fileID: 6954501015045145385}
   - component: {fileID: 68007477627919769}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 2564168812926939718}
   - component: {fileID: 4004323363076621253}
   - component: {fileID: 607142418241107097}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 6414410884790003625}
   - component: {fileID: 5072907604615918017}
   - component: {fileID: 4251055720957432766}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5944914766560538422}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 3564138571861751834}
   - component: {fileID: 7558161090993086701}
   - component: {fileID: 2652231259780670572}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 3894694488064143480}
   - component: {fileID: 3728351563019863374}
   - component: {fileID: 8983854425471631389}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: BossUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 1870703560988323523}
   - component: {fileID: 8925810995302801079}
   - component: {fileID: 145303648772422675}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,7 +764,7 @@ GameObject:
   - component: {fileID: 7685996373412910645}
   - component: {fileID: 2984608963494684106}
   - component: {fileID: 5252003653166727622}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: EnemyHealthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 3260285853045483908}
   - component: {fileID: 8387943365754746810}
   - component: {fileID: 5665798177559329160}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,9 +995,9 @@ GameObject:
   - component: {fileID: 5128442751427650230}
   - component: {fileID: 762824047659660069}
   - component: {fileID: 3480850915124904886}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: CanvasHUD
-  m_TagString: Untagged
+  m_TagString: Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1113,7 +1113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 737293430216215118}
   - component: {fileID: 6219698336713666679}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1239,6 +1239,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Title Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492313396733458905, guid: 4fe54d036fce96140baa3c63c10be2f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6828351786168641068, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}
@@ -1388,6 +1393,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Title Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492313396733458905, guid: 4fe54d036fce96140baa3c63c10be2f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6828351786168641068, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}

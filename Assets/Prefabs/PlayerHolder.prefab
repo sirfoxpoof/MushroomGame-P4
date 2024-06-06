@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7824845313605236391}
   - component: {fileID: 414215492936019519}
   - component: {fileID: 298682472765666836}
+  - component: {fileID: 9109913786078057076}
   m_Layer: 7
   m_Name: PlayerHolder
   m_TagString: Player
@@ -133,6 +134,25 @@ MonoBehaviour:
   attackAnimator: {fileID: 1740213026917337563}
   allowedAttack: 0
   attacking: 0
+  heavyAttacking: 0
+--- !u!114 &9109913786078057076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89657493610224492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb3479d8389ce64a93a67088bf17202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsAan: 0
+  firsttime: 0
+  settingsMenu: {fileID: 0}
+  moveScript: {fileID: 804635104602477807}
+  secondaryGameObjects: []
+  primaryGameObjects: []
 --- !u!1 &179291073195776172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3154,6 +3174,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c7debcd1-362b-4632-953b-894c37d6849f
     m_ActionName: Character/Dodge right[/Keyboard/d,/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9109913786078057076}
+        m_TargetAssemblyTypeName: OptionMenu, Assembly-CSharp
+        m_MethodName: DoSettingsMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 54f8f24e-22cd-4a56-af87-99fa842d9c48
+    m_ActionName: Character/Settings[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Character
