@@ -334,6 +334,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss Area Maus
       objectReference: {fileID: 0}
+    - target: {fileID: 2122304332892060013, guid: c7605132c14f0654cbafb1a816956ce3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040116032600664202, guid: c7605132c14f0654cbafb1a816956ce3,
+        type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[0]
+      value: 
+      objectReference: {fileID: 1527526783}
     - target: {fileID: 6269988797385586037, guid: c7605132c14f0654cbafb1a816956ce3,
         type: 3}
       propertyPath: player

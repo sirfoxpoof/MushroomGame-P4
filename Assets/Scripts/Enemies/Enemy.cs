@@ -108,21 +108,6 @@ public class Enemy : MonoBehaviour
         }*/
     }
 
-
-    /*private void ResetAttack()
-    {
-        attacking = false;
-        gameObject.GetComponent<NavMeshAgent>().speed = 2;
-    }*/
-   /* public void SetPlayerPos()
-    {
-        playerPosActive = true;
-        var playerPos = player.position;
-        playerPos.y = transform.position.y;
-
-        transform.LookAt(playerPos);
-    }*/
-
     public void TakeDamage(float damage)
     {
         StartCoroutine("ChangeMaterial");
