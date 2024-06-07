@@ -34,13 +34,13 @@ public class BossUI : MonoBehaviour
                 }
             }
         }
-       /* else
+        else
         {
             bossUI.SetActive(false);
             animalcrossing.Play();
             eldenring.Pause();
 
-        }*/
+        }
     }
 
 }

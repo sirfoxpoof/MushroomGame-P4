@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class CameraCustom : MonoBehaviour
+public class CameraControls : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
