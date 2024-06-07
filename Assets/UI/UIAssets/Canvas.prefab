@@ -2494,6 +2494,7 @@ MonoBehaviour:
   secondaryGameObjects: []
   primaryGameObjects: []
   menuGameObjects: []
+  mainMenuOn: 0
 --- !u!1 &8362125018407446333
 GameObject:
   m_ObjectHideFlags: 0

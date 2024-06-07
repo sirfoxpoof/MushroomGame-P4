@@ -997,7 +997,7 @@ GameObject:
   - component: {fileID: 3480850915124904886}
   m_Layer: 10
   m_Name: CanvasHUD
-  m_TagString: Menu
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -11,12 +11,13 @@ public class StartUp : MonoBehaviour
     [SerializeField] GameObject[] menuGameObjects;
 
     public bool mainMenuOn;
+    public GameObject hud;
     // Start is called before the first frame update
     void Start()
     {
         secondaryGameObjects = GameObject.FindGameObjectsWithTag("Secondary");
         primaryGameObjects = GameObject.FindGameObjectsWithTag("Primary");
-        menuGameObjects = GameObject.FindGameObjectsWithTag("Menu");
+        //menuGameObjects = GameObject.FindGameObjectsWithTag("Menu");
 
         mainMenuOn = true;
 
@@ -30,10 +31,10 @@ public class StartUp : MonoBehaviour
             gameObject.SetActive(true);
         }
 
-        foreach (GameObject gameObject in menuGameObjects)
+        /*foreach (GameObject gameObject in menuGameObjects)
         {
             gameObject.SetActive(false);
-        }
+        }*/
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -45,6 +46,8 @@ public class StartUp : MonoBehaviour
         Cursor.visible = false;
 
         mainMenuOn = false;
+        hud.SetActive(true);
+        
 
     }
 
