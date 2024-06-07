@@ -71,7 +71,6 @@ public class OptionMenu : MonoBehaviour
         settingsMenu.gameObject.SetActive(true);
 
         moveScript.enabled = false;
-        print("settingsOn");
 
     }
 
@@ -86,7 +85,6 @@ public class OptionMenu : MonoBehaviour
         hud.gameObject.SetActive(true);
 
         moveScript.enabled = true;
-        print("settingsOff");
 
     }
 
