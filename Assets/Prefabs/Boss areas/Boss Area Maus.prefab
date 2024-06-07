@@ -546,6 +546,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 528020669acd2214da110a7c1bc8e97d, type: 3}
+--- !u!198 &6040116032600664202 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7923245706895180461, guid: 528020669acd2214da110a7c1bc8e97d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4478768782347446823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7079771161844070204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6658482055915543835, guid: 528020669acd2214da110a7c1bc8e97d,
@@ -1528,15 +1534,17 @@ MonoBehaviour:
   inSightRange: 0
   inAttackRange: 0
   enemyAnimator: {fileID: 6885142426879828734}
-  health: 500
+  health: 100
   currentHealth: 0
   damage: 5
   enemyName: Maus, The servant of decay
   resetTime: 5
+  currentState: 0
   randomState: 0
   healthSlider: {fileID: 0}
   normalColour: {fileID: 2100000, guid: b44bd93536eefe042be6db21ff9575be, type: 2}
-  shockWave: {fileID: 0}
+  shockWave: {fileID: 6040116032600664202}
+  shockWaveTime: 3.2
 --- !u!95 &6885142426879828734
 Animator:
   serializedVersion: 5

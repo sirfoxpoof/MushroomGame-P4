@@ -6,12 +6,13 @@ public class ShockWave : MonoBehaviour
 {
     public ParticleSystem part;
     public List<ParticleCollisionEvent> collisionEvents;
+    [SerializeField] float shockWaveDamage;
 
-    void Start()
+    /*void Start()
     {
         part = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
-    }
+    }*/
 
     /* void OnParticleCollision(GameObject other)
      {
@@ -49,7 +50,7 @@ public class ShockWave : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("SLAYYYYYYYY");
+            other.GetComponent<Attack>().TakeDamage(shockWaveDamage);
         }
     }
 }

@@ -9,10 +9,7 @@ public class Weapons : MonoBehaviour
     public bool inRange = false;
     public GameObject enemy;
 
-    private void Start()
-    {
-        normalDamage = damage;
-    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")

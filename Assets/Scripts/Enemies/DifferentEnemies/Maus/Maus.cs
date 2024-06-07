@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class Maus : Enemy
 {
     [SerializeField] ParticleSystem shockWave;
-
+    [SerializeField]float shockWaveTime;
 
     private void Start()
     {
@@ -25,14 +25,42 @@ public class Maus : Enemy
         if (!attacking)
         {
 
-            Random.Range(0, randomState);
+            randomState = Random.Range(0, currentState);
             Debug.Log(randomState.ToString());
+
+            CheckAttackState();
             //enemyAnimator.SetTrigger("TailLeft");
-            shockWave.Play();
             Invoke("ResetAttack", resetTime);
             attacking = true;
         }
     
+    }
+
+    void CheckAttackState()
+    {
+        if(randomState == 0)
+        {
+            //first attack
+            Debug.Log("FIRST");
+        }
+        if(randomState == 1)
+        {
+            //secodn attack
+            enemyAnimator.SetTrigger("TailLeft");
+        }
+        if(randomState == 2)
+        {
+            //third attack
+            enemyAnimator.SetTrigger("ShockWave");
+
+            StartCoroutine("ShockWaveTime");
+        }
+    }
+
+    IEnumerator ShockWaveTime()
+    {
+        yield return new WaitForSeconds(shockWaveTime);
+        shockWave.Play();
     }
     private void ResetAttack()
     {

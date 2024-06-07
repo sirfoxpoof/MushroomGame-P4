@@ -31,23 +31,23 @@ public class Enemy : MonoBehaviour
     public string enemyName;
     public float resetTime = 5;
 
-    int currentState = 0;
+    public int currentState = 0;
     public int randomState = 0;
 
-    bool playerPosActive;
+   // bool playerPosActive;
 
     public Slider healthSlider;
 
     public Material normalColour;
     
 
-    private void Start()
+    public void StartEnemy()
     {
         currentState = 0;
         randomState = 0;
         currentHealth = health;
 
-        healthSlider.maxValue = health;
+        healthSlider.maxValue = currentHealth;
         player = GameObject.Find("PlayerHolder").transform;
         agent = gameObject.GetComponent<NavMeshAgent>();
     }
@@ -84,10 +84,10 @@ public class Enemy : MonoBehaviour
         
         agent.SetDestination(transform.position);
 
-        playerPosActive = true;
+       /* playerPosActive = true;
         var playerPos = player.position;
         playerPos.y = transform.position.y;
-
+*/
             //hier attacked hij HOWEVER ik heb daar een ander script voor
             //miss gooi ik het heir ook wel in
             // is miss wel handig 
@@ -95,37 +95,14 @@ public class Enemy : MonoBehaviour
              //de bedoeling is dat hij hier attacks uit gaat voeren en de animaties doet enzo en hutsafluts*//*
 
         // dus de attack gewoon in MAus 
-
-       
     }
 
     public void TakeDamage(float damage)
     {
         StartCoroutine("ChangeMaterial");
         currentHealth -= damage;
-        healthSlider.value = health;
+        healthSlider.value = currentHealth;
 
-        //Zet de currentstate naar boven als de health onder een bepaald procent komt.
-        if (currentHealth / health <= 0.99f && currentState == 0)
-        {
-            //Statefunctie();
-            currentState++;
-            randomState++;
-        }
-        else if (currentHealth / health <= 0.6f && currentState == 1)
-        {
-            //StateFunctie();
-            currentState++;
-            randomState++;
-        }
-        else if (currentHealth / health <= 0.3f && currentState == 2)
-        {
-            //StateFunctie();
-            currentState++;
-            randomState++;
-        }
-
-        //die
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
@@ -133,6 +110,28 @@ public class Enemy : MonoBehaviour
             SceneManager.LoadScene(0);
             //Invoke("Reset", 2);
         }
+
+        //Zet de currentstate naar boven als de health onder een bepaald procent komt.
+        if (currentHealth / health <= 0.99f && currentState == 0)
+        {
+            //Statefunctie();
+            currentState++;
+            //randomState++;
+        }
+        else if (currentHealth / health <= 0.6f && currentState == 1)
+        {
+            //StateFunctie();
+            currentState++;
+            //randomState++;
+        }
+        else if (currentHealth / health <= 0.3f && currentState == 2)
+        {
+            //StateFunctie();
+            currentState++;
+            //randomState++;
+        }
+
+        //die
         
     }
 

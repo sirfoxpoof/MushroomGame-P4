@@ -9,6 +9,8 @@ public class StartUp : MonoBehaviour
     [SerializeField] GameObject[] secondaryGameObjects;
     [SerializeField] GameObject[] primaryGameObjects;
     [SerializeField] GameObject[] menuGameObjects;
+    [SerializeField] Enemy enemy;
+    [SerializeField] Attack attack;
 
     public bool mainMenuOn;
     public GameObject hud;
@@ -47,8 +49,9 @@ public class StartUp : MonoBehaviour
 
         mainMenuOn = false;
         hud.SetActive(true);
-        
 
+        enemy.StartEnemy();
+        attack.StartAttack();
     }
 
 }

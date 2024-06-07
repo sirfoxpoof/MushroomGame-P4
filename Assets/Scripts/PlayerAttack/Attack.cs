@@ -24,12 +24,14 @@ public class Attack : MonoBehaviour
 
     bool takingDamage;
 
-    private void Start()
+    public void StartAttack()
     {
         healthSlider.maxValue = health;
         healthSlider.value = health;
         playerMovement = GetComponent<PlayerMovement>();
         allowedAttack = true;
+
+        weapons.normalDamage = weapons.damage;
     }
 
 
