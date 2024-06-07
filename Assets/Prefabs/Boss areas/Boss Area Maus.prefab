@@ -5318,6 +5318,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 01a20f29f13e01a4d839560256c87c18,
         type: 3}
       propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01a20f29f13e01a4d839560256c87c18,
         type: 3}
@@ -6356,10 +6357,12 @@ MonoBehaviour:
   inSightRange: 0
   inAttackRange: 0
   enemyAnimator: {fileID: 6885142426879828734}
-  health: 60
+  health: 500
+  currentHealth: 0
   damage: 5
   enemyName: Maus, The servant of decay
   resetTime: 5
+  randomState: 0
   healthSlider: {fileID: 0}
   normalColour: {fileID: 2100000, guid: b44bd93536eefe042be6db21ff9575be, type: 2}
   shockWave: {fileID: 0}

@@ -27,10 +27,13 @@ public class Enemy : MonoBehaviour
     //stats
     [Header("Stats")]
     public Animator enemyAnimator;
-    public float health, damage;
+    public float health, currentHealth, damage;
     public string enemyName;
     public float resetTime = 5;
-    
+
+    int currentState = 0;
+    public int randomState = 0;
+
     bool playerPosActive;
 
     public Slider healthSlider;
@@ -40,6 +43,10 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        currentState = 0;
+        randomState = 0;
+        currentHealth = health;
+
         healthSlider.maxValue = health;
         player = GameObject.Find("PlayerHolder").transform;
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -71,7 +78,7 @@ public class Enemy : MonoBehaviour
         agent.SetDestination(player.position);
     }
     
-    //basic things for the attack, the actual attack happens inside the scripts that inherit from this one
+    //basic things for the attack, the actual attack happens inside the scripts that inherits from this one
     public virtual void AttackPlayer()
     {
         
@@ -81,41 +88,45 @@ public class Enemy : MonoBehaviour
         var playerPos = player.position;
         playerPos.y = transform.position.y;
 
-
-        //transform.LookAt(playerPos);
-        /* if (!playerPosActive && !attacking)
-         {
-             Invoke("SetPlayerPos", 1);
-             playerPosActive = true;
-         }*/
-
-
-        //transform.rotation = Quaternion.LookRotation(playerPos);
-        /*if (!attacking)
-        {
             //hier attacked hij HOWEVER ik heb daar een ander script voor
             //miss gooi ik het heir ook wel in
             // is miss wel handig 
-            *//*nouja in ieder geval
-             de bedoeling is dat hij hier attacks uit gaat voeren en de animaties doet enzo en hutsafluts*//*
+            //*nouja in ieder geval
+             //de bedoeling is dat hij hier attacks uit gaat voeren en de animaties doet enzo en hutsafluts*//*
 
-            //enemyAnimator.SetTrigger("TailRight");
-            Debug.Log(" AAAAAAH");
-            //player.transform.GetComponent<Attack>().TakeDamage(damage);
+        // dus de attack gewoon in MAus 
 
-            Invoke("ResetAttack", 5);
-            attacking = true;
-        }*/
+       
     }
 
     public void TakeDamage(float damage)
     {
         StartCoroutine("ChangeMaterial");
-        health -= damage;
-        
+        currentHealth -= damage;
         healthSlider.value = health;
 
-        if (health <= 0)
+        //Zet de currentstate naar boven als de health onder een bepaald procent komt.
+        if (currentHealth / health <= 0.99f && currentState == 0)
+        {
+            //Statefunctie();
+            currentState++;
+            randomState++;
+        }
+        else if (currentHealth / health <= 0.6f && currentState == 1)
+        {
+            //StateFunctie();
+            currentState++;
+            randomState++;
+        }
+        else if (currentHealth / health <= 0.3f && currentState == 2)
+        {
+            //StateFunctie();
+            currentState++;
+            randomState++;
+        }
+
+        //die
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
             Debug.Log(enemyName + " DIED");
@@ -125,10 +136,6 @@ public class Enemy : MonoBehaviour
         
     }
 
-    /*public void Reset()
-    {
-        SceneManager.LoadScene(0);
-    }*/
 
     IEnumerator ChangeMaterial()
     {

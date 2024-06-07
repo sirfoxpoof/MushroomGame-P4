@@ -24,6 +24,9 @@ public class Maus : Enemy
         base.AttackPlayer();
         if (!attacking)
         {
+
+            Random.Range(0, randomState);
+            Debug.Log(randomState.ToString());
             //enemyAnimator.SetTrigger("TailLeft");
             shockWave.Play();
             Invoke("ResetAttack", resetTime);
