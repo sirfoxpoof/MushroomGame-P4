@@ -29,12 +29,13 @@ public class Enemy : MonoBehaviour
     public Animator enemyAnimator;
     public float health, currentHealth, damage;
     public string enemyName;
-    public float resetTime = 5;
+    public float resetTime = 7;
 
+    //TO HIDE JUST TO CHECK NOW
     public int currentState = 0;
     public int randomState = 0;
 
-   // bool playerPosActive;
+    [HideInInspector]public bool playerPosActive;
 
     public Slider healthSlider;
 
@@ -76,6 +77,7 @@ public class Enemy : MonoBehaviour
     public void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        //enemyAnimator.Play("Walk");
     }
     
     //basic things for the attack, the actual attack happens inside the scripts that inherits from this one
@@ -84,15 +86,15 @@ public class Enemy : MonoBehaviour
         
         agent.SetDestination(transform.position);
 
-       /* playerPosActive = true;
+        playerPosActive = true;
         var playerPos = player.position;
         playerPos.y = transform.position.y;
-*/
-            //hier attacked hij HOWEVER ik heb daar een ander script voor
-            //miss gooi ik het heir ook wel in
-            // is miss wel handig 
-            //*nouja in ieder geval
-             //de bedoeling is dat hij hier attacks uit gaat voeren en de animaties doet enzo en hutsafluts*//*
+
+        //hier attacked hij HOWEVER ik heb daar een ander script voor
+        //miss gooi ik het heir ook wel in
+        // is miss wel handig 
+        //*nouja in ieder geval
+        //de bedoeling is dat hij hier attacks uit gaat voeren en de animaties doet enzo en hutsafluts*//*
 
         // dus de attack gewoon in MAus 
     }

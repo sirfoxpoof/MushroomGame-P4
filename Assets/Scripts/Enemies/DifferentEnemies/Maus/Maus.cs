@@ -43,7 +43,7 @@ public class Maus : Enemy
             //first attack
             Debug.Log("FIRST");
         }
-        if(randomState == 1)
+        if (randomState == 1)
         {
             //secodn attack
             enemyAnimator.SetTrigger("TailLeft");
