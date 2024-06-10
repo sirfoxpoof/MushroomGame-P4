@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("ToFill")]
+    [Header("Enemy Values")]
+    
     public NavMeshAgent agent;
     public Transform player;
 
@@ -36,7 +37,7 @@ public class Enemy : MonoBehaviour
     public int randomState = 0;
 
     [HideInInspector]public bool playerPosActive;
-
+    [HideInInspector] public Vector3 playerPos;
     public Slider healthSlider;
 
     public Material normalColour;
@@ -86,9 +87,9 @@ public class Enemy : MonoBehaviour
         
         agent.SetDestination(transform.position);
 
-        playerPosActive = true;
+        /*playerPosActive = true;
         var playerPos = player.position;
-        playerPos.y = transform.position.y;
+        playerPos.y = transform.position.y;*/
 
         //hier attacked hij HOWEVER ik heb daar een ander script voor
         //miss gooi ik het heir ook wel in

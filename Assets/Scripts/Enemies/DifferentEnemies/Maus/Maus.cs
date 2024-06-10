@@ -6,24 +6,25 @@ using UnityEngine.AI;
 
 public class Maus : Enemy
 {
+    [Header("Maus Values")]
     [SerializeField] ParticleSystem shockWave;
-    [SerializeField]float shockWaveTime;
+    [SerializeField] float shockWaveTime, speed, normalSpeed;
 
+    bool speedAttacking;
+
+    public AudioSource honk;
     private void Start()
     {
         shockWave = GetComponentInChildren<ParticleSystem>();
+        speedAttacking = false;
     }
     public override void AttackPlayer()
     {
-
-        //hier elke keer een random.range in doen, die moet gekoppeld zijn aan attacks
-        //dan in de update checken welke eruit is gekomen
-
-        //als de muis op een bepaalde health is dan krijtg hij een andere state en wordt er een index aan de random.range toegevoegd
-        //dan gaat hij weer een random.range doen met die extra index en kan hij zo extra attacks doen
         base.AttackPlayer();
         if (!attacking)
         {
+            playerPosActive = true;
+            playerPos = player.position;
 
             randomState = Random.Range(0, currentState);
             Debug.Log(randomState.ToString());
@@ -33,7 +34,13 @@ public class Maus : Enemy
             Invoke("ResetAttack", resetTime);
             attacking = true;
         }
-    
+
+        if (speedAttacking)
+        {
+            
+            agent.SetDestination(playerPos);
+            agent.speed = speed;
+        }
     }
 
     void CheckAttackState()
@@ -41,7 +48,10 @@ public class Maus : Enemy
         if(randomState == 0)
         {
             //first attack
+            honk.Play();
             Debug.Log("FIRST");
+            speedAttacking = true;
+            Invoke("ResetAttack", resetTime);
         }
         if (randomState == 1)
         {
@@ -65,6 +75,7 @@ public class Maus : Enemy
     private void ResetAttack()
     {
         attacking = false;
-        gameObject.GetComponent<NavMeshAgent>().speed = 2;
+        speedAttacking = false;
+        gameObject.GetComponent<NavMeshAgent>().speed = normalSpeed;
     }
 }
