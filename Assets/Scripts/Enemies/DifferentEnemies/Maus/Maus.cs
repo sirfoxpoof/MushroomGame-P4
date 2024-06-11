@@ -11,7 +11,7 @@ public class Maus : Enemy
     [SerializeField] float shockWaveTime, speed, normalSpeed;
 
     bool speedAttacking;
-
+    float leftRight = 1;
     public AudioSource honk;
     private void Start()
     {
@@ -45,7 +45,7 @@ public class Maus : Enemy
 
     void CheckAttackState()
     {
-        if(randomState == 0)
+        if (randomState == 0)
         {
             //first attack
             honk.Play();
@@ -56,7 +56,16 @@ public class Maus : Enemy
         if (randomState == 1)
         {
             //secodn attack
-            enemyAnimator.SetTrigger("TailLeft");
+            leftRight = Random.Range(0, 2);
+
+            if(leftRight == 0)
+            {
+                enemyAnimator.SetTrigger("TailLeft");
+            }
+            else if(leftRight == 1)
+            {
+                enemyAnimator.SetTrigger("TailRight");
+            }
         }
         if(randomState == 2)
         {

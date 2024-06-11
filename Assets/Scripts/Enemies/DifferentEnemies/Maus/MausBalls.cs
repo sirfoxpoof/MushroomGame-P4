@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class MausBalls : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    //shit voor de poison spots, elke bal health geven
+    //als de health op 0 is dan moet de spot stuk
+    // als de spot stuk is dan damage doen aan muis
+    //
+    Maus mausScript;
+
+    void StartUp()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.gameObject.tag == "Weapon")
+        {
+
+        }
     }
 }

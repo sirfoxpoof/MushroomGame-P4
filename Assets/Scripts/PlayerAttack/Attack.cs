@@ -63,7 +63,7 @@ public class Attack : MonoBehaviour
     {
         if(context.performed)
         {
-            if(allowedAttack && !playerMovement.jumping)
+            if(allowedAttack && playerMovement.jumping)
             {
                 weapons.damage = weapons.critDamage;
                 weapons.gameObject.GetComponent<CapsuleCollider>().enabled = true;
