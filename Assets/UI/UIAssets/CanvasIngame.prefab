@@ -775,7 +775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 294.78262}
+  m_AnchoredPosition: {x: 0, y: 294.78268}
   m_SizeDelta: {x: 0, y: 906.3441}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3359442904467920400
@@ -1529,8 +1529,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2408586716528577694}
   m_HandleRect: {fileID: 980549933216479312}
   m_Direction: 2
-  m_Value: -0.0031848638
-  m_Size: 0.64223194
+  m_Value: -0.0014663376
+  m_Size: 0
   m_NumberOfSteps: 11
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2214,7 +2214,10 @@ MonoBehaviour:
   secondaryGameObjects: []
   primaryGameObjects: []
   menuGameObjects: []
+  enemy: {fileID: 0}
+  attack: {fileID: 0}
   mainMenuOn: 0
+  hud: {fileID: 0}
 --- !u!114 &5416474341527868499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4384,6 +4387,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.19999695
       objectReference: {fileID: 0}
+    - target: {fileID: 2467646371225823008, guid: 4791a7f8aef33df4c89848b5546eb69f,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 2801612850827789688, guid: 4791a7f8aef33df4c89848b5546eb69f,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -4548,6 +4556,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6953447011200984592, guid: 4791a7f8aef33df4c89848b5546eb69f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8295151618732683670, guid: 4791a7f8aef33df4c89848b5546eb69f,
         type: 3}

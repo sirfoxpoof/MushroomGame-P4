@@ -116,6 +116,42 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""W"",
+                    ""type"": ""Button"",
+                    ""id"": ""aab2ae6a-ac4a-4a22-8e03-8c3fa91dcc9d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""A"",
+                    ""type"": ""Button"",
+                    ""id"": ""42b81abc-82a9-4787-a3ac-492cd0a8259c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""S"",
+                    ""type"": ""Button"",
+                    ""id"": ""dc512c82-932d-42f2-b466-b36c23e23569"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""D"",
+                    ""type"": ""Button"",
+                    ""id"": ""ffb3fb95-5218-4dc7-9b43-0cf6eed6b7b6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -393,6 +429,50 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
                     ""action"": ""Settings"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e01d4c8-74f7-434f-b5d4-89fb2ce126c7"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""W"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97c69fac-b063-4a4f-a4cb-5dff7131b47f"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""A"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5275cf28-3822-4c2b-9375-a5b10bb97a2f"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""S"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""618cbb07-a368-4654-a0c3-fddf69f28367"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""D"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -472,6 +552,10 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
         m_Character_Attack = m_Character.FindAction("Attack", throwIfNotFound: true);
         m_Character_Interact = m_Character.FindAction("Interact", throwIfNotFound: true);
         m_Character_Settings = m_Character.FindAction("Settings", throwIfNotFound: true);
+        m_Character_W = m_Character.FindAction("W", throwIfNotFound: true);
+        m_Character_A = m_Character.FindAction("A", throwIfNotFound: true);
+        m_Character_S = m_Character.FindAction("S", throwIfNotFound: true);
+        m_Character_D = m_Character.FindAction("D", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -543,6 +627,10 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_Character_Attack;
     private readonly InputAction m_Character_Interact;
     private readonly InputAction m_Character_Settings;
+    private readonly InputAction m_Character_W;
+    private readonly InputAction m_Character_A;
+    private readonly InputAction m_Character_S;
+    private readonly InputAction m_Character_D;
     public struct CharacterActions
     {
         private @PlayerActionMap m_Wrapper;
@@ -557,6 +645,10 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Character_Attack;
         public InputAction @Interact => m_Wrapper.m_Character_Interact;
         public InputAction @Settings => m_Wrapper.m_Character_Settings;
+        public InputAction @W => m_Wrapper.m_Character_W;
+        public InputAction @A => m_Wrapper.m_Character_A;
+        public InputAction @S => m_Wrapper.m_Character_S;
+        public InputAction @D => m_Wrapper.m_Character_D;
         public InputActionMap Get() { return m_Wrapper.m_Character; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -596,6 +688,18 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
             @Settings.started += instance.OnSettings;
             @Settings.performed += instance.OnSettings;
             @Settings.canceled += instance.OnSettings;
+            @W.started += instance.OnW;
+            @W.performed += instance.OnW;
+            @W.canceled += instance.OnW;
+            @A.started += instance.OnA;
+            @A.performed += instance.OnA;
+            @A.canceled += instance.OnA;
+            @S.started += instance.OnS;
+            @S.performed += instance.OnS;
+            @S.canceled += instance.OnS;
+            @D.started += instance.OnD;
+            @D.performed += instance.OnD;
+            @D.canceled += instance.OnD;
         }
 
         private void UnregisterCallbacks(ICharacterActions instance)
@@ -630,6 +734,18 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
             @Settings.started -= instance.OnSettings;
             @Settings.performed -= instance.OnSettings;
             @Settings.canceled -= instance.OnSettings;
+            @W.started -= instance.OnW;
+            @W.performed -= instance.OnW;
+            @W.canceled -= instance.OnW;
+            @A.started -= instance.OnA;
+            @A.performed -= instance.OnA;
+            @A.canceled -= instance.OnA;
+            @S.started -= instance.OnS;
+            @S.performed -= instance.OnS;
+            @S.canceled -= instance.OnS;
+            @D.started -= instance.OnD;
+            @D.performed -= instance.OnD;
+            @D.canceled -= instance.OnD;
         }
 
         public void RemoveCallbacks(ICharacterActions instance)
@@ -704,5 +820,9 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnSettings(InputAction.CallbackContext context);
+        void OnW(InputAction.CallbackContext context);
+        void OnA(InputAction.CallbackContext context);
+        void OnS(InputAction.CallbackContext context);
+        void OnD(InputAction.CallbackContext context);
     }
 }

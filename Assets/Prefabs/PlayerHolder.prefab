@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 414215492936019519}
   - component: {fileID: 298682472765666836}
   - component: {fileID: 9109913786078057076}
+  - component: {fileID: 7407211276646800466}
   m_Layer: 7
   m_Name: PlayerHolder
   m_TagString: Player
@@ -156,6 +157,27 @@ MonoBehaviour:
   mainmenu: {fileID: 0}
   secondaryGameObjects: []
   primaryGameObjects: []
+--- !u!114 &7407211276646800466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89657493610224492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f46417ed3002a47a13dbca6bf8b9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  w: 0
+  a: 0
+  s: 0
+  d: 0
+  wt: {fileID: 0}
+  at: {fileID: 0}
+  st: {fileID: 0}
+  dt: {fileID: 0}
+  tutorialmove: {fileID: 0}
 --- !u!1 &179291073195776172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3226,6 +3248,70 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 54f8f24e-22cd-4a56-af87-99fa842d9c48
     m_ActionName: Character/Settings[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7407211276646800466}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: W
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: aab2ae6a-ac4a-4a22-8e03-8c3fa91dcc9d
+    m_ActionName: Character/W[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7407211276646800466}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: A
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 42b81abc-82a9-4787-a3ac-492cd0a8259c
+    m_ActionName: Character/W1[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7407211276646800466}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: S
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dc512c82-932d-42f2-b466-b36c23e23569
+    m_ActionName: Character/W2[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7407211276646800466}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: D
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ffb3fb95-5218-4dc7-9b43-0cf6eed6b7b6
+    m_ActionName: Character/W3[/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Character
