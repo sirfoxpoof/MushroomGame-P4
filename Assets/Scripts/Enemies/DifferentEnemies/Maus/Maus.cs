@@ -8,6 +8,7 @@ public class Maus : Enemy
 {
     [Header("Maus Values")]
     [SerializeField] ParticleSystem shockWave;
+    [SerializeField] Transform speedAttackPoint;
     [SerializeField] float shockWaveTime, speed, normalSpeed;
 
     bool speedAttacking;
@@ -24,7 +25,7 @@ public class Maus : Enemy
         if (!attacking)
         {
             playerPosActive = true;
-            playerPos = player.position;
+            playerPos = speedAttackPoint.position;
 
             randomState = Random.Range(0, currentState);
             Debug.Log(randomState.ToString());
@@ -35,12 +36,12 @@ public class Maus : Enemy
             attacking = true;
         }
 
-        if (speedAttacking)
+       /* if (speedAttacking)
         {
             
             agent.SetDestination(playerPos);
             agent.speed = speed;
-        }
+        }*/
     }
 
     void CheckAttackState()
@@ -48,10 +49,16 @@ public class Maus : Enemy
         if (randomState == 0)
         {
             //first attack
-            honk.Play();
-            Debug.Log("FIRST");
+            /* honk.Play();
+             Debug.Log("FIRST");
+             speedAttacking = true;
+             Invoke("ResetAttack", resetTime);*/
+
             speedAttacking = true;
-            Invoke("ResetAttack", resetTime);
+            agent.speed = speed;
+            StartCoroutine("SprintAttack", playerPos);
+
+
         }
         if (randomState == 1)
         {
@@ -76,11 +83,34 @@ public class Maus : Enemy
         }
     }
 
+    IEnumerator SprintAttack(Vector3 targetPos)
+    {
+        float step = 0.12f;
+
+        while (speedAttacking)
+        {
+            if (step >= (targetPos - transform.position).magnitude)
+            {
+                transform.position = targetPos;
+                speedAttacking = false;
+                break;
+            }
+            //transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
+            agent.SetDestination(targetPos);
+            yield return new WaitForEndOfFrame();
+        }
+        yield return new WaitForEndOfFrame();
+        
+    }
+
+
     IEnumerator ShockWaveTime()
     {
         yield return new WaitForSeconds(shockWaveTime);
         shockWave.Play();
     }
+
+
     private void ResetAttack()
     {
         attacking = false;

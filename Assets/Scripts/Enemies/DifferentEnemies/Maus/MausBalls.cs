@@ -15,15 +15,17 @@ public class MausBalls : MonoBehaviour
 
     [SerializeField]Maus mausScript;
     [SerializeField] float ballDamage, throwAmount;
-    Vector3 playerThrow = new Vector3 (0, 0, 0);
+    Vector3 playerThrow = new Vector3 (0, 0, -5);
 
     [SerializeField]Material normalColour;
 
-    void StartUp()
+    private void Start()
     {
         mausScript = GetComponentInParent<Maus>();
         normalColour = gameObject.GetComponent<Material>();
+        
     }
+   
 
 
     private void OnTriggerEnter(Collider other)
@@ -31,9 +33,9 @@ public class MausBalls : MonoBehaviour
         if(other.gameObject.tag == "Weapon")
         {
             weapon = other.gameObject;
-            playerBody = other.gameObject;
+            /*playerBody = other.gameObject;
 
-            player = playerBody.GetComponent<PlayerMovement>();
+            player = playerBody.GetComponent<PlayerMovement>();*/
 
             Debug.Log("AAAAAAAAAAAAAAAAH");
             TakeBallDamage();
@@ -45,12 +47,13 @@ public class MausBalls : MonoBehaviour
     {
         health -= weapon.GetComponent<Weapons>().damage;
         StartCoroutine("ChangeMaterial");
+
         if(health <= 0)
         {
-            player.rb.AddForce(player.jump * throwAmount, ForceMode.Impulse);
+            player.rb.AddForce(playerThrow * throwAmount, ForceMode.Impulse);
 
             mausScript.TakeDamage(ballDamage);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
 
 
         }
