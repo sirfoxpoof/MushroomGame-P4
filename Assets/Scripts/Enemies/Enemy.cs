@@ -141,7 +141,6 @@ public class Enemy : MonoBehaviour
 
     IEnumerator ChangeMaterial()
     {
-        Debug.Log("HUTS");
         gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.red;
         yield return new WaitForSeconds(1);
         gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = normalColour.color;

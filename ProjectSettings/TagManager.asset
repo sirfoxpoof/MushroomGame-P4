@@ -9,6 +9,7 @@ TagManager:
   - Boss area
   - Primary
   - Menu
+  - Weapon
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 130406578282291042}
   - component: {fileID: 8461544467906827654}
+  - component: {fileID: 5897629686989160930}
   m_Layer: 0
   m_Name: PoisonHolder
   m_TagString: Untagged
@@ -45,6 +46,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efcdea550295bd4783c707a43d8fd9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 20
+  mausScript: {fileID: 0}
+  ballDamage: 50
+  normalColour: {fileID: 2100000, guid: 7503ca391ec688f4b8cdf65d6b6ba214, type: 2}
+--- !u!135 &5897629686989160930
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278816289817836349}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5034914093776377934
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,7 +82,6 @@ GameObject:
   - component: {fileID: 8283109390189822684}
   - component: {fileID: 6217579733837986492}
   - component: {fileID: 2498650221820445000}
-  - component: {fileID: 6872889294425986028}
   m_Layer: 0
   m_Name: poison spot (1)
   m_TagString: Untagged
@@ -107,7 +132,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7503ca391ec688f4b8cdf65d6b6ba214, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,24 +154,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6872889294425986028
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5034914093776377934}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
