@@ -45,7 +45,6 @@ public class Tutorial : MonoBehaviour
             tutorialmove.SetActive(false);
         }
 
-
     }
 
 }
