@@ -93,6 +93,7 @@ public class Maus : Enemy
         while (speedAttacking)
         {
             sprintCollider.enabled = true;
+            enemyAnimator.Play("Sprint");
             if (step >= (targetPos - transform.position).magnitude)
             {
                 transform.position = targetPos;

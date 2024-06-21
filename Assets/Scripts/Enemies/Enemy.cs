@@ -78,7 +78,7 @@ public class Enemy : MonoBehaviour
     public void ChasePlayer()
     {
         agent.SetDestination(player.position);
-        //enemyAnimator.Play("Walk");
+        enemyAnimator.SetTrigger("Walk");
     }
     
     //basic things for the attack, the actual attack happens inside the scripts that inherits from this one
@@ -108,9 +108,10 @@ public class Enemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            enemyAnimator.SetTrigger("Die");
             Debug.Log(enemyName + " DIED");
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
             //Invoke("Reset", 2);
         }
 
@@ -134,7 +135,6 @@ public class Enemy : MonoBehaviour
             //randomState++;
         }
 
-        //die
         
     }
 

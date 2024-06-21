@@ -51,11 +51,11 @@ public class MausBalls : MonoBehaviour
     {
         if (!takingDamage)
         {
-
-        }
             health -= weapon.GetComponent<Weapons>().damage;
             StartCoroutine("ChangeMaterial");
-           // takingDamage = true;
+            takingDamage = true;
+
+        }
 
         if(health <= 0)
         {
@@ -77,6 +77,7 @@ public class MausBalls : MonoBehaviour
         gameObject.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
         yield return new WaitForSeconds(1);
         gameObject.GetComponentInChildren<MeshRenderer>().material.color = normalColour.color;
-        //takingDamage = false;
+        takingDamage = false;
+        Debug.Log(takingDamage + " Poison spots can take damage again");
     }
 }

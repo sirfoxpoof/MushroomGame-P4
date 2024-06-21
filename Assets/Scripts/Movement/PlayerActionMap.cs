@@ -28,24 +28,6 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
             ""id"": ""6f75007a-981c-4fbe-b7f1-adbab859daf7"",
             ""actions"": [
                 {
-                    ""name"": ""Dodge left"",
-                    ""type"": ""Value"",
-                    ""id"": ""27873daf-2e3d-4e6c-a569-3ba686e2009e"",
-                    ""expectedControlType"": ""Double"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Dodge right"",
-                    ""type"": ""Value"",
-                    ""id"": ""c7debcd1-362b-4632-953b-894c37d6849f"",
-                    ""expectedControlType"": ""Double"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""Look"",
                     ""type"": ""PassThrough"",
                     ""id"": ""99f9fb74-3a80-4759-8002-1dcafbe2aac1"",
@@ -354,72 +336,6 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""One Modifier"",
-                    ""id"": ""3af3b2a5-bc67-4e19-b929-5369325b9b91"",
-                    ""path"": ""OneModifier"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Dodge left"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""modifier"",
-                    ""id"": ""d5535d58-0e4b-47a2-9342-7d1c37b1151f"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Dodge left"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""binding"",
-                    ""id"": ""c7a074a3-5902-4661-929b-dec4cbb6246f"",
-                    ""path"": ""<Keyboard>/ctrl"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Dodge left"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""One Modifier"",
-                    ""id"": ""4aa9cfda-5839-47ab-8320-4918dfde7c5a"",
-                    ""path"": ""OneModifier"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Dodge right"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""modifier"",
-                    ""id"": ""ca01937d-f66c-4102-9406-d9d7aaa7f37a"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Dodge right"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""binding"",
-                    ""id"": ""6e3070b8-19ea-4ffb-af99-e58aed3813e7"",
-                    ""path"": ""<Keyboard>/ctrl"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Dodge right"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
                     ""id"": ""c0d4feb6-7ed5-4501-afd7-d1a2c051de30"",
                     ""path"": ""<Keyboard>/escape"",
@@ -542,8 +458,6 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
 }");
         // Character
         m_Character = asset.FindActionMap("Character", throwIfNotFound: true);
-        m_Character_Dodgeleft = m_Character.FindAction("Dodge left", throwIfNotFound: true);
-        m_Character_Dodgeright = m_Character.FindAction("Dodge right", throwIfNotFound: true);
         m_Character_Look = m_Character.FindAction("Look", throwIfNotFound: true);
         m_Character_Move = m_Character.FindAction("Move", throwIfNotFound: true);
         m_Character_Sprint = m_Character.FindAction("Sprint", throwIfNotFound: true);
@@ -617,8 +531,6 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
     // Character
     private readonly InputActionMap m_Character;
     private List<ICharacterActions> m_CharacterActionsCallbackInterfaces = new List<ICharacterActions>();
-    private readonly InputAction m_Character_Dodgeleft;
-    private readonly InputAction m_Character_Dodgeright;
     private readonly InputAction m_Character_Look;
     private readonly InputAction m_Character_Move;
     private readonly InputAction m_Character_Sprint;
@@ -635,8 +547,6 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
     {
         private @PlayerActionMap m_Wrapper;
         public CharacterActions(@PlayerActionMap wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Dodgeleft => m_Wrapper.m_Character_Dodgeleft;
-        public InputAction @Dodgeright => m_Wrapper.m_Character_Dodgeright;
         public InputAction @Look => m_Wrapper.m_Character_Look;
         public InputAction @Move => m_Wrapper.m_Character_Move;
         public InputAction @Sprint => m_Wrapper.m_Character_Sprint;
@@ -658,12 +568,6 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_CharacterActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_CharacterActionsCallbackInterfaces.Add(instance);
-            @Dodgeleft.started += instance.OnDodgeleft;
-            @Dodgeleft.performed += instance.OnDodgeleft;
-            @Dodgeleft.canceled += instance.OnDodgeleft;
-            @Dodgeright.started += instance.OnDodgeright;
-            @Dodgeright.performed += instance.OnDodgeright;
-            @Dodgeright.canceled += instance.OnDodgeright;
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
@@ -704,12 +608,6 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(ICharacterActions instance)
         {
-            @Dodgeleft.started -= instance.OnDodgeleft;
-            @Dodgeleft.performed -= instance.OnDodgeleft;
-            @Dodgeleft.canceled -= instance.OnDodgeleft;
-            @Dodgeright.started -= instance.OnDodgeright;
-            @Dodgeright.performed -= instance.OnDodgeright;
-            @Dodgeright.canceled -= instance.OnDodgeright;
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
@@ -810,8 +708,6 @@ public partial class @PlayerActionMap: IInputActionCollection2, IDisposable
     }
     public interface ICharacterActions
     {
-        void OnDodgeleft(InputAction.CallbackContext context);
-        void OnDodgeright(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
