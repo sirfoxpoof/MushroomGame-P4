@@ -14,6 +14,9 @@ public class Maus : Enemy
     bool speedAttacking;
     float leftRight = 1;
     public AudioSource honk;
+
+    [SerializeField] Collider sprintCollider;
+
     private void Start()
     {
         shockWave = GetComponentInChildren<ParticleSystem>();
@@ -89,6 +92,7 @@ public class Maus : Enemy
 
         while (speedAttacking)
         {
+            sprintCollider.enabled = true;
             if (step >= (targetPos - transform.position).magnitude)
             {
                 transform.position = targetPos;
@@ -100,6 +104,7 @@ public class Maus : Enemy
             yield return new WaitForEndOfFrame();
         }
         yield return new WaitForEndOfFrame();
+        sprintCollider.enabled = false;
         
     }
 

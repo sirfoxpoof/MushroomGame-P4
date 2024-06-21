@@ -14,6 +14,7 @@ public class MausBalls : MonoBehaviour
     [SerializeField] PlayerMovement player;
 
     [SerializeField]Maus mausScript;
+    [SerializeField] Animator mausAnimator;
     [SerializeField] float ballDamage, throwAmount;
     Vector3 playerThrow = new Vector3 (0, 0, -10);
 
@@ -58,6 +59,9 @@ public class MausBalls : MonoBehaviour
 
         if(health <= 0)
         {
+            mausAnimator.SetTrigger("Throw");
+
+
             player.rb.AddForce(playerThrow * throwAmount, ForceMode.Impulse);
 
             mausScript.TakeDamage(ballDamage);
