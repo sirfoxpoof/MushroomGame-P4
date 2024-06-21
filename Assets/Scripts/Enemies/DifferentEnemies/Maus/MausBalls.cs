@@ -15,12 +15,15 @@ public class MausBalls : MonoBehaviour
 
     [SerializeField]Maus mausScript;
     [SerializeField] float ballDamage, throwAmount;
-    Vector3 playerThrow = new Vector3 (0, 0, -5);
+    Vector3 playerThrow = new Vector3 (0, 0, -10);
 
     [SerializeField]Material normalColour;
 
+    [SerializeField] bool takingDamage;
+
     private void Start()
     {
+        takingDamage = false;
         mausScript = GetComponentInParent<Maus>();
         normalColour = gameObject.GetComponent<Material>();
         
@@ -45,8 +48,13 @@ public class MausBalls : MonoBehaviour
 
     void TakeBallDamage()
     {
-        health -= weapon.GetComponent<Weapons>().damage;
-        StartCoroutine("ChangeMaterial");
+        if (!takingDamage)
+        {
+
+        }
+            health -= weapon.GetComponent<Weapons>().damage;
+            StartCoroutine("ChangeMaterial");
+           // takingDamage = true;
 
         if(health <= 0)
         {
@@ -65,5 +73,6 @@ public class MausBalls : MonoBehaviour
         gameObject.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
         yield return new WaitForSeconds(1);
         gameObject.GetComponentInChildren<MeshRenderer>().material.color = normalColour.color;
+        //takingDamage = false;
     }
 }

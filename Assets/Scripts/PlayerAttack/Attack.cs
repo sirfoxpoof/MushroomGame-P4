@@ -129,7 +129,6 @@ public class Attack : MonoBehaviour
 
     IEnumerator DamageColour()
     {
-        Debug.Log("TAKING DAMAGE");
         gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.red;
         yield return new WaitForSeconds(1.2f);
         gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.white;

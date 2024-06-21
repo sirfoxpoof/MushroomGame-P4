@@ -47,9 +47,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  player: {fileID: 0}
   mausScript: {fileID: 0}
   ballDamage: 50
+  throwAmount: 10
   normalColour: {fileID: 2100000, guid: 7503ca391ec688f4b8cdf65d6b6ba214, type: 2}
+  takingDamage: 0
 --- !u!135 &5897629686989160930
 SphereCollider:
   m_ObjectHideFlags: 0
