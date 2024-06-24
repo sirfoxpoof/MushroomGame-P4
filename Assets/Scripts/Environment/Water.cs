@@ -5,11 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class Water : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    GameObject player;
+   [SerializeField] float waterdamage;
+   
+    private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(0);
+            player = collision.gameObject;
+            player.GetComponent<Attack>().waterDamage = true;
+            Invoke("TakeDamage", 0.05f);
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            player.GetComponent<Attack>().waterDamage = false;
+        }
+    }
+
+    private void TakeDamage()
+    {
+        player.GetComponent<Attack>().TakeDamage(waterdamage);
     }
 }

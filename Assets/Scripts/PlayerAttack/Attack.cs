@@ -23,7 +23,7 @@ public class Attack : MonoBehaviour
     //float dodgeValue = 0.01f;
 
     bool takingDamage;
-
+    [HideInInspector] public bool waterDamage;
     public void StartAttack()
     {
         healthSlider.maxValue = health;
@@ -102,11 +102,16 @@ public class Attack : MonoBehaviour
     {
         //de character zichzelf damage geven
 
-        if(!takingDamage)
+        if(!takingDamage && !waterDamage)
         {
             health -= damage;
             StartCoroutine("DamageColour");
             takingDamage = true;
+            healthSlider.value = health;
+        }
+        else if(waterDamage) 
+        {
+            health -= damage;
             healthSlider.value = health;
         }
 
