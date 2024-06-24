@@ -1233,7 +1233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4008441715535603793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5195,7 +5195,7 @@ PrefabInstance:
     - target: {fileID: 8295151618732683670, guid: 4791a7f8aef33df4c89848b5546eb69f,
         type: 3}
       propertyPath: m_Name
-      value: ToggleW
+      value: ToggleGlide
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

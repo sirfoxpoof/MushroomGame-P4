@@ -137,6 +137,7 @@ MonoBehaviour:
   allowedAttack: 0
   attacking: 0
   heavyAttacking: 0
+  waterDamage: 0
 --- !u!114 &9109913786078057076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,11 +174,20 @@ MonoBehaviour:
   a: 0
   s: 0
   d: 0
+  jump: 0
+  glide: 0
+  attack: 0
   wt: {fileID: 0}
   at: {fileID: 0}
   st: {fileID: 0}
   dt: {fileID: 0}
+  jumpt: {fileID: 0}
+  glidet: {fileID: 0}
+  attackt: {fileID: 0}
   tutorialmove: {fileID: 0}
+  tutorialjump: {fileID: 0}
+  tutorialglide: {fileID: 0}
+  tutorialattack: {fileID: 0}
 --- !u!1 &179291073195776172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,6 +3156,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7407211276646800466}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 63eb8a03-da77-40c0-b531-5cd8b508549f
     m_ActionName: Character/Jump[/Keyboard/space]
   - m_PersistentCalls:
@@ -3153,6 +3175,18 @@ MonoBehaviour:
       - m_Target: {fileID: 298682472765666836}
         m_TargetAssemblyTypeName: Attack, Assembly-CSharp
         m_MethodName: Attacking
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7407211276646800466}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: Attack
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3198,40 +3232,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7407211276646800466}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: Glide
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c15ce3a4-2c8f-49a6-96d8-0c4d5221ccc8
     m_ActionName: Character/Glide[/Keyboard/alt]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 298682472765666836}
-        m_TargetAssemblyTypeName: Attack, Assembly-CSharp
-        m_MethodName: DodgeLeft
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 27873daf-2e3d-4e6c-a569-3ba686e2009e
-    m_ActionName: Character/Dodge left[/Keyboard/a,/Keyboard/ctrl]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 298682472765666836}
-        m_TargetAssemblyTypeName: Attack, Assembly-CSharp
-        m_MethodName: DodgeRight
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: c7debcd1-362b-4632-953b-894c37d6849f
-    m_ActionName: Character/Dodge right[/Keyboard/d,/Keyboard/ctrl]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9109913786078057076}
@@ -3580,7 +3594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8535742595196380451}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.061577924, y: 0.8870146, z: 0.12399736, w: 0.44049743}
+  m_LocalRotation: {x: -0.061577946, y: 0.88701457, z: 0.1239974, w: 0.44049743}
   m_LocalPosition: {x: -2.0396194, y: 0.8499999, z: 1.5471115}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
