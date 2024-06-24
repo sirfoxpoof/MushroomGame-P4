@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
-    public bool w, a, s, d;
-    public Toggle wt, at, st, dt;
+    public bool w, a, s, d, jump, glide, attack;
+    public Toggle wt, at, st, dt, jumpt, glidet, attackt;
     public GameObject tutorialmove;
 
     public void W(InputAction.CallbackContext context)
@@ -38,11 +38,24 @@ public class Tutorial : MonoBehaviour
         Invoke("CheckTutorial", 2);
     }
 
+    public void Jump(InputAction.CallbackContext context)
+    {
+        jump = true;
+        jumpt.isOn = true;
+        Invoke("CheckTutorial", 2);
+    }
+
+
+
     void CheckTutorial()
     {
         if (a && s && w && d)
         {
             tutorialmove.SetActive(false);
+            if (jump)
+            {
+
+            }
         }
 
     }
