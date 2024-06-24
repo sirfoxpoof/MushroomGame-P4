@@ -4185,7 +4185,7 @@ PrefabInstance:
     - target: {fileID: 1711072889349366879, guid: b6f326a8078745443bd5ef51e8a86cfb,
         type: 3}
       propertyPath: m_text
-      value: while gliding, press
+      value: while in air, press
       objectReference: {fileID: 0}
     - target: {fileID: 1711072889349366879, guid: b6f326a8078745443bd5ef51e8a86cfb,
         type: 3}
