@@ -67,21 +67,21 @@ public class Tutorial : MonoBehaviour
         {
             tutorialmove.SetActive(false);
             tutorialjump.SetActive(true);
-            print("switch");
+       
             if (jump)
             {
                 tutorialjump.SetActive(false);
                 tutorialglide.SetActive(true);
-                print("switch");
+               
                 if (glide)
                 {
                     tutorialglide.SetActive(false);
                     tutorialattack.SetActive(true);
-                    print("switch");
+                  
                     if (attack)
                     {
                         tutorialattack.SetActive(false);
-                        print("switch");
+                       
                     }
                 }
 
