@@ -10,7 +10,7 @@ public class StartUp : MonoBehaviour
     [SerializeField] GameObject[] primaryGameObjects;
     [SerializeField] GameObject[] menuGameObjects;
 
-    [SerializeField] GameObject deathScreen;
+    public GameObject deathScreen;
     [SerializeField] Maus enemy;
     [SerializeField] Attack attack;
 

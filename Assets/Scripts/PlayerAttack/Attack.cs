@@ -13,6 +13,7 @@ public class Attack : MonoBehaviour
     float maxHealth = 100;
     public Weapons weapons;
     public PlayerMovement playerMovement;
+    public StartUp startUp;
     public Slider healthSlider;
 
     public Animator attackAnimator;
@@ -117,7 +118,7 @@ public class Attack : MonoBehaviour
 
         if(health <= 0)
         {
-            SceneManager.LoadScene(0);
+            startUp.deathScreen.SetActive(false);
         }
     }
 
