@@ -13,6 +13,7 @@ public class OptionMenu : MonoBehaviour
     [SerializeField] PlayerMovement moveScript;
 
     [SerializeField] StartUp mainmenu;
+    [SerializeField] Tutorial tutorial;
     [SerializeField] GameObject[] secondaryGameObjects;
     [SerializeField] GameObject[] primaryGameObjects;
 
@@ -20,7 +21,6 @@ public class OptionMenu : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log(mainmenu.mainMenuOn);
             if(!mainmenu.mainMenuOn)
             {
                 if (!settingsAan)
@@ -43,32 +43,17 @@ public class OptionMenu : MonoBehaviour
        
     }
 
-    /*public void DoSettingsMenuButton()
-    {
-
-        if (!settingsAan)
-        {
-            SettingsMenuOn();
-        }
-        else
-        {
-            SettingsMenuOff();
-
-        }
-        settingsAan = !settingsAan;
-    }*/
-
     public void SettingsMenuOn()
     {
         
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0;
-        
+        tutorial.tutorialEnabled = false;
 
-        SortMenu();
         hud.gameObject.SetActive(false);
         settingsMenu.gameObject.SetActive(true);
+        SortMenu();
 
         moveScript.enabled = false;
 
@@ -79,10 +64,11 @@ public class OptionMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
+        tutorial.tutorialEnabled = true;
 
-        SortMenu();
         settingsMenu.gameObject.SetActive(false);
         hud.gameObject.SetActive(true);
+        SortMenu();
 
         moveScript.enabled = true;
 
@@ -131,8 +117,3 @@ public class OptionMenu : MonoBehaviour
     }
 
 }
-/* muis moet stoppen met lopen
-        * als settingsmenu uit is, moet ie aan
-        * als settingsmenu al aan is, moet ie uit
-        * 
-       */

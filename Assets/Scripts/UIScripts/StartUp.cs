@@ -9,9 +9,12 @@ public class StartUp : MonoBehaviour
     [SerializeField] GameObject[] secondaryGameObjects;
     [SerializeField] GameObject[] primaryGameObjects;
     [SerializeField] GameObject[] menuGameObjects;
+
     [SerializeField] GameObject deathScreen;
     [SerializeField] Maus enemy;
     [SerializeField] Attack attack;
+
+    [SerializeField] Tutorial tutorial;     
 
     public bool mainMenuOn;
     public GameObject hud;
@@ -21,6 +24,7 @@ public class StartUp : MonoBehaviour
         secondaryGameObjects = GameObject.FindGameObjectsWithTag("Secondary");
         primaryGameObjects = GameObject.FindGameObjectsWithTag("Primary");
         //menuGameObjects = GameObject.FindGameObjectsWithTag("Menu");
+        tutorial.tutorialEnabled = false;
 
         mainMenuOn = true;
 
@@ -49,6 +53,7 @@ public class StartUp : MonoBehaviour
         Cursor.visible = false;
 
         mainMenuOn = false;
+        tutorial.tutorialEnabled = true;
 
         hud.SetActive(true);
 
@@ -60,6 +65,7 @@ public class StartUp : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
 
         mainMenuOn = false;
         deathScreen.SetActive(false);
