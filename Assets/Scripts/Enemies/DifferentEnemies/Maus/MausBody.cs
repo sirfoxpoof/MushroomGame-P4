@@ -5,15 +5,14 @@ using UnityEngine;
 public class MausBody : MonoBehaviour
 {
     GameObject player;
-    [SerializeField]float bodyDamage;
+    public bool onBody;
    
 
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == ("Player"))
         {
-            player = other.gameObject;
-            Invoke("BodyDamage", 2);
+           onBody = true;
         }
     }
 
@@ -21,11 +20,8 @@ public class MausBody : MonoBehaviour
     {
         if (other.tag == ("Player"))
         {
-            CancelInvoke("BodyDamage");
+            onBody = false;
         }
     }
-    void BodyDamage()
-    {
-        player.GetComponent<Attack>().TakeDamage(bodyDamage);
-    }
+    
 }

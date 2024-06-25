@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
 
     [HideInInspector]public bool playerPosActive;
     [HideInInspector] public Vector3 playerPos;
-    public Slider healthSlider;
+    //public Slider healthSlider;
 
     public Material normalColour;
     
@@ -49,12 +49,12 @@ public class Enemy : MonoBehaviour
         randomState = 0;
         currentHealth = health;
 
-        healthSlider.maxValue = currentHealth;
+       // healthSlider.maxValue = currentHealth;
         player = GameObject.Find("PlayerHolder").transform;
         agent = gameObject.GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    public virtual void Update()
     {
         // Check if the player is in range to attack 
         inAttackRange = Physics.CheckSphere(transform.position, attackRange, getPlayer);
@@ -104,7 +104,7 @@ public class Enemy : MonoBehaviour
     {
         StartCoroutine("ChangeMaterial");
         currentHealth -= damage;
-        healthSlider.value = currentHealth;
+        //healthSlider.value = currentHealth;
 
         if (currentHealth <= 0)
         {

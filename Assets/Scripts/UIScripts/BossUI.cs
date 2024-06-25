@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 public class BossUI : MonoBehaviour
 {
-    [SerializeField] Enemy enemy;
+    [SerializeField] Maus enemy;
     [SerializeField] GameObject bossUI;
     [SerializeField] AnimatorOff animatorOff;
     [SerializeField] AudioSource animalcrossing, eldenring;

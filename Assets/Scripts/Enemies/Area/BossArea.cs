@@ -5,11 +5,11 @@ using UnityEngine;
 public class BossArea : MonoBehaviour
 {
 
-    [SerializeField] Enemy enemyMove;
+    [SerializeField] Maus enemyMove;
 
     private void Start()
     {
-        enemyMove = gameObject.GetComponentInChildren<Enemy>();
+        enemyMove = gameObject.GetComponentInChildren<Maus>();
     }
     private void OnTriggerEnter(Collider other)
     {

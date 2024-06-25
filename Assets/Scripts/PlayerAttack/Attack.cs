@@ -44,7 +44,7 @@ public class Attack : MonoBehaviour
                     attacking = false;
                     //weapons.gameObject.GetComponent<CapsuleCollider>().enabled = true;    
                     Debug.Log("supposed to do damage");
-                    weapons.enemy.GetComponentInParent<Enemy>().TakeDamage(weapons.damage);
+                    weapons.enemy.GetComponentInParent<Maus>().TakeDamage(weapons.damage);
                    // StartCoroutine("AttackTime");
                     Invoke("Reset", 1.1f);
              }
@@ -81,7 +81,7 @@ public class Attack : MonoBehaviour
 
                 attackAnimator.Play("Attack");
                 allowedAttack = false;
-                attacking= true;
+                attacking = true;
 
                 StartCoroutine("AttackTime");
             }

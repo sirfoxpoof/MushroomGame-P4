@@ -10,7 +10,7 @@ public class StartUp : MonoBehaviour
     [SerializeField] GameObject[] primaryGameObjects;
     [SerializeField] GameObject[] menuGameObjects;
     [SerializeField] GameObject deathScreen;
-    [SerializeField] Enemy enemy;
+    [SerializeField] Maus enemy;
     [SerializeField] Attack attack;
 
     public bool mainMenuOn;
@@ -52,7 +52,7 @@ public class StartUp : MonoBehaviour
 
         hud.SetActive(true);
 
-        enemy.StartEnemy();
+        enemy.StartMaus();
         attack.StartAttack();
     }
 
@@ -65,7 +65,7 @@ public class StartUp : MonoBehaviour
         deathScreen.SetActive(false);
         hud.SetActive(true);
 
-        enemy.StartEnemy();
+        enemy.StartMaus();
         attack.StartAttack();
 
     }
