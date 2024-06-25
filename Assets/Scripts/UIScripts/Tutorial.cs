@@ -59,8 +59,6 @@ public class Tutorial : MonoBehaviour
         Invoke("CheckTutorial", 2);
     }
 
-
-
     void CheckTutorial()
     {
         if (a && s && w && d)
