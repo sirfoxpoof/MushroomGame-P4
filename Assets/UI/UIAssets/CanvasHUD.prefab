@@ -630,7 +630,7 @@ RectTransform:
   m_Father: {fileID: 4673443995448375957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -0.00012207, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -954,7 +954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3894694488064143480
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2488,6 +2488,11 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4280362885
       objectReference: {fileID: 0}
+    - target: {fileID: 5410673700190062176, guid: 4fe54d036fce96140baa3c63c10be2f6,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6492313396733458905, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}
       propertyPath: m_Name
@@ -2839,6 +2844,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5410673700190062176, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410673700190062176, guid: 4fe54d036fce96140baa3c63c10be2f6,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 109.326355
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410673700190062176, guid: 4fe54d036fce96140baa3c63c10be2f6,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 129.1568
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410673700190062176, guid: 4fe54d036fce96140baa3c63c10be2f6,
+        type: 3}
       propertyPath: m_fontColor.b
       value: 0.17306478
       objectReference: {fileID: 0}
@@ -2856,6 +2876,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_VerticalAlignment
       value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410673700190062176, guid: 4fe54d036fce96140baa3c63c10be2f6,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6492313396733458905, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}
@@ -2905,7 +2930,7 @@ PrefabInstance:
     - target: {fileID: 6828351786168641068, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -958.5662
       objectReference: {fileID: 0}
     - target: {fileID: 6828351786168641068, guid: 4fe54d036fce96140baa3c63c10be2f6,
         type: 3}

@@ -9,6 +9,7 @@ public class StartUp : MonoBehaviour
     [SerializeField] GameObject[] secondaryGameObjects;
     [SerializeField] GameObject[] primaryGameObjects;
     [SerializeField] GameObject[] menuGameObjects;
+    [SerializeField] GameObject deathScreen;
     [SerializeField] Enemy enemy;
     [SerializeField] Attack attack;
 
@@ -48,10 +49,25 @@ public class StartUp : MonoBehaviour
         Cursor.visible = false;
 
         mainMenuOn = false;
+
         hud.SetActive(true);
 
         enemy.StartEnemy();
         attack.StartAttack();
+    }
+
+    public void TryAgain()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        mainMenuOn = false;
+        deathScreen.SetActive(false);
+        hud.SetActive(true);
+
+        enemy.StartEnemy();
+        attack.StartAttack();
+
     }
 
 }
