@@ -16,7 +16,7 @@ public class MausBalls : MonoBehaviour
     [SerializeField]Maus mausScript;
     [SerializeField] Animator mausAnimator;
     [SerializeField] float ballDamage, throwAmount;
-    Vector3 playerThrow = new Vector3 (0, 0, -10);
+    Vector3 playerThrow = new Vector3 (0, 3, -10);
 
     [SerializeField]Material normalColour;
 
@@ -26,7 +26,6 @@ public class MausBalls : MonoBehaviour
     {
         takingDamage = false;
         mausScript = GetComponentInParent<Maus>();
-        normalColour = gameObject.GetComponent<Material>();
         
     }
    

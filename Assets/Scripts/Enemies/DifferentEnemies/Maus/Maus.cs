@@ -50,6 +50,7 @@ public class Maus : MonoBehaviour
     [SerializeField]public Slider healthSlider;
     public Material normalColour;
 
+    GameObject targetTarget;
 
 
     public enum MausState
@@ -108,7 +109,10 @@ public class Maus : MonoBehaviour
 
         }
 
-
+        if(Vector3.Distance(player.position, transform.position) > detectRange)
+        {
+            state = MausState.IDLE;
+        }
 
         if(body.onBody)
         {
@@ -158,11 +162,13 @@ public class Maus : MonoBehaviour
             float distance = heading.magnitude;
             Vector3 direction = heading / distance;
 
-            float attackDistance = 50f;
+            float attackDistance = 20f;
 
             GameObject target = new GameObject();
             target.name = "Target";
             target.transform.position = transform.position + direction * attackDistance;
+
+            playerPos = target.transform.position;
             Debug.DrawLine(transform.position, target.transform.position, Color.red, 10f);
 
             //+= transform.forward * Time.deltaTime * movementSpeed;
@@ -171,17 +177,17 @@ public class Maus : MonoBehaviour
             /*playerPosActive = true;
             playerPos = speedAttackPoint.position;*/
 
-             randomState = Random.Range(0, currentState);
+            randomState = Random.Range(0, currentState);
              Debug.Log(randomState.ToString());
 
              CheckAttackState();
              Invoke("ResetAttack", resetTime);
         }
 
-        if (speedAttacking)
+        /*if (speedAttacking)
         {
             agent.SetDestination(playerPos);
-        }
+        }*/
 
              // random attack based on hp.
             // Dan terwijl anim aan het spelen is, wacht zolang de anim is en daarna doe Tired.
@@ -317,7 +323,6 @@ public class Maus : MonoBehaviour
     
     public void DoSprintAttack()
     {
-
         speedAttacking = true;
         StartCoroutine("SprintAttack", playerPos);
     }
@@ -357,6 +362,8 @@ public class Maus : MonoBehaviour
     {
         attacking = false;
         speedAttacking = false;
+
+        targetTarget = null;
         gameObject.GetComponent<NavMeshAgent>().speed = normalSpeed;
     }
 }

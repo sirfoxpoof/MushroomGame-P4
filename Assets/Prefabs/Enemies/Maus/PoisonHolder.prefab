@@ -50,8 +50,8 @@ MonoBehaviour:
   player: {fileID: 0}
   mausScript: {fileID: 0}
   mausAnimator: {fileID: 0}
-  ballDamage: 50
-  throwAmount: 10
+  ballDamage: 100
+  throwAmount: 15
   normalColour: {fileID: 2100000, guid: aea5117fdc76c754ebf000571b0cdbfb, type: 2}
   takingDamage: 0
 --- !u!135 &5897629686989160930
@@ -73,8 +73,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.1027185
+  m_Center: {x: -0.062459007, y: -1.8115551e-10, z: -3.8155125e-17}
 --- !u!1001 &741837345283832897
 PrefabInstance:
   m_ObjectHideFlags: 0

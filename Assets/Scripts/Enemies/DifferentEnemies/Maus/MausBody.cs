@@ -7,18 +7,16 @@ public class MausBody : MonoBehaviour
     GameObject player;
     public bool onBody;
    
-
-    private void OnTriggerStay(Collider other)
+    private void OnCollisionStay(Collision collision)
     {
-        if (other.tag == ("Player"))
+        if (collision.gameObject.tag == ("Player"))
         {
-           onBody = true;
+            onBody = true;
         }
     }
-
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision collision)
     {
-        if (other.tag == ("Player"))
+        if (collision.gameObject.tag == ("Player"))
         {
             onBody = false;
         }
