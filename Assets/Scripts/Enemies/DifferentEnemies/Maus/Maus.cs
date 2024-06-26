@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -102,6 +103,7 @@ public class Maus : MonoBehaviour
             case MausState.DEAD:
                 break;
             case MausState.ONMAUS:
+                OnBody();
                 break;
 
         }
@@ -117,6 +119,8 @@ public class Maus : MonoBehaviour
 
     public void Idle()
     {
+        animator.Play("Idle");
+
         if (Vector3.Distance(player.position, transform.position) < detectRange && Vector3.Distance(player.position, transform.position) > attackRange)
         {
             inSightRange = true;
@@ -139,16 +143,33 @@ public class Maus : MonoBehaviour
 
     public IEnumerator Attack()
     {
-        
-
         if (!attacking)
         {
 
-                attacking = true;
-          StopAllCoroutines();
-             agent.SetDestination(transform.position);
-            playerPosActive = true;
-            playerPos = speedAttackPoint.position;
+            attacking = true;
+            StopAllCoroutines();
+
+
+
+
+            //Calculates distance between mause and player, adds the attackdistance and spawns a target at the end.
+            //after that the mause can run to the target.
+            Vector3 heading = player.position - transform.position;
+            float distance = heading.magnitude;
+            Vector3 direction = heading / distance;
+
+            float attackDistance = 50f;
+
+            GameObject target = new GameObject();
+            target.name = "Target";
+            target.transform.position = transform.position + direction * attackDistance;
+            Debug.DrawLine(transform.position, target.transform.position, Color.red, 10f);
+
+            //+= transform.forward * Time.deltaTime * movementSpeed;
+
+            agent.SetDestination(transform.position);
+            /*playerPosActive = true;
+            playerPos = speedAttackPoint.position;*/
 
              randomState = Random.Range(0, currentState);
              Debug.Log(randomState.ToString());
@@ -173,8 +194,18 @@ public class Maus : MonoBehaviour
         animator.SetTrigger("Tired");
         yield return new WaitForSeconds(10);
         // play tired anim en wacht.
-        
+        animator.SetTrigger("TiredDone");
         state = MausState.GOTO;
+    }
+
+    public void OnBody()
+    {
+        agent.SetDestination(transform.position);
+
+        if (!body.onBody)
+        {
+            state = MausState.GOTO;
+        }
     }
 
     void CheckAttackState()

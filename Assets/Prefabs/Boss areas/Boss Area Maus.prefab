@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb299536f75bb9e4f8cf99587535319a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodyDamage: 0
+  onBody: 0
 --- !u!1 &2122304332892060013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,13 +1751,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da7d3b7696c2d24e90a284332042f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 5720044334125364179}
   shockWave: {fileID: 6040116032600664202}
   speedAttackPoint: {fileID: 0}
   player: {fileID: 0}
   shockWaveTime: 3.2
   speed: 20
   normalSpeed: 2
-  detectRange: 25
+  detectRange: 40
   attackRange: 15
   honk: {fileID: 2292791522606049556}
   animator: {fileID: 6885142426879828734}
