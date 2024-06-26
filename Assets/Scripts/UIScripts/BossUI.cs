@@ -10,11 +10,22 @@ public class BossUI : MonoBehaviour
     [SerializeField] GameObject bossUI;
     [SerializeField] AnimatorOff animatorOff;
     [SerializeField] AudioSource animalcrossing, eldenring;
+    [SerializeField] Tutorial tutorial;
 
-    bool animatorIsOff = false;
+    bool animatorIsOff = false, scriptOff;
 
     public void Update()
     {
+        if (scriptOff == false)
+        {
+            if (tutorial.finsihed)
+            {
+                tutorial.enabled = false;
+                scriptOff = true;
+            }
+            
+        }
+
         if (enemy.inSightRange == true)
         {
         

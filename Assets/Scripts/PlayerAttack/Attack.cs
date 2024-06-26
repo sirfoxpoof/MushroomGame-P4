@@ -118,7 +118,7 @@ public class Attack : MonoBehaviour
 
         if(health <= 0)
         {
-            startUp.deathScreen.SetActive(false);
+            startUp.deathScreen.SetActive(true);
         }
     }
 

@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
-    public bool tutorialEnabled, w, a, s, d, jump, glide, attack;
+    public bool tutorialEnabled, w, a, s, d, jump, glide, attack, finsihed;
     public Toggle wt, at, st, dt, jumpt, glidet, attackt;
     public GameObject tutorialmove, tutorialjump, tutorialglide, tutorialattack;
+
 
     public void W(InputAction.CallbackContext context)
     {
@@ -18,8 +19,6 @@ public class Tutorial : MonoBehaviour
             wt.isOn = true;
             Invoke("CheckTutorial", 2);
         }
-        
-
     }
     public void A(InputAction.CallbackContext context)
     {
@@ -28,9 +27,7 @@ public class Tutorial : MonoBehaviour
             a = true;
             at.isOn = true;
             Invoke("CheckTutorial", 2);
-
         }
-
     }
     public void S(InputAction.CallbackContext context)
     {
@@ -39,10 +36,7 @@ public class Tutorial : MonoBehaviour
             s = true;
             st.isOn = true;
             Invoke("CheckTutorial", 2);
-
         }
-        
-
     }
     public void D(InputAction.CallbackContext context)
     {
@@ -51,9 +45,7 @@ public class Tutorial : MonoBehaviour
             d = true;
             dt.isOn = true;
             Invoke("CheckTutorial", 2);
-
         }
-        
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -66,10 +58,7 @@ public class Tutorial : MonoBehaviour
                 jumpt.isOn = true;
                 Invoke("CheckTutorial", 2);
             }
-            
-
         }
-        
     }
 
     public void Glide(InputAction.CallbackContext context)
@@ -83,7 +72,6 @@ public class Tutorial : MonoBehaviour
                 Invoke("CheckTutorial", 2);
             }
         }
-        
     }
 
     public void Attack(InputAction.CallbackContext context)
@@ -96,10 +84,7 @@ public class Tutorial : MonoBehaviour
                 attackt.isOn = true;
                 Invoke("CheckTutorial", 2);
             }
-            
-
         }
-        
     }
 
     void CheckTutorial()
@@ -118,12 +103,12 @@ public class Tutorial : MonoBehaviour
                 {
                     tutorialglide.SetActive(false);
                     tutorialattack.SetActive(true);
-                    print("glide done");
                   
                     if (attack)
                     {
                         tutorialattack.SetActive(false);
-                        print("attack done");
+                        finsihed = true;
+                        
                        
                     }
                 }
