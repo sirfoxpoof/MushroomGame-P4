@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7562282010371115448}
   - component: {fileID: 2115645909302090101}
+  - component: {fileID: 6523513747203910081}
   m_Layer: 0
   m_Name: Sprint Collider
   m_TagString: Untagged
@@ -53,6 +54,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.7839355, y: 4.393843, z: 7.983227}
   m_Center: {x: 0.07751465, y: 1.6969216, z: -1.1666813}
+--- !u!114 &6523513747203910081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174517613917270448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b4c5911cb26ba4d8a4d8fa8ccd982d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprintDamage: 10
 --- !u!1 &455748960729911610
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,10 +121,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.1830753
-  m_Height: 6.3498936
+  m_Radius: 1.6705782
+  m_Height: 6.420535
   m_Direction: 1
-  m_Center: {x: 0.07000017, y: 2.397285, z: 5.010478}
+  m_Center: {x: 0.07000029, y: 2.9209414, z: 4.7474747}
 --- !u!136 &3601599938858116610
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -130,10 +144,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.93698967
-  m_Height: 3.9048486
+  m_Radius: 1.6532724
+  m_Height: 4.306989
   m_Direction: 1
-  m_Center: {x: -0.22894907, y: -2.7900393, z: 5.0033307}
+  m_Center: {x: -0.22894907, y: -2.4131575, z: 4.8662853}
 --- !u!114 &5720044334125364179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,11 +223,12 @@ Transform:
   m_GameObject: {fileID: 2572492963917793138}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 124.6, y: 6.83, z: -17.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8679035053895675692}
+  - {fileID: 1632102040240317961}
   m_Father: {fileID: 1979040545947127731}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1291177247526224645
@@ -286,7 +301,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 69
-  m_Center: {x: 0.00000011920929, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6774540853045821273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,8 +540,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.4062195, y: 9.880488, z: 5.0995755}
-  m_Center: {x: 0.109802246, y: 2.7831378, z: 2.0497952}
+  m_Size: {x: 3.4062195, y: 5.8360496, z: 5.0995755}
+  m_Center: {x: 0.109802246, y: 0.7609185, z: 2.049805}
 --- !u!1001 &4478768782347446823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1181,6 +1196,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8074875503788167528}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8725682421795379371
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4138248340238547449}
+    m_Modifications:
+    - target: {fileID: 7276248452269171736, guid: dfd6c503a58945044844ea84d1e4ad51,
+        type: 3}
+      propertyPath: m_Name
+      value: Throphee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276248452269171736, guid: dfd6c503a58945044844ea84d1e4ad51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048422667663785634, guid: dfd6c503a58945044844ea84d1e4ad51,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048422667663785634, guid: dfd6c503a58945044844ea84d1e4ad51,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048422667663785634, guid: dfd6c503a58945044844ea84d1e4ad51,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048422667663785634, guid: dfd6c503a58945044844ea84d1e4ad51,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048422667663785634, guid: dfd6c503a58945044844ea84d1e4ad51,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048422667663785634, guid: dfd6c503a58945044844ea84d1e4ad51,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048422667663785634, guid: dfd6c503a58945044844ea84d1e4ad51,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048422667663785634, guid: dfd6c503a58945044844ea84d1e4ad51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048422667663785634, guid: dfd6c503a58945044844ea84d1e4ad51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048422667663785634, guid: dfd6c503a58945044844ea84d1e4ad51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dfd6c503a58945044844ea84d1e4ad51, type: 3}
+--- !u!4 &1632102040240317961 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8048422667663785634, guid: dfd6c503a58945044844ea84d1e4ad51,
+    type: 3}
+  m_PrefabInstance: {fileID: 8725682421795379371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9221288567985146055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1755,6 +1849,7 @@ MonoBehaviour:
   shockWave: {fileID: 6040116032600664202}
   speedAttackPoint: {fileID: 0}
   player: {fileID: 0}
+  throphee: {fileID: 1632102040240317961}
   shockWaveTime: 3.2
   speed: 20
   normalSpeed: 2
@@ -1780,7 +1875,7 @@ MonoBehaviour:
   playerPosActive: 0
   playerPos: {x: 0, y: 0, z: 0}
   healthSlider: {fileID: 0}
-  normalColour: {fileID: 2100000, guid: b44bd93536eefe042be6db21ff9575be, type: 2}
+  normalColour: {fileID: 2100000, guid: 462c02e2e1299f2459fe1ae6025ceb19, type: 2}
   state: 0
   sprintCollider: {fileID: 2115645909302090101}
 --- !u!95 &6885142426879828734

@@ -13,7 +13,7 @@ public class Maus : MonoBehaviour
 
 
     [SerializeField] ParticleSystem shockWave;
-    [SerializeField] Transform speedAttackPoint, player;
+    [SerializeField] Transform speedAttackPoint, player, throphee;
     [SerializeField] float shockWaveTime, speed, normalSpeed, detectRange = 40, attackRange = 15;
     bool speedAttacking;
     float leftRight = 1;
@@ -50,7 +50,7 @@ public class Maus : MonoBehaviour
     [SerializeField]public Slider healthSlider;
     public Material normalColour;
 
-    GameObject targetTarget;
+   
 
 
     public enum MausState
@@ -102,6 +102,7 @@ public class Maus : MonoBehaviour
                 //Tired();
                 break;
             case MausState.DEAD:
+                DeadMaus();
                 break;
             case MausState.ONMAUS:
                 OnBody();
@@ -258,6 +259,7 @@ public class Maus : MonoBehaviour
         {
             //Destroy(gameObject);
             animator.SetTrigger("Die");
+            throphee.gameObject.SetActive(true);
             state = MausState.DEAD;
             Debug.Log(enemyName + " DIED");
             //SceneManager.LoadScene(0);
@@ -363,7 +365,12 @@ public class Maus : MonoBehaviour
         attacking = false;
         speedAttacking = false;
 
-        targetTarget = null;
         gameObject.GetComponent<NavMeshAgent>().speed = normalSpeed;
+    }
+
+
+    void DeadMaus()
+    {
+        //ja doet niks misschien zorgt dit ervoor dat die stomme muis stopt met shit doen als ik hem doodmaak
     }
 }
