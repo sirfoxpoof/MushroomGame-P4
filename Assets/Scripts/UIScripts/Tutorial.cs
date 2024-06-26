@@ -20,6 +20,7 @@ public class Tutorial : MonoBehaviour
             Invoke("CheckTutorial", 2);
         }
     }
+
     public void A(InputAction.CallbackContext context)
     {
         if (tutorialEnabled)
@@ -29,6 +30,7 @@ public class Tutorial : MonoBehaviour
             Invoke("CheckTutorial", 2);
         }
     }
+
     public void S(InputAction.CallbackContext context)
     {
         if (tutorialEnabled)
@@ -38,6 +40,7 @@ public class Tutorial : MonoBehaviour
             Invoke("CheckTutorial", 2);
         }
     }
+
     public void D(InputAction.CallbackContext context)
     {
         if (tutorialEnabled)
