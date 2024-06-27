@@ -694,6 +694,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 70302348}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &84131337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5333428201154905239, guid: f2b054dc1c482cf49b0f80eb07e8586a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6948003675502878244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &106570373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1456,6 +1462,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 298682472765666836, guid: 92adb5f4a0a31a4428b8113c3122ab97,
+        type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 519947325}
+    - target: {fileID: 298682472765666836, guid: 92adb5f4a0a31a4428b8113c3122ab97,
+        type: 3}
+      propertyPath: startUp
+      value: 
+      objectReference: {fileID: 851363920}
+    - target: {fileID: 298682472765666836, guid: 92adb5f4a0a31a4428b8113c3122ab97,
+        type: 3}
+      propertyPath: tutorial
+      value: 
+      objectReference: {fileID: 1527526792}
+    - target: {fileID: 298682472765666836, guid: 92adb5f4a0a31a4428b8113c3122ab97,
+        type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 84131337}
     - target: {fileID: 298682472765666836, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: healthSlider

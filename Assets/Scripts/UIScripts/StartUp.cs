@@ -51,6 +51,7 @@ public class StartUp : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Time.timeScale = 1;
 
         mainMenuOn = false;
         tutorial.tutorialEnabled = true;

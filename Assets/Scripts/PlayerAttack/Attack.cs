@@ -13,8 +13,9 @@ public class Attack : MonoBehaviour
     float maxHealth = 100;
     public Weapons weapons;
     public PlayerMovement playerMovement;
-    public StartUp startUp;
+    public Tutorial tutorial;
     public Slider healthSlider;
+    [SerializeField] GameObject deathScreen, hud;
 
     public Animator attackAnimator;
 
@@ -25,6 +26,7 @@ public class Attack : MonoBehaviour
 
     bool takingDamage;
     [HideInInspector] public bool waterDamage;
+
     public void StartAttack()
     {
         healthSlider.maxValue = health;
@@ -118,8 +120,22 @@ public class Attack : MonoBehaviour
 
         if(health <= 0)
         {
-            startUp.deathScreen.SetActive(true);
+            Invoke("Death", 2);
+
         }
+    }
+
+    public void Death()
+    {
+        deathScreen.SetActive(true);
+        hud.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0;
+
+        tutorial.tutorialEnabled = false;
+
     }
 
     public void Heal(float healAmmount)
