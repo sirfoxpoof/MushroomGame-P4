@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Other Things")]
     [SerializeField] private Camera cam;
     /*[HideInInspector]*/ public bool isGrounded, jumping, gliding;
-    [SerializeField] private Animator movementAnimator;
+     public Animator movementAnimator;
     private void Awake()
     {
         playerActionMap = new PlayerActionMap();

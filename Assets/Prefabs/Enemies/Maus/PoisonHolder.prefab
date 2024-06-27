@@ -46,12 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efcdea550295bd4783c707a43d8fd9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 30
   player: {fileID: 0}
   mausScript: {fileID: 0}
   mausAnimator: {fileID: 0}
   ballDamage: 100
-  throwAmount: 15
+  throwAmount: 20
   normalColour: {fileID: 2100000, guid: aea5117fdc76c754ebf000571b0cdbfb, type: 2}
   takingDamage: 0
 --- !u!135 &5897629686989160930

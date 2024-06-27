@@ -49,7 +49,7 @@ public class Attack : MonoBehaviour
                     Debug.Log("supposed to do damage");
                     weapons.enemy.GetComponentInParent<Maus>().TakeDamage(weapons.damage);
                    // StartCoroutine("AttackTime");
-                    Invoke("Reset", 1.1f);
+                    Invoke("Reset", 2.3f);
              }
             
         }
@@ -57,7 +57,7 @@ public class Attack : MonoBehaviour
 
     private void Reset()
     {
-        weapons.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        weapons.gameObject.GetComponent<BoxCollider>().enabled = false;
         attacking = false;
     }
     //hier moeten we checken welk wapen we vast hebben en het script vahn dat wapen pakken om die attack uit te voeren
@@ -69,7 +69,7 @@ public class Attack : MonoBehaviour
             if(allowedAttack && playerMovement.jumping)
             {
                 weapons.damage = weapons.critDamage;
-                weapons.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+                weapons.gameObject.GetComponent<BoxCollider>().enabled = true;
 
                 attackAnimator.Play("Heavy Attack");
                 allowedAttack = false;
@@ -80,7 +80,7 @@ public class Attack : MonoBehaviour
             else if (allowedAttack)
             {
                 weapons.damage = weapons.normalDamage;
-                weapons.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+                weapons.gameObject.GetComponent<BoxCollider>().enabled = true;
 
                 attackAnimator.Play("Attack");
                 allowedAttack = false;
@@ -95,9 +95,9 @@ public class Attack : MonoBehaviour
     IEnumerator AttackTime()
     {
         allowedAttack = false;
-        yield return new WaitForSeconds(1.1f);
+        yield return new WaitForSeconds(2.3f);
         allowedAttack = true;
-        weapons.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        weapons.gameObject.GetComponent<BoxCollider>().enabled = false;
 
     }
 
@@ -120,7 +120,9 @@ public class Attack : MonoBehaviour
 
         if(health <= 0)
         {
-            Invoke("Death", 2);
+            attackAnimator.SetTrigger("Die");
+
+            Invoke("Death", 5);
 
         }
     }
@@ -156,25 +158,4 @@ public class Attack : MonoBehaviour
         gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.white;
         takingDamage = false;
     }
-
-    //dodgew aka wtf uis dit hoe kut wil jke het hebben
-   /* public void DodgeLeft(InputAction.CallbackContext context)
-    {
-        //ik wil de dodge hier ook in zetten want dat is makkelijker met aanspreken enzo met invincibility en whoooooooo
-
-        //klote dodge
-        if (context.performed)
-        {
-            playerMovement.rb.AddForce(Vector3.left * 10, ForceMode.Impulse);
-        }
-    }
-
-    public void DodgeRight(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            //playerMovement.rb.AddForce(Vector3.right * 10, ForceMode.Impulse);
-           transform.Translate(transform.position.x * dodgeValue, transform.position.y, 0);
-        }
-    }*/
 }

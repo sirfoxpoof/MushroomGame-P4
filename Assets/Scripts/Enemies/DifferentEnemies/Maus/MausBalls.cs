@@ -16,7 +16,7 @@ public class MausBalls : MonoBehaviour
     [SerializeField]Maus mausScript;
     [SerializeField] Animator mausAnimator;
     [SerializeField] float ballDamage, throwAmount;
-    Vector3 playerThrow = new Vector3 (0, 3, -10);
+    Vector3 playerThrow = new Vector3 (0, 1, 10);
 
     [SerializeField]Material normalColour;
 

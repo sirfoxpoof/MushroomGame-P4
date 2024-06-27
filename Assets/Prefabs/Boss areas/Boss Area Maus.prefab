@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7562282010371115448}
   - component: {fileID: 2115645909302090101}
   - component: {fileID: 6523513747203910081}
+  - component: {fileID: 2807379592090962213}
   m_Layer: 0
   m_Name: Sprint Collider
   m_TagString: Untagged
@@ -55,6 +56,19 @@ BoxCollider:
   m_Size: {x: 2.7839355, y: 4.393843, z: 7.983227}
   m_Center: {x: 0.07751465, y: 1.6969216, z: -1.1666813}
 --- !u!114 &6523513747203910081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174517613917270448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b4c5911cb26ba4d8a4d8fa8ccd982d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprintDamage: 10
+--- !u!114 &2807379592090962213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -407,7 +421,7 @@ GameObject:
   - component: {fileID: 2448626931188421706}
   m_Layer: 11
   m_Name: Lower Body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,8 +460,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.4062195, y: 5.8360496, z: 5.0995755}
-  m_Center: {x: 0.109802246, y: 0.7609185, z: 2.049805}
+  m_Size: {x: 4.1354675, y: 5.8360496, z: 5.4380026}
+  m_Center: {x: 0.15926361, y: 0.76091856, z: 2.2190633}
 --- !u!1001 &4478768782347446823
 PrefabInstance:
   m_ObjectHideFlags: 0
