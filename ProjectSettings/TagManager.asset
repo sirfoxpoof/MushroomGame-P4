@@ -10,6 +10,7 @@ TagManager:
   - Primary
   - Menu
   - Weapon
+  - Jumpable
   layers:
   - Default
   - TransparentFX

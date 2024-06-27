@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6702829167271281778}
   - component: {fileID: 4034192360611492670}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: LeafCollider
-  m_TagString: Untagged
+  m_TagString: Jumpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

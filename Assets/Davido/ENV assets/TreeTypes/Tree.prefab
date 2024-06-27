@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5028479462197732253}
   - component: {fileID: 4394308015157948538}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Tree
-  m_TagString: Untagged
+  m_TagString: Jumpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4999,6 +4999,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4c7f7a32fcbb0645898b0aaf35f54b9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

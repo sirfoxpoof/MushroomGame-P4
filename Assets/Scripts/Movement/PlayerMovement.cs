@@ -144,7 +144,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.layer == 12 || collision.gameObject.layer == 9)
+        if(collision.gameObject.tag == "Jumpable")
         {
             isGrounded = true;
             gliding = false;
@@ -152,6 +152,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            isGrounded = false;
+            jumping = true;
             return;
         }
     }

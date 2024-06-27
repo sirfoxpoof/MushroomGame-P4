@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8969614607096170866}
   - component: {fileID: 2527364588734184169}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: CapCollider
-  m_TagString: Untagged
+  m_TagString: Jumpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
