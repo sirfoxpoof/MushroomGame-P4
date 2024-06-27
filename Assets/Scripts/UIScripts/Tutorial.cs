@@ -17,7 +17,7 @@ public class Tutorial : MonoBehaviour
         {
             w = true;
             wt.isOn = true;
-            Invoke("CheckTutorial", 2);
+            Invoke("CheckTutorial", 5   );
         }
     }
 
@@ -27,7 +27,7 @@ public class Tutorial : MonoBehaviour
         {
             a = true;
             at.isOn = true;
-            Invoke("CheckTutorial", 2);
+            Invoke("CheckTutorial", 10);
         }
     }
 
@@ -37,7 +37,7 @@ public class Tutorial : MonoBehaviour
         {
             s = true;
             st.isOn = true;
-            Invoke("CheckTutorial", 2);
+            Invoke("CheckTutorial", 10);
         }
     }
 
@@ -47,7 +47,7 @@ public class Tutorial : MonoBehaviour
         {
             d = true;
             dt.isOn = true;
-            Invoke("CheckTutorial", 2);
+            Invoke("CheckTutorial", 10);
         }
     }
 
@@ -59,7 +59,7 @@ public class Tutorial : MonoBehaviour
             {
                 jump = true;
                 jumpt.isOn = true;
-                Invoke("CheckTutorial", 2);
+                Invoke("CheckTutorial", 10);
             }
         }
     }
@@ -72,7 +72,7 @@ public class Tutorial : MonoBehaviour
             {
                 glide = true;
                 glidet.isOn = true;
-                Invoke("CheckTutorial", 2);
+                Invoke("CheckTutorial", 10);
             }
         }
     }
@@ -85,7 +85,7 @@ public class Tutorial : MonoBehaviour
             {
                 attack = true;
                 attackt.isOn = true;
-                Invoke("CheckTutorial", 2);
+                Invoke("CheckTutorial", 10);
             }
         }
     }
@@ -111,8 +111,6 @@ public class Tutorial : MonoBehaviour
                     {
                         tutorialattack.SetActive(false);
                         finsihed = true;
-                        
-                       
                     }
                 }
 
