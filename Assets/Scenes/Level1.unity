@@ -17770,7 +17770,7 @@ GameObject:
   - component: {fileID: 1798105151}
   - component: {fileID: 1798105150}
   - component: {fileID: 1798105149}
-  m_Layer: 12
+  m_Layer: 9
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -144,16 +144,15 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.layer == 11)
-        {
-            Debug.Log("ENEMY");
-            return;
-        }
-        else
+        if(collision.gameObject.layer == 12 || collision.gameObject.layer == 9)
         {
             isGrounded = true;
             gliding = false;
             jumping = false;
+        }
+        else
+        {
+            return;
         }
     }
     private void OnCollisionExit(Collision collision)
