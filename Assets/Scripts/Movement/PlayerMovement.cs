@@ -142,11 +142,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionStay()
+    void OnCollisionStay(Collision collision)
     {
-        isGrounded = true;
-        gliding = false;
-        jumping = false;
+        if(collision.gameObject.layer == 11)
+        {
+            return;
+        }
+        else
+        {
+            isGrounded = true;
+            gliding = false;
+            jumping = false;
+        }
     }
     private void OnCollisionExit(Collision collision)
     {
