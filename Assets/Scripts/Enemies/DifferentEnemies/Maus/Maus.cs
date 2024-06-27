@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class Maus : MonoBehaviour
 {
-    public MausBody body;
+    public MausBody[] body;
 
 
     [SerializeField] ParticleSystem shockWave;
@@ -115,9 +115,12 @@ public class Maus : MonoBehaviour
             state = MausState.IDLE;
         }
 
-        if(body.onBody)
+        foreach(MausBody body in body)
         {
-            state = MausState.ONMAUS;
+            if (body.onBody)
+            {
+                state = MausState.ONMAUS;
+            }
         }
     }
 
@@ -209,9 +212,12 @@ public class Maus : MonoBehaviour
     {
         agent.SetDestination(transform.position);
 
-        if (!body.onBody)
+        foreach(MausBody body in body)
         {
-            state = MausState.GOTO;
+            if (!body.onBody)
+            {
+                state = MausState.GOTO;
+            }
         }
     }
 

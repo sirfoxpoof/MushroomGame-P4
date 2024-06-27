@@ -146,6 +146,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.layer == 11)
         {
+            Debug.Log("ENEMY");
             return;
         }
         else

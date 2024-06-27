@@ -22,8 +22,8 @@ TagManager:
   - Assets
   - Terrain
   - HUD
-  - 
-  - 
+  - Enemy
+  - Jumpable
   - 
   - 
   - 
