@@ -608,6 +608,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8302932136230204822, guid: c7605132c14f0654cbafb1a816956ce3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1279675954}
     - targetCorrespondingSourceObject: {fileID: 174517613917270448, guid: c7605132c14f0654cbafb1a816956ce3,
         type: 3}
       insertIndex: -1
@@ -2141,22 +2145,22 @@ PrefabInstance:
     - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7088663
+      value: 0.70886624
       objectReference: {fileID: 0}
     - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.099093765
+      value: -0.099093735
       objectReference: {fileID: 0}
     - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.69162226
+      value: -0.6916224
       objectReference: {fileID: 0}
     - target: {fileID: 1338285293452443457, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.09668318
+      value: -0.09668319
       objectReference: {fileID: 0}
     - target: {fileID: 3502892146291542608, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
@@ -2211,22 +2215,22 @@ PrefabInstance:
     - target: {fileID: 6278709779680870177, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70886636
+      value: 0.7088663
       objectReference: {fileID: 0}
     - target: {fileID: 6278709779680870177, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.09909376
+      value: -0.09909375
       objectReference: {fileID: 0}
     - target: {fileID: 6278709779680870177, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.69162226
+      value: -0.6916223
       objectReference: {fileID: 0}
     - target: {fileID: 6278709779680870177, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.096683174
+      value: -0.09668318
       objectReference: {fileID: 0}
     - target: {fileID: 6676810739482922300, guid: 92adb5f4a0a31a4428b8113c3122ab97,
         type: 3}
@@ -6035,6 +6039,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fac28963df431ae43b410b48ab605247, type: 3}
+--- !u!1 &531851919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8302932136230204822, guid: c7605132c14f0654cbafb1a816956ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 43083198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &534300651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8847,7 +8857,7 @@ PrefabInstance:
     - target: {fileID: 3607943198313107328, guid: 4bc5636592968b94292c8f26adf51b16,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 294.78275
+      value: 294.78278
       objectReference: {fileID: 0}
     - target: {fileID: 3618831759393804023, guid: 4bc5636592968b94292c8f26adf51b16,
         type: 3}
@@ -14226,10 +14236,22 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 43083198}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 531851919}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8da7d3b7696c2d24e90a284332042f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1279675954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531851919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb2b6be46199be4e8be4320bc4ba21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1282579204
