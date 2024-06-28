@@ -29,17 +29,11 @@ public class MausHead : MonoBehaviour
 
         if (context.performed && inRange && !pickedup)
         {
-            transform.SetParent(newParentObject.transform);
+            newParentObject.SetActive(true);
             pickedup = true;
             oldSword.SetActive(false);
 
-            /*transform.position = Vector3.zero;
-            transform.rotation = Quaternion.identity;
-            transform.localScale = Vector3.one;*/
-
-            gameObject.GetComponent<Transform>().position = newParentObject.transform.position;
-            gameObject.GetComponent<Transform>().rotation = newParentObject.transform.rotation;
-            gameObject.GetComponent<Transform>().localScale = newParentObject.transform.localScale;
+            gameObject.SetActive(false);
         }
     }
 }
