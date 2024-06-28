@@ -33,6 +33,7 @@ public class Attack : MonoBehaviour
         healthSlider.value = health;
         playerMovement = GetComponent<PlayerMovement>();
         allowedAttack = true;
+        Debug.Log(allowedAttack);
 
         weapons.normalDamage = weapons.damage;
     }

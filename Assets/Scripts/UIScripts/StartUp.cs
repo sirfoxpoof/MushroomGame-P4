@@ -49,6 +49,7 @@ public class StartUp : MonoBehaviour
     }
     public void MenuOff()
     {
+        Debug.Log("HALLO");
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;

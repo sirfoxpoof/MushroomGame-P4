@@ -359,9 +359,9 @@ public class Maus : MonoBehaviour
     }
 
 
-    IEnumerator ShockWaveTime()
+    public void ShockWave()
     {
-        yield return new WaitForSeconds(shockWaveTime);
+        Debug.LogWarning("MAUHAUHAUHAUS");
         shockWave.Play();
     }
 

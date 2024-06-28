@@ -185,7 +185,7 @@ MonoBehaviour:
   deathScreen: {fileID: 0}
   hud: {fileID: 0}
   attackAnimator: {fileID: 877975195237274661}
-  allowedAttack: 0
+  allowedAttack: 1
   attacking: 0
   heavyAttacking: 0
   waterDamage: 0
@@ -4685,7 +4685,7 @@ Transform:
   m_GameObject: {fileID: 1084338132589553550}
   serializedVersion: 2
   m_LocalRotation: {x: 0.02817515, y: -0.000000017262497, z: 4.865666e-10, w: 0.99960303}
-  m_LocalPosition: {x: -2.0396729, y: -0.942008, z: -5.5430408}
+  m_LocalPosition: {x: -2.039669, y: -0.942008, z: -5.543041}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12255,7 +12255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2955527862904924523}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.10745352, y: -0.44156927, z: -0.05336233, w: 0.88916975}
+  m_LocalRotation: {x: -0.10745366, y: -0.44156894, z: -0.05336235, w: 0.8891699}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31152,7 +31152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7148721363196488935}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.12399708, y: -0.44049868, z: -0.061577998, w: 0.88701403}
+  m_LocalRotation: {x: -0.12399727, y: -0.44049835, z: -0.061578047, w: 0.88701415}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34287,7 +34287,7 @@ Transform:
   m_GameObject: {fileID: 7964407217942718397}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.039627, y: 1.342, z: -1.5471082}
+  m_LocalPosition: {x: 2.0396233, y: 1.342, z: -1.5471077}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36964,8 +36964,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8535742595196380451}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.12399708, y: -0.44049868, z: -0.061577998, w: 0.88701403}
-  m_LocalPosition: {x: 2.039627, y: 1.342, z: -1.5471083}
+  m_LocalRotation: {x: -0.12399727, y: -0.44049826, z: -0.06157803, w: 0.88701415}
+  m_LocalPosition: {x: 2.0396233, y: 1.342, z: -1.5471077}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
