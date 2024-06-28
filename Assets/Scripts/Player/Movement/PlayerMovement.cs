@@ -25,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Camera cam;
     /*[HideInInspector]*/ public bool isGrounded, jumping, gliding, notJumpable;
     public Animator movementAnimator;
+
+    private int jumpCount = 0;
+    private int jumpLimit = 1   ;
+
+    RaycastHit hit;
     private void Awake()
     {
         playerActionMap = new PlayerActionMap();
@@ -82,9 +87,27 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = horizontalVel.normalized * maxSpeed + Vector3.up * rb.velocity.y;
         }
 
+        //LayerMask layerMask = 1 << 9;
+        if (Physics.Raycast(transform.position,-Vector3.up, out hit, 0.1f))
+        {
+            if (hit.transform.tag != "Jumpable")
+            {
+                return;
+            }
+            isGrounded = true;
+            jumpCount = 0;
+            gliding = false;
+            jumping = false;
+            Debug.DrawLine(transform.position, hit.point, Color.green, 2f);
+        }
+        else
+        {
+            isGrounded = false;
+            //jumping = true;
+            Debug.DrawRay(transform.position, -Vector3.up * 5f, Color.red, 2f);
 
-        //animations oke oke jump is kakka miss heeft het met de eerste if statement te maken
-        //even proberen om er een speed van de maken
+        }
+
 
         //float actualSpeed = rb.velocity.magnitude;
         //float actualSpeed = rb.velocity.z;
@@ -128,6 +151,7 @@ public class PlayerMovement : MonoBehaviour
         right.y = 0f;
         return right.normalized;
     }
+
     //hier kijken we in de directie die we opgaan
     private void LookAt()
     {
@@ -144,36 +168,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionStay(Collision collision)
-    {
-        if(collision.gameObject.tag == "Jumpable")
-        {
-            isGrounded = true;
-            gliding = false;
-            jumping = false;
-            movementAnimator.SetTrigger("Glide done");
-        }
-        else
-        {
-            isGrounded = false;
-            jumping = true;
-            return;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        isGrounded = false;
-        jumping = true;
-    }
-
     public void DoJump(InputAction.CallbackContext context)
     {
-        if(isGrounded && !notJumpable)
+        if(isGrounded)
         {
             //first jump
             if(context.performed)
             {
-                //movementAnimator.Play("Jumping");
+                jumpCount++;
                 movementAnimator.SetTrigger("Jumping");
 
                 jumping = true;
@@ -184,23 +186,19 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            //second jump (aka boost), which is a bit higher
-            if(jumping && !notJumpable)
+            //double jump
+            if(jumpCount < jumpLimit)
             {
                 if (context.performed)
                 {
+                   jumpCount++;
                    rb.AddForce(jump * jumpForce * maxJumpforce, ForceMode.Impulse);
                    jumping = false;
-                   //animatie voor tweede jump
 
                 }
             }
-            
-
         }
-      
     }
-    //btw niet op de hardcode letten ik ga het fixen I swear
 
     public void Sprint(InputAction.CallbackContext context)
     {
