@@ -121,6 +121,7 @@ public class Attack : MonoBehaviour
         if(health <= 0)
         {
             attackAnimator.SetTrigger("Die");
+            playerMovement.enabled = false;
 
             Invoke("Death", 5);
 
