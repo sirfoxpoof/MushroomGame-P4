@@ -36,6 +36,9 @@ public class MausHead : MonoBehaviour
             transform.position = Vector3.zero;
             transform.rotation = Quaternion.identity;
             transform.localScale = Vector3.one;
+
+            gameObject.GetComponent<Transform>().position = newParentObject.transform.position;
+
         }
     }
 }

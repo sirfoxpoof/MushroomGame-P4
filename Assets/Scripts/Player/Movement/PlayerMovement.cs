@@ -23,8 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Other Things")]
     [SerializeField] private Camera cam;
-    /*[HideInInspector]*/ public bool isGrounded, jumping, gliding;
-     public Animator movementAnimator;
+    /*[HideInInspector]*/ public bool isGrounded, jumping, gliding, notJumpable;
+    public Animator movementAnimator;
     private void Awake()
     {
         playerActionMap = new PlayerActionMap();
@@ -101,11 +101,13 @@ public class PlayerMovement : MonoBehaviour
         {
             if (gliding)
             {
+                movementAnimator.SetTrigger("Glide done");
                 gliding = false;
 
             }
             else
             {
+                movementAnimator.SetTrigger("Glide");
                 gliding = true;
                 moveSpeed += 2;
             }
@@ -149,6 +151,7 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             gliding = false;
             jumping = false;
+            movementAnimator.SetTrigger("Glide done");
         }
         else
         {
@@ -165,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void DoJump(InputAction.CallbackContext context)
     {
-        if(isGrounded)
+        if(isGrounded && !notJumpable)
         {
             //first jump
             if(context.performed)
@@ -182,7 +185,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             //second jump (aka boost), which is a bit higher
-            if(jumping)
+            if(jumping && !notJumpable)
             {
                 if (context.performed)
                 {
