@@ -27,13 +27,13 @@ public class Attack : MonoBehaviour
     bool takingDamage;
     [HideInInspector] public bool waterDamage;
 
-    public void StartAttack()
+    public void Awake()
     {
         healthSlider.maxValue = health;
         healthSlider.value = health;
         playerMovement = GetComponent<PlayerMovement>();
         allowedAttack = true;
-        Debug.Log(allowedAttack);
+       
 
         weapons.normalDamage = weapons.damage;
     }

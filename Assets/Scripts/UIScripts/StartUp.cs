@@ -59,8 +59,8 @@ public class StartUp : MonoBehaviour
 
         hud.SetActive(true);
 
-        enemy.StartMaus();
-        attack.StartAttack();
+        /*enemy.StartMaus();
+        attack.StartAttack();*/
     }
 
     public void TryAgain()
@@ -73,8 +73,8 @@ public class StartUp : MonoBehaviour
         deathScreen.SetActive(false);
         hud.SetActive(true);
 
-        enemy.StartMaus();
-        attack.StartAttack();
+       /* enemy.StartMaus();
+        attack.StartAttack();*/
 
     }
 

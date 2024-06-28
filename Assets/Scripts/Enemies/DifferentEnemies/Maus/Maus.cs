@@ -67,7 +67,7 @@ public class Maus : MonoBehaviour
 
     [SerializeField] Collider sprintCollider;
 
-    public void StartMaus()
+    public void Awake()
     {
         state = MausState.IDLE;
         shockWave = GetComponentInChildren<ParticleSystem>();
@@ -180,7 +180,7 @@ public class Maus : MonoBehaviour
             agent.SetDestination(transform.position);
             /*playerPosActive = true;
             playerPos = speedAttackPoint.position;*/
-
+            
             randomState = Random.Range(0, currentState);
              Debug.Log(randomState.ToString());
 
@@ -250,7 +250,7 @@ public class Maus : MonoBehaviour
             //third attack
             animator.SetTrigger("ShockWave");
 
-            StartCoroutine("ShockWaveTime");
+            //StartCoroutine("ShockWaveTime");
         }
     }
 
