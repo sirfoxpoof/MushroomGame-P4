@@ -94,10 +94,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 return;
             }
-            isGrounded = true;
-            jumpCount = 0;
-            gliding = false;
-            jumping = false;
+            if (!isGrounded)
+            {
+                isGrounded = true;
+                jumpCount = 0;
+                gliding = false;
+                jumping = false;
+                movementAnimator.SetTrigger("GlideFinished");
+            }
         }
         else
         {
@@ -117,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (gliding)
             {
-                movementAnimator.SetTrigger("Glide done");
+                movementAnimator.SetTrigger("GlideFinished");
                 gliding = false;
 
             }
