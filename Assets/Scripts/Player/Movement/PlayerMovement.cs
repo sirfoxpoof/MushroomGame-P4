@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     /*[HideInInspector]*/ public bool isGrounded, jumping, gliding, notJumpable;
     public Animator movementAnimator;
 
-    private int jumpCount = 0;
+    public int jumpCount = 0;
     private int jumpLimit = 1   ;
 
     RaycastHit hit;
@@ -98,19 +98,12 @@ public class PlayerMovement : MonoBehaviour
             jumpCount = 0;
             gliding = false;
             jumping = false;
-            Debug.DrawLine(transform.position, hit.point, Color.green, 2f);
         }
         else
         {
             isGrounded = false;
-            //jumping = true;
-            Debug.DrawRay(transform.position, -Vector3.up * 5f, Color.red, 2f);
-
         }
 
-
-        //float actualSpeed = rb.velocity.magnitude;
-        //float actualSpeed = rb.velocity.z;
         float actualSpeed = new Vector3(rb.velocity.x, rb.velocity.z, 0).magnitude;
         movementAnimator.SetFloat("Actual Speed", actualSpeed);
 

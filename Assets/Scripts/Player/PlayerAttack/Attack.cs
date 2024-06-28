@@ -46,12 +46,9 @@ public class Attack : MonoBehaviour
              {
                     attacking = false;
                     //weapons.gameObject.GetComponent<CapsuleCollider>().enabled = true;    
-                    Debug.Log("supposed to do damage");
                     weapons.enemy.GetComponentInParent<Maus>().TakeDamage(weapons.damage);
-                   // StartCoroutine("AttackTime");
-                    Invoke("Reset", 2.3f);
+                    Invoke("Reset", 2f);
              }
-            
         }
     }
 
@@ -66,7 +63,7 @@ public class Attack : MonoBehaviour
     {
         if(context.performed)
         {
-            if(allowedAttack && playerMovement.jumping)
+            if(allowedAttack && playerMovement.jumpCount > 0)
             {
                 weapons.damage = weapons.critDamage;
                 weapons.gameObject.GetComponent<BoxCollider>().enabled = true;
@@ -75,7 +72,7 @@ public class Attack : MonoBehaviour
                 allowedAttack = false;
                 attacking = true;
 
-                StartCoroutine("AttackTime");
+                StartCoroutine("HeavyAttackTime");
             }
             else if (allowedAttack)
             {
@@ -95,16 +92,23 @@ public class Attack : MonoBehaviour
     IEnumerator AttackTime()
     {
         allowedAttack = false;
+        yield return new WaitForSeconds(1f);
+        allowedAttack = true;
+        weapons.gameObject.GetComponent<BoxCollider>().enabled = false;
+
+    }
+    IEnumerator HeavyAttackTime()
+    {
+        allowedAttack = false;
         yield return new WaitForSeconds(2.3f);
         allowedAttack = true;
         weapons.gameObject.GetComponent<BoxCollider>().enabled = false;
 
     }
 
+
     public void TakeDamage(float damage)
     {
-        //de character zichzelf damage geven
-
         if(!takingDamage && !waterDamage)
         {
             health -= damage;
